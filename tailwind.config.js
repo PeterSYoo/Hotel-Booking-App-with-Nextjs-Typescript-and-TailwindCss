@@ -9,6 +9,12 @@ module.exports = {
       colors: {
         blueBtn: '#316BFF',
       },
+      width: {
+        1920: '1920px',
+      },
+      maxWidth: {
+        1920: '1920px',
+      },
     },
   },
   plugins: [],

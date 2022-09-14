@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <div className="flex py-5 px-10 justify-between items-center">
+    <div className="flex py-5 px-10 justify-between items-center max-w-1920 mx-auto">
       {/* Desktop */}
       <div className="hidden md:flex">
         <Image src="/img/logo.png" alt="" width="148" height="38" />
