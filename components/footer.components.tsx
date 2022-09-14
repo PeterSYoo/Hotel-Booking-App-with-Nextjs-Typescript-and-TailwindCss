@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <div className="flex justify-between px-48 pt-44 pb-32 bg-gray-100">
-      <div className="w-64">
+    <div className="md:flex md:justify-between pt-10 px-8 pb-8 md:px-48 md:pt-44 md:pb-32 bg-gray-100">
+      <div className="hidden md:flex flex-col w-64">
         <div className="">
           <Image src="/img/logo.png" alt="" width="148" height="38" />
         </div>
@@ -20,13 +20,31 @@ const Footer = () => {
       </div>
       <div className="">
         <ul className="flex flex-col gap-3.5">
-          <li className="text-2xl">Business</li>
-          <li className="text-gray-400">Success</li>
-          <li className="text-gray-400">About Locato</li>
-          <li className="text-gray-400">Blog</li>
-          <li className="text-gray-400">Information</li>
-          <li className="text-gray-400">Travel Guide</li>
+          <li className="text-lg md:text-2xl">Business</li>
+          <li className="text-xs text-gray-600 md:text-gray-400 md:text-base">
+            Success
+          </li>
+          <li className="text-xs text-gray-600 md:text-gray-400 md:text-base">
+            About Locato
+          </li>
+          <li className="text-xs text-gray-600 md:text-gray-400 md:text-base">
+            Blog
+          </li>
+          <li className="text-xs text-gray-600 md:text-gray-400 md:text-base">
+            Information
+          </li>
+          <li className="text-xs text-gray-600 md:text-gray-400 md:text-base">
+            Travel Guide
+          </li>
         </ul>
+      </div>
+      {/* Mobile */}
+      <div className="pt-7 md:hidden">
+        <Image src="/img/logo.png" alt="" width="94" height="24" />
+      </div>
+      <div className="w-32 h-10 mt-6 pl-3 pt-1 pr-2 flex items-center gap-x-7 bg-white rounded-lg md:hidden">
+        <Image src="/img/button-sun.png" alt="" width="60" height="30" />
+        <Image src="/img/button-moon.png" alt="" width="24" height="24" />
       </div>
     </div>
   );
