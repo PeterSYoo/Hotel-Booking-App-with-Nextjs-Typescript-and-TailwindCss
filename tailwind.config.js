@@ -12,6 +12,7 @@ module.exports = {
       width: {
         1920: '1920px',
         1440: '1440px',
+        1170: '1170px',
       },
       height: {
         578: '578px',
@@ -23,6 +24,17 @@ module.exports = {
       },
       backgroundImage: {
         hero: "url('/img/hero.jpg')",
+      },
+      lineHeight: {
+        54: '54px',
+        80: '80px',
+      },
+      fontSize: {
+        64: '64px',
+      },
+      fontFamily: {
+        dmSans: 'DM Sans',
+        poppins: 'Poppins',
       },
     },
   },

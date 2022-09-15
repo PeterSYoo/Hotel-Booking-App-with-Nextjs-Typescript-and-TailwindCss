@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <div className="flex py-5 px-10 justify-between items-center max-w-1440 mx-auto">
+    <div className="flex py-5 px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
       {/* Desktop */}
       <div className="hidden md:flex">
         <Image src="/img/logo.png" alt="" width="148" height="38" />
@@ -13,7 +13,7 @@ const Header = () => {
       </div>
       {/* Desktop */}
       <div className="hidden gap-x-12 items-center md:flex">
-        <div className="text-xl">Login</div>
+        <div className="text-xl font-bold">Login</div>
         <div className="text-xl text-white bg-blueBtn px-5 py-3 rounded-xl">
           signup
         </div>

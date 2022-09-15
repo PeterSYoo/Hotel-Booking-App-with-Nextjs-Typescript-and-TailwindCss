@@ -5,11 +5,11 @@ import Footer from '../components/footer.components';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div className="bg-gray-100 h-screen">
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </div>
   );
 }
 
