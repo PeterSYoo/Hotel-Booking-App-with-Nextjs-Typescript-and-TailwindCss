@@ -16,6 +16,7 @@ const Home: NextPage = () => {
           Journey!
         </h1>
       </section>
+
       {/* Search Best Place in the World */}
       <section className="max-w-375 mx-auto md:max-w-1440">
         <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10">
@@ -27,7 +28,7 @@ const Home: NextPage = () => {
           advance
         </p>
       </section>
-      {/* Cards - Search Best Place in the World */}
+      {/* Search Best Place in the World - Cards */}
       <section className="max-w-1170 mx-auto px-7">
         <div className="flex pb-10 overflow-x-auto no-scrollbar">
           <div className="flex flex-nowrap md:flex-wrap">
@@ -182,6 +183,207 @@ const Home: NextPage = () => {
                   <p className="text-sm text-gray-400">86 Destinations</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Destinations */}
+      <section className="max-w-375 mx-auto md:max-w-1440">
+        <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10">
+          Featured Destinations
+        </h1>
+        <p className="max-w-375 w-600 text-center px-14 leading-6 text-gray-600 pb-7 md:max-w-1440">
+          Popular destinations open to vistors from Indonesia
+        </p>
+      </section>
+      {/* Dekstop */}
+      {/* Featured Destinations - Cards */}
+      <section className="max-w-1440 mx-auto hidden md:flex">
+        <div className="max-w-1170 mx-auto grid overflow-hidden grid-cols-2 grid-rows-1 gap-[30px] w-auto h-auto">
+          {/* Grid col 1 */}
+          <div className="grid overflow-hidden grid-cols-2 grid-rows-2 gap-[30px] w-auto h-auto">
+            <div className="box row-start-1 row-end-1 col-start-1 col-end-3 bg-gray-500">
+              1
+            </div>
+            <div className="box row-start-2 row-end-2 col-start-1 col-end-1 bg-gray-500">
+              2
+            </div>
+            <div className="box row-start-2 row-end-2 col-start-2 col-end-2 bg-gray-500">
+              3
+            </div>
+          </div>
+          {/* Grid col 2 */}
+          <div className="grid overflow-hidden grid-cols-1 grid-rows-3 gap-[30px] w-auto h-auto">
+            <div className="box row-start-1 row-end-1 col-start-1 col-end-3 bg-gray-500">
+              1
+            </div>
+            <div className="box row-start-2 row-end-2 col-start-1 col-end-3 bg-gray-500">
+              2
+            </div>
+            <div className="box row-start-3 row-end-3 col-start-1 col-end-3 bg-gray-500">
+              3
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile */}
+      {/* Featured Destinations - Cards */}
+      <section className="max-w-375 mx-auto md:hidden">
+        {/* Card */}
+        <div className="flex flex-col justify-between pl-[20px] w-335 h-[280px] mb-[20px] bg-[url('/img/destinations/barcelona.png')]">
+          <div className="pt-[20px]">
+            <span className="bg-white rounded-full px-[19px] py-[2px] text-[#FF543D]">
+              3.5
+            </span>
+          </div>
+          <div className="">
+            <h1 className="text-2xl text-white font-bold pb-[6px]">
+              Barcelona Tour
+            </h1>
+            <div className="flex items-center pb-[18px]">
+              <span className="">
+                <Image
+                  src="/img/destinations/avatar.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <span className="pl-[14px] text-white -mt-[7px]">
+                196 Activities
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* Card */}
+        <div className="flex flex-col justify-between pl-[20px] w-335 h-[408px] mb-[20px] bg-[url('/img/destinations/london.png')]">
+          <div className="pt-[20px]">
+            <span className="bg-white rounded-full px-[19px] py-[2px] text-[#FF543D]">
+              3.5
+            </span>
+          </div>
+          <div className="">
+            <h1 className="text-2xl text-white font-bold pb-[6px]">
+              London, United Kingdom
+            </h1>
+            <div className="flex items-center pb-[18px]">
+              <span className="">
+                <Image
+                  src="/img/destinations/avatar.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <span className="pl-[14px] text-white -mt-[7px]">
+                196 Activities
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* Card */}
+        <div className="flex flex-col justify-between pl-[20px] w-335 h-[408px] mb-[20px] bg-[url('/img/destinations/australia.png')]">
+          <div className="pt-[20px]">
+            <span className="bg-white rounded-full px-[19px] py-[2px] text-[#FF543D]">
+              3.5
+            </span>
+          </div>
+          <div className="">
+            <h1 className="text-2xl text-white font-bold pb-[6px]">
+              Australia Tour
+            </h1>
+            <div className="flex items-center pb-[18px]">
+              <span className="">
+                <Image
+                  src="/img/destinations/avatar.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <span className="pl-[14px] text-white -mt-[7px]">
+                196 Activities
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* Card */}
+        <div className="flex flex-col justify-between pl-[20px] w-335 h-[220px] mb-[20px] bg-[url('/img/destinations/australia-2.png')]">
+          <div className="pt-[20px]">
+            <span className="bg-white rounded-full px-[19px] py-[2px] text-[#FF543D]">
+              3.5
+            </span>
+          </div>
+          <div className="">
+            <h1 className="text-2xl text-white font-bold pb-[6px]">
+              Australia Tour
+            </h1>
+            <div className="flex items-center pb-[18px]">
+              <span className="">
+                <Image
+                  src="/img/destinations/avatar.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <span className="pl-[14px] text-white -mt-[7px]">
+                196 Activities
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* Card */}
+        <div className="flex flex-col justify-between pl-[20px] w-335 h-[220px] mb-[20px] bg-[url('/img/destinations/japan.png')]">
+          <div className="pt-[20px]">
+            <span className="bg-white rounded-full px-[19px] py-[2px] text-[#FF543D]">
+              3.5
+            </span>
+          </div>
+          <div className="">
+            <h1 className="text-2xl text-white font-bold pb-[6px]">
+              Japan Tour
+            </h1>
+            <div className="flex items-center pb-[18px]">
+              <span className="">
+                <Image
+                  src="/img/destinations/avatar.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <span className="pl-[14px] text-white -mt-[7px]">
+                196 Activities
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* Card */}
+        <div className="flex flex-col justify-between pl-[20px] w-335 h-[217px] mb-[20px] bg-[url('/img/destinations/japan-2.png')]">
+          <div className="pt-[20px]">
+            <span className="bg-white rounded-full px-[19px] py-[2px] text-[#FF543D]">
+              3.5
+            </span>
+          </div>
+          <div className="">
+            <h1 className="text-2xl text-white font-bold pb-[6px]">
+              Japan Tour
+            </h1>
+            <div className="flex items-center pb-[18px]">
+              <span className="">
+                <Image
+                  src="/img/destinations/avatar.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <span className="pl-[14px] text-white -mt-[7px]">
+                196 Activities
+              </span>
             </div>
           </div>
         </div>

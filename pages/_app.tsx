@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="bg-sectionBg">
       <Head>
-        <title>Hotel Booking</title>
+        <title>TripGuide</title>
       </Head>
       <Header />
       <Component {...pageProps} />
