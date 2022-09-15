@@ -4,9 +4,12 @@ const Footer = () => {
   return (
     <div className="bg-footerBg font-dmSans max-w-1440 mx-auto">
       <div className="pt-10 px-8 pb-8 max-w-1057 mx-auto md:px-48 md:pt-44 md:pb-32 md:flex md:justify-between ">
-        <div className="hidden md:flex flex-col w-64">
-          <div className="">
-            <Image src="/img/logo.png" alt="" width="148" height="38" />
+        <div className="hidden flex-col w-64 md:flex">
+          <div className="items-center md:flex">
+            <Image src="/img/logo.png" alt="" width="40" height="38" />
+            <span className="text-xl font-openSans font-bold pl-2.5">
+              TripGuide
+            </span>
           </div>
           <div className="pt-7">
             <span className="text-gray-400">
@@ -40,8 +43,11 @@ const Footer = () => {
           </ul>
         </div>
         {/* Mobile */}
-        <div className="pt-7 md:hidden">
-          <Image src="/img/logo.png" alt="" width="94" height="24" />
+        <div className="pt-7 flex items-center md:hidden">
+          <Image src="/img/logo.png" alt="" width="24" height="24" />
+          <span className="text-xs font-openSans font-bold pl-2.5">
+            TripGuide
+          </span>
         </div>
         <div className="w-32 mt-6 pl-2 pr-1 pt-1 flex items-center gap-x-7 bg-white rounded-lg md:hidden">
           <Image src="/img/button-sun.png" alt="" width="60" height="30" />

@@ -43,6 +43,7 @@ module.exports = {
       fontFamily: {
         dmSans: 'DM Sans',
         poppins: 'Poppins',
+        openSans: 'Open Sans',
       },
       padding: {
         35: '35px',
