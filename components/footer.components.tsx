@@ -17,9 +17,11 @@ const Footer = () => {
               your interior looks cool
             </span>
           </div>
-          <div className="w-32 h-10 mt-7 pl-30 pt-1 pr-2 flex items-center gap-x-7 bg-white rounded-lg">
+          <div className="w-32 h-10 mt-7 pl-[12px] pt-1 pr-[12px] flex items-center gap-x-7 bg-white rounded-lg">
             <Image src="/img/button-sun.png" alt="" width="60" height="30" />
-            <Image src="/img/button-moon.png" alt="" width="24" height="24" />
+            <div className="mt-1">
+              <Image src="/img/button-moon.png" alt="" width="24" height="24" />
+            </div>
           </div>
         </div>
         <div className="">
@@ -49,9 +51,11 @@ const Footer = () => {
             TripGuide
           </span>
         </div>
-        <div className="w-32 mt-6 pl-2 pr-1 pt-1 flex items-center gap-x-7 bg-white rounded-lg md:hidden">
+        <div className="w-32 mt-6 pl-[12px] pr-[12px] pt-1 flex items-center gap-x-7 bg-white rounded-lg md:hidden">
           <Image src="/img/button-sun.png" alt="" width="60" height="30" />
-          <Image src="/img/button-moon.png" alt="" width="24" height="24" />
+          <div className="mt-1">
+            <Image src="/img/button-moon.png" alt="" width="24" height="24" />
+          </div>
         </div>
       </div>
     </div>
