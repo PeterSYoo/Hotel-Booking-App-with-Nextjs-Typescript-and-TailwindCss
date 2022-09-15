@@ -31,7 +31,7 @@ const Footer = () => {
               Success
             </li>
             <li className="text-xs text-gray-600 md:text-gray-400 md:text-base">
-              About Locato
+              About
             </li>
             <li className="text-xs text-gray-600 md:text-gray-400 md:text-base">
               Blog

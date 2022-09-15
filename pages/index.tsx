@@ -197,28 +197,35 @@ const Home: NextPage = () => {
           Popular destinations open to vistors from Indonesia
         </p>
       </section>
+
       {/* Dekstop */}
       {/* Featured Destinations - Cards */}
       <section className="px-[135px] hidden md:block">
         <div className="grid grid-cols-12 grid-rows-6 gap-[30px] h-[718px]">
           <div className="row-start-1 row-span-6 col-start-1 col-span-9">
             <div className="grid grid-cols-2 grid-rows-5 gap-[30px] h-[718px]">
-              <div className="bg-gray-200 row-start-1 row-span-2 col-start-1 col-span-2">
+              <div className="bg-gray-200 row-start-1 row-span-2 col-start-1 col-span-2 rounded-3xl p-6">
                 1
               </div>
-              <div className="bg-gray-200 row-start-3 row-span-3 col-start-1 col-span-1">
+              <div className="bg-gray-200 row-start-3 row-span-3 col-start-1 col-span-1 rounded-3xl p-6">
                 2
               </div>
-              <div className="bg-gray-200 row-start-3 row-span-3 col-start-2 col-span-1">
+              <div className="bg-gray-200 row-start-3 row-span-3 col-start-2 col-span-1 rounded-3xl p-6">
                 3
               </div>
             </div>
           </div>
           <div className="row-start-1 row-span-6 col-start-10 col-span-4">
             <div className="grid grid-cols-1 grid-rows-3 gap-[30px] h-[718px]">
-              <div className="bg-gray-200 row-start-1 row-span-1">4</div>
-              <div className="bg-gray-200 row-start-2 row-span-1">5</div>
-              <div className="bg-gray-200 row-start-3 row-span-1">6</div>
+              <div className="bg-gray-200 row-start-1 row-span-1 rounded-3xl p-6">
+                4
+              </div>
+              <div className="bg-gray-200 row-start-2 row-span-1 rounded-3xl p-6">
+                5
+              </div>
+              <div className="bg-gray-200 row-start-3 row-span-1 rounded-3xl p-6">
+                6
+              </div>
             </div>
           </div>
         </div>
@@ -381,6 +388,66 @@ const Home: NextPage = () => {
                 196 Activities
               </span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Tour */}
+      <section className="max-w-[375px] mx-auto">
+        <div className="mt-[60px] mb-[12px]">
+          <h1 className="text-center text-3xl font-bold">Top Tour</h1>
+        </div>
+        <div className="mb-[35px]">
+          <p className="text-center text-[14px] text-gray-400">
+            Keep calm & Travel on
+          </p>
+        </div>
+      </section>
+      {/* Card */}
+      <section className="flex flex-col justify-between w-[335px] h-[495px] rounded-2xl mb-[20px] mx-auto bg-[url('/img/top-tour/japan.png')]">
+        <div className="pt-[30px] pl-[30px]">
+          <span className="bg-black bg-opacity-25 rounded-full px-[28px] py-[11px] text-white text-[20px]">
+            Japan
+          </span>
+        </div>
+        <div className="pl-[30px]">
+          <h1 className="text-[34px] text-white font-bold pb-[12px]">Japan</h1>
+          <div className="flex items-center pb-[30px]">
+            <span className="text-white -mt-[7px] text-[16px]">
+              10 Popular Places
+            </span>
+          </div>
+        </div>
+      </section>
+      {/* Card */}
+      <section className="flex flex-col justify-between w-[335px] h-[495px] rounded-2xl mb-[20px] mx-auto bg-[url('/img/top-tour/japan.png')]">
+        <div className="pt-[30px] pl-[30px]">
+          <span className="bg-black bg-opacity-25 rounded-full px-[28px] py-[11px] text-white text-[20px]">
+            Barcelona
+          </span>
+        </div>
+        <div className="pl-[30px]">
+          <h1 className="text-[34px] text-white font-bold pb-[12px]">Spain</h1>
+          <div className="flex items-center pb-[30px]">
+            <span className="text-white -mt-[7px] text-[16px]">
+              10 Popular Places
+            </span>
+          </div>
+        </div>
+      </section>
+      {/* Card */}
+      <section className="flex flex-col justify-between w-[335px] h-[495px] rounded-2xl mb-[20px] mx-auto bg-[url('/img/top-tour/japan.png')]">
+        <div className="pt-[30px] pl-[30px]">
+          <span className="bg-black bg-opacity-25 rounded-full px-[28px] py-[11px] text-white text-[20px]">
+            Indonesia
+          </span>
+        </div>
+        <div className="pl-[30px]">
+          <h1 className="text-[34px] text-white font-bold pb-[12px]">Bali</h1>
+          <div className="flex items-center pb-[30px]">
+            <span className="text-white -mt-[7px] text-[16px]">
+              10 Popular Places
+            </span>
           </div>
         </div>
       </section>
