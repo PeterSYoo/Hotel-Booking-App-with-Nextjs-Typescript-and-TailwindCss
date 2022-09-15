@@ -5,8 +5,9 @@ import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="max-w-1440 mx-auto flex justify-center w-full">
+      {/* Hero Section */}
+      <section className="bg-hero bg-cover bg-no-repeat bg-center w-1440 h-541 md:h-578"></section>
     </div>
   );
 };
