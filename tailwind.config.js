@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       colors: {
         blueBtn: '#316BFF',
+        footerBg: '#F4F5F6',
+        sectionBg: '#FAFAFA',
       },
       width: {
         1920: '1920px',
@@ -26,6 +28,7 @@ module.exports = {
         1440: '1440px',
         1170: '1170px',
         1057: '1057px',
+        375: '375px',
       },
       backgroundImage: {
         hero: "url('/img/hero.jpg')",

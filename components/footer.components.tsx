@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <div className="bg-gray-100 font-dmSans max-w-1057 mx-auto">
-      <div className="md:flex md:justify-between pt-10 px-8 pb-8 md:px-48 md:pt-44 md:pb-32">
+    <div className="bg-footerBg font-dmSans max-w-1440 mx-auto">
+      <div className="pt-10 px-8 pb-8 max-w-1057 mx-auto md:px-48 md:pt-44 md:pb-32 md:flex md:justify-between ">
         <div className="hidden md:flex flex-col w-64">
           <div className="">
             <Image src="/img/logo.png" alt="" width="148" height="38" />
@@ -14,7 +14,7 @@ const Footer = () => {
               your interior looks cool
             </span>
           </div>
-          <div className="w-32 h-10 mt-7 pl-3 pt-1 pr-2 flex items-center gap-x-7 bg-white rounded-lg">
+          <div className="w-32 h-10 mt-7 pl-30 pt-1 pr-2 flex items-center gap-x-7 bg-white rounded-lg">
             <Image src="/img/button-sun.png" alt="" width="60" height="30" />
             <Image src="/img/button-moon.png" alt="" width="24" height="24" />
           </div>

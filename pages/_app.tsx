@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-sectionBg">
       <Head>
         <title>Hotel Booking</title>
       </Head>
