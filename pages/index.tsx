@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
-    <div className="max-w-1440 mx-auto flex flex-col justify-center w-full font-dmSans bg-gray-100">
+    <div className="max-w-1440 overflow-x-hidden mx-auto flex flex-col justify-center w-full font-dmSans bg-gray-100">
       {/* Hero Section */}
       <section className="bg-hero bg-cover bg-no-repeat bg-center h-541 md:h-578">
         <h1 className="text-4xl font-bold w-80 pl-7 pt-10 leading-54 text-gray-700 font-poppins md:text-64 md:w-full md:leading-80 md:pl-32 md:pt-36">
@@ -21,15 +21,15 @@ const Home: NextPage = () => {
         <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10">
           Search a best place in the world
         </h1>
-        <p className="text-center text-sm px-14 leading-5 text-gray-400 pb-7">
+        <p className="w-600 text-center text-sm px-14 leading-5 text-gray-400 pb-7">
           Whether you’re looking for places for a vacation. We are here to Guide
           you about the details you need to check in and ease your trips in
           advance
         </p>
       </section>
       {/* Cards - Search Best Place in the World */}
-      <section className="pl-30">
-        <div className="flex overflow-x-hidden pb-10 hide-scroll-bar">
+      <section className="max-w-1170 mx-auto px-7">
+        <div className="flex pb-10 hide-scroll-bar">
           <div className="flex flex-nowrap md:flex-wrap">
             {/* Card */}
             <div className="inline-block px-3 md:pb-30">

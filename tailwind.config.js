@@ -13,6 +13,7 @@ module.exports = {
         1920: '1920px',
         1440: '1440px',
         1170: '1170px',
+        600: '600px',
         250: '250px',
       },
       height: {
@@ -23,6 +24,8 @@ module.exports = {
       maxWidth: {
         1920: '1920px',
         1440: '1440px',
+        1170: '1170px',
+        1057: '1057px',
       },
       backgroundImage: {
         hero: "url('/img/hero.jpg')",
