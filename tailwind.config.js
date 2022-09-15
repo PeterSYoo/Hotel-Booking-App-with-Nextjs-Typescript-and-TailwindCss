@@ -51,6 +51,9 @@ module.exports = {
         30: '30px',
         18: '18px',
       },
+      gridTemplateRows: {
+        9: 'repeat(9, minmax(0, 1fr))',
+      },
     },
   },
   plugins: [],

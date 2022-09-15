@@ -18,22 +18,22 @@ const Home: NextPage = () => {
       </section>
 
       {/* Search Best Place in the World */}
-      <section className="max-w-375 mx-auto md:max-w-1440">
-        <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10">
+      <section className="max-w-375 mx-auto md:max-w-1170">
+        <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-5xl md:max-w-1170 md:px-0 md:mx-auto">
           Search a best place in the world
         </h1>
-        <p className="max-w-375 w-600 text-center text-sm px-14 leading-5 text-gray-400 pb-7 md:max-w-1440">
+        <p className="max-w-375 w-600 text-center text-sm px-14 leading-5 text-gray-400 pb-7 md:max-w-1170 md:text-base md:px-1 md:mx-auto">
           Whether you’re looking for places for a vacation. We are here to Guide
           you about the details you need to check in and ease your trips in
           advance
         </p>
       </section>
       {/* Search Best Place in the World - Cards */}
-      <section className="max-w-1170 mx-auto px-7">
+      <section className="mx-auto px-[135px]">
         <div className="flex pb-10 overflow-x-auto no-scrollbar">
-          <div className="flex flex-nowrap md:flex-wrap">
+          <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
             {/* Card */}
-            <div className="inline-block px-3 md:pb-30">
+            <div className="inline-block md:pb-30">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block px-3 md:pb-30">
+            <div className="inline-block md:pb-30">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block px-3 md:pb-30">
+            <div className="inline-block md:pb-30">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -90,7 +90,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block px-3 md:pb-30">
+            <div className="inline-block md:pb-30">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block px-3 md:pb-30">
+            <div className="inline-block md:pb-30">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block px-3 md:pb-30">
+            <div className="inline-block md:pb-30">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block px-3 md:pb-30">
+            <div className="inline-block md:pb-30">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -166,7 +166,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block px-3 md:pb-30">
+            <div className="inline-block md:pb-30">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -189,40 +189,36 @@ const Home: NextPage = () => {
       </section>
 
       {/* Featured Destinations */}
-      <section className="max-w-375 mx-auto md:max-w-1440">
-        <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10">
+      <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
+        <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-left md:px-0 md:text-5xl">
           Featured Destinations
         </h1>
-        <p className="max-w-375 w-600 text-center px-14 leading-6 text-gray-600 pb-7 md:max-w-1440">
+        <p className="max-w-375 w-600 text-center px-14 leading-6 text-gray-600 pb-7 md:max-w-1440 md:text-left md:px-0">
           Popular destinations open to vistors from Indonesia
         </p>
       </section>
       {/* Dekstop */}
       {/* Featured Destinations - Cards */}
-      <section className="max-w-1440 mx-auto hidden md:flex">
-        <div className="max-w-1170 mx-auto grid overflow-hidden grid-cols-2 grid-rows-1 gap-[30px] w-auto h-auto">
-          {/* Grid col 1 */}
-          <div className="grid overflow-hidden grid-cols-2 grid-rows-2 gap-[30px] w-auto h-auto">
-            <div className="box row-start-1 row-end-1 col-start-1 col-end-3 bg-gray-500">
-              1
-            </div>
-            <div className="box row-start-2 row-end-2 col-start-1 col-end-1 bg-gray-500">
-              2
-            </div>
-            <div className="box row-start-2 row-end-2 col-start-2 col-end-2 bg-gray-500">
-              3
+      <section className="px-[135px] hidden md:block">
+        <div className="grid grid-cols-12 grid-rows-6 gap-[30px] h-[718px]">
+          <div className="row-start-1 row-span-6 col-start-1 col-span-9">
+            <div className="grid grid-cols-2 grid-rows-5 gap-[30px] h-[718px]">
+              <div className="bg-gray-200 row-start-1 row-span-2 col-start-1 col-span-2">
+                1
+              </div>
+              <div className="bg-gray-200 row-start-3 row-span-3 col-start-1 col-span-1">
+                2
+              </div>
+              <div className="bg-gray-200 row-start-3 row-span-3 col-start-2 col-span-1">
+                3
+              </div>
             </div>
           </div>
-          {/* Grid col 2 */}
-          <div className="grid overflow-hidden grid-cols-1 grid-rows-3 gap-[30px] w-auto h-auto">
-            <div className="box row-start-1 row-end-1 col-start-1 col-end-3 bg-gray-500">
-              1
-            </div>
-            <div className="box row-start-2 row-end-2 col-start-1 col-end-3 bg-gray-500">
-              2
-            </div>
-            <div className="box row-start-3 row-end-3 col-start-1 col-end-3 bg-gray-500">
-              3
+          <div className="row-start-1 row-span-6 col-start-10 col-span-4">
+            <div className="grid grid-cols-1 grid-rows-3 gap-[30px] h-[718px]">
+              <div className="bg-gray-200 row-start-1 row-span-1">4</div>
+              <div className="bg-gray-200 row-start-2 row-span-1">5</div>
+              <div className="bg-gray-200 row-start-3 row-span-1">6</div>
             </div>
           </div>
         </div>
