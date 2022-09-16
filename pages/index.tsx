@@ -521,13 +521,17 @@ const Home: NextPage = () => {
       </section>
 
       {/* Explore The World */}
-      <section className="max-w-375 mx-auto md:max-w-1170">
-        <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-5xl md:max-w-1170 md:px-0 md:mx-auto">
-          Explore The World
-        </h1>
-        <p className="max-w-375 w-600 text-center text-sm px-14 leading-5 text-gray-400 pb-7 md:max-w-1170 md:text-base md:px-1 md:mx-auto">
-          10,788 beautiful places to go
-        </p>
+      <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
+        <div className="mt-[60px] mb-[12px] md:mb-[24px] md:mt-[100px]">
+          <h1 className="text-center text-[30px] font-bold leading-10 md:text-left md:text-[48px]">
+            Explore The World
+          </h1>
+        </div>
+        <div className="mb-[35px]">
+          <p className="max-w-375 w-600 text-center text-[14px] leading-6 text-gray-400 md:max-w-1440 md:text-left md:px-0">
+            10,788 beautiful places to go
+          </p>
+        </div>
       </section>
       {/* Search Best Place in the World - Cards */}
       <section className="md:mx-auto px-[30px] md:px-[135px] overflow-x-auto no-scrollbar snap-x snap-mandatory">
