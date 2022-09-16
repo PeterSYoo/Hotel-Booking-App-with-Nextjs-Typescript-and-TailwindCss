@@ -949,6 +949,111 @@ const Home: NextPage = () => {
           </div>
         </section>
       </section>
+
+      {/* Travel Your Passion */}
+      <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
+        <div className="mt-[60px] mb-[12px] md:mb-[24px] md:mt-[100px]">
+          <h1 className="text-center text-[30px] font-bold leading-10 md:text-left md:text-[48px]">
+            Travel Your Passion
+          </h1>
+        </div>
+        <div className="mb-[35px]">
+          <p className="max-w-375 w-600 text-center px-11 text-[14px] leading-6 text-gray-400 md:max-w-1440 md:text-left md:px-0">
+            Most Brilliant reasons Entrada should be your one-stop-shop!
+          </p>
+        </div>
+      </section>
+      {/* Search Best Place in the World - Cards */}
+      <section className="md:mx-auto px-[30px] overflow-x-auto no-scrollbar snap-x snap-mandatory md:px-[135px]">
+        <div className="flex pb-10">
+          <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
+            {/* Card */}
+            <div className="inline-block snap-always snap-center md:pb-30">
+              <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
+                <div className="">
+                  <h1 className="text-[24px] font-bold text-white">
+                    Beach Hobby
+                  </h1>
+                </div>
+                <div className="flex items-center">
+                  <Image
+                    src="/img/explore-the-world/star.png"
+                    alt=""
+                    width="14"
+                    height="14"
+                  />
+                  <span className="pl-[8px] text-white text-[14px]">
+                    4.8 (122 reviews)
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="inline-block snap-always snap-center md:pb-30">
+              <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
+                <div className="">
+                  <h1 className="text-[24px] font-bold text-white">
+                    Beach Hobby
+                  </h1>
+                </div>
+                <div className="flex items-center">
+                  <Image
+                    src="/img/explore-the-world/star.png"
+                    alt=""
+                    width="14"
+                    height="14"
+                  />
+                  <span className="pl-[8px] text-white text-[14px]">
+                    4.8 (122 reviews)
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="inline-block snap-always snap-center md:pb-30">
+              <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
+                <div className="">
+                  <h1 className="text-[24px] font-bold text-white">
+                    Beach Hobby
+                  </h1>
+                </div>
+                <div className="flex items-center">
+                  <Image
+                    src="/img/explore-the-world/star.png"
+                    alt=""
+                    width="14"
+                    height="14"
+                  />
+                  <span className="pl-[8px] text-white text-[14px]">
+                    4.8 (122 reviews)
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="inline-block snap-always snap-center md:pb-30">
+              <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
+                <div className="">
+                  <h1 className="text-[24px] font-bold text-white">
+                    Beach Hobby
+                  </h1>
+                </div>
+                <div className="flex items-center">
+                  <Image
+                    src="/img/explore-the-world/star.png"
+                    alt=""
+                    width="14"
+                    height="14"
+                  />
+                  <span className="pl-[8px] text-white text-[14px]">
+                    4.8 (122 reviews)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
