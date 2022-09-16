@@ -1054,6 +1054,39 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Get our pro offers */}
+      <section className="max-w-[375px] mx-auto mb-[159px]">
+        {/* Card */}
+        <section className="flex flex-col justify-between w-[335px] h-[174px] rounded-2xl mb-[20px] mx-auto bg-[url('/img/offers-bg.png')] bg-blue-600 px-[20px] py-[14px]">
+          <div className="">
+            <h1 className="text-[20px] text-white font-bold pb-[12px]">
+              Get our pro offers
+            </h1>
+            <div className="">
+              <p className="text-white -mt-[7px] text-[12px] w-[234px]">
+                Subscribe to stay up to date with our latest offers!
+              </p>
+            </div>
+            <div className="mt-[14px]">
+              <form className="bg-white w-[295px] h-[60px] rounded-md p-[9px]">
+                <div className="flex justify-between item-center -mt-[1px]">
+                  <input
+                    type="text"
+                    className="w-[155px]"
+                    placeholder="Enter email..."
+                  />
+                  <input
+                    className="bg-gray-700 w-[120px] h-[44px] text-white text-[16px] font-bold rounded-md flex items-center justify-center"
+                    type="submit"
+                    value="Subscribe"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </section>
     </div>
   );
 };
