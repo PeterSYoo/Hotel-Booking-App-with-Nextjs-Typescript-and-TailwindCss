@@ -13,8 +13,7 @@ const Footer = () => {
           </div>
           <div className="pt-7">
             <span className="text-gray-400">
-              This is the team that specializes in making sure in the find it a
-              your interior looks cool
+              Making sure in finding the best place for you to travel
             </span>
           </div>
           <div className="w-32 h-10 mt-7 pl-[12px] pt-1 pr-[12px] flex items-center gap-x-7 bg-white rounded-lg">
