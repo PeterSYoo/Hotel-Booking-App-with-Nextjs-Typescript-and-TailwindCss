@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
-    <div className="max-w-1440 overflow-x-hidden mx-auto flex flex-col justify-center w-full font-dmSans bg-sectionBg">
+    <div className="md:max-w-1440 mx-auto flex flex-col justify-center w-full font-dmSans bg-sectionBg">
       {/* Hero Section */}
       <section className="bg-hero bg-cover bg-no-repeat bg-center h-541 md:h-578">
         <h1 className="text-4xl font-bold w-80 pl-7 pt-10 leading-54 text-gray-700 font-poppins md:text-64 md:w-full md:leading-80 md:pl-32 md:pt-36">
@@ -29,11 +29,11 @@ const Home: NextPage = () => {
         </p>
       </section>
       {/* Search Best Place in the World - Cards */}
-      <section className="mx-auto px-[135px]">
-        <div className="flex pb-10 overflow-x-auto no-scrollbar">
+      <section className="md:mx-auto px-[30px] md:px-[135px] overflow-x-auto no-scrollbar snap-x snap-mandatory">
+        <div className="flex pb-10">
           <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
             {/* Card */}
-            <div className="inline-block md:pb-30">
+            <div className="inline-block md:pb-30 snap-always snap-center">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block md:pb-30">
+            <div className="inline-block md:pb-30 snap-always snap-center">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block md:pb-30">
+            <div className="inline-block md:pb-30 snap-always snap-center">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -90,7 +90,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block md:pb-30">
+            <div className="inline-block md:pb-30 snap-always snap-center">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block md:pb-30">
+            <div className="inline-block md:pb-30 snap-always snap-center">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block md:pb-30">
+            <div className="inline-block md:pb-30 snap-always snap-center">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -147,7 +147,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block md:pb-30">
+            <div className="inline-block md:pb-30 snap-always snap-center">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
@@ -166,7 +166,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="inline-block md:pb-30">
+            <div className="inline-block md:pb-30 snap-always snap-center">
               <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
                 <div className="pl-30 pt-30">
                   <Image
