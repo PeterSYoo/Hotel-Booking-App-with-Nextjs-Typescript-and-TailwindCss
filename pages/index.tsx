@@ -1,7 +1,5 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
@@ -754,7 +752,7 @@ const Home: NextPage = () => {
       </section>
 
       {/* Trending Cities */}
-      <section className="bg-[#F5F5F5]">
+      <section className="bg-[#F5F5F5] pb-[30px]">
         <section className="max-w-375 mx-auto md:max-w-1170">
           <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-5xl md:max-w-1170 md:px-0 md:mx-auto md:mt-[20px]">
             Trending Cities
