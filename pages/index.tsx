@@ -519,6 +519,235 @@ const Home: NextPage = () => {
           </div>
         </section>
       </section>
+
+      {/* Explore The World */}
+      <section className="max-w-375 mx-auto md:max-w-1170">
+        <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-5xl md:max-w-1170 md:px-0 md:mx-auto">
+          Explore The World
+        </h1>
+        <p className="max-w-375 w-600 text-center text-sm px-14 leading-5 text-gray-400 pb-7 md:max-w-1170 md:text-base md:px-1 md:mx-auto">
+          10,788 beautiful places to go
+        </p>
+      </section>
+      {/* Search Best Place in the World - Cards */}
+      <section className="md:mx-auto px-[30px] md:px-[135px] overflow-x-auto no-scrollbar snap-x snap-mandatory">
+        <div className="flex pb-10">
+          <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
+            {/* Card */}
+            <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
+              <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="mx-[14px] mt-[14px]">
+                  <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
+                </div>
+                <div className="mt-[20px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/star.png"
+                    alt=""
+                    width="14"
+                    height="14"
+                  />
+                  <span className="pl-[8px]">4.91</span>
+                  <span className="text-gray-400">&nbsp;(147)</span>
+                </div>
+                <div className="mt-[14px] mx-[14px] flex justify-between">
+                  <div className="">
+                    <h1 className="text-[20px]">Comfort Space</h1>
+                    <p className="text-sm text-gray-400">
+                      1.2 km to Town Center
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <span className="bg-blue-600 text-white py-[4.5px] px-[12px] rounded-lg">
+                      $210
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-[14px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/location.png"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <span className="text-gray-400 text-[14px]">
+                    &nbsp;Turkey, Mamaris
+                  </span>
+                </div>
+                <div className="mt-[7px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/building.png"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <span className="text-gray-400 text-[14px]">
+                    &nbsp;Rooms available: 375
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
+              <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="mx-[14px] mt-[14px]">
+                  <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
+                </div>
+                <div className="mt-[20px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/star.png"
+                    alt=""
+                    width="14"
+                    height="14"
+                  />
+                  <span className="pl-[8px]">4.91</span>
+                  <span className="text-gray-400">&nbsp;(147)</span>
+                </div>
+                <div className="mt-[14px] mx-[14px] flex justify-between">
+                  <div className="">
+                    <h1 className="text-[20px]">Comfort Space</h1>
+                    <p className="text-sm text-gray-400">
+                      1.2 km to Town Center
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <span className="bg-blue-600 text-white py-[4.5px] px-[12px] rounded-lg">
+                      $210
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-[14px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/location.png"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <span className="text-gray-400 text-[14px]">
+                    &nbsp;Turkey, Mamaris
+                  </span>
+                </div>
+                <div className="mt-[7px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/building.png"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <span className="text-gray-400 text-[14px]">
+                    &nbsp;Rooms available: 375
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
+              <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="mx-[14px] mt-[14px]">
+                  <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
+                </div>
+                <div className="mt-[20px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/star.png"
+                    alt=""
+                    width="14"
+                    height="14"
+                  />
+                  <span className="pl-[8px]">4.91</span>
+                  <span className="text-gray-400">&nbsp;(147)</span>
+                </div>
+                <div className="mt-[14px] mx-[14px] flex justify-between">
+                  <div className="">
+                    <h1 className="text-[20px]">Comfort Space</h1>
+                    <p className="text-sm text-gray-400">
+                      1.2 km to Town Center
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <span className="bg-blue-600 text-white py-[4.5px] px-[12px] rounded-lg">
+                      $210
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-[14px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/location.png"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <span className="text-gray-400 text-[14px]">
+                    &nbsp;Turkey, Mamaris
+                  </span>
+                </div>
+                <div className="mt-[7px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/building.png"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <span className="text-gray-400 text-[14px]">
+                    &nbsp;Rooms available: 375
+                  </span>
+                </div>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
+              <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="mx-[14px] mt-[14px]">
+                  <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
+                </div>
+                <div className="mt-[20px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/star.png"
+                    alt=""
+                    width="14"
+                    height="14"
+                  />
+                  <span className="pl-[8px]">4.91</span>
+                  <span className="text-gray-400">&nbsp;(147)</span>
+                </div>
+                <div className="mt-[14px] mx-[14px] flex justify-between">
+                  <div className="">
+                    <h1 className="text-[20px]">Comfort Space</h1>
+                    <p className="text-sm text-gray-400">
+                      1.2 km to Town Center
+                    </p>
+                  </div>
+                  <div className="mt-1">
+                    <span className="bg-blue-600 text-white py-[4.5px] px-[12px] rounded-lg">
+                      $210
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-[14px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/location.png"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <span className="text-gray-400 text-[14px]">
+                    &nbsp;Turkey, Mamaris
+                  </span>
+                </div>
+                <div className="mt-[7px] mx-[14px] flex items-center">
+                  <Image
+                    src="/img/explore-the-world/building.png"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <span className="text-gray-400 text-[14px]">
+                    &nbsp;Rooms available: 375
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
