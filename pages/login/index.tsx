@@ -3,14 +3,14 @@ const Login = () => {
     <div className="bg-gray-400 h-screen font-dmSans pt-10">
       <section className="max-w-375 mx-auto md:max-w-1140">
         <div className="w-[324px] bg-white rounded-2xl px-[30px] py-[30px] md:w-[448px] md:px-[40px]">
-          <div className="text-right -mt-10 -mr-10 md:-mr-12">
+          <div className="text-right -mt-10 -mr-10 md:-mr-14">
             <button
               type="button"
               className="bg-white rounded-3xl p-1 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 drop-shadow"
             >
               <span className="sr-only">Close menu</span>
               <svg
-                className="h-[17px] w-[17px]"
+                className="h-[27px] w-[27px]"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

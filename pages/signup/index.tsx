@@ -5,14 +5,14 @@ const SignUp = () => {
     <div className="bg-gray-400 h-screen font-dmSans pt-10">
       <section className="max-w-375 mx-auto md:max-w-1140">
         <div className="w-[324px] bg-white rounded-2xl px-[30px] py-[30px] md:w-[448px] md:px-[40px]">
-          <div className="text-right -mt-10 -mr-10 md:-mr-12">
+          <div className="text-right -mt-10 -mr-10 md:-mr-14">
             <button
               type="button"
               className="bg-white rounded-3xl p-1 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 drop-shadow"
             >
               <span className="sr-only">Close menu</span>
               <svg
-                className="h-[17px] w-[17px]"
+                className="h-[27px] w-[27px]"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -33,7 +33,7 @@ const SignUp = () => {
             <div className="bg-blue-600 text-center text-[12px] text-white py-[8px] rounded-md w-full md:text-[20px]">
               Signup with Google
             </div>
-            <div className="w-[68px] h-[34px] bg-gray-600 rounded-md md:w-[48px] md:h-[48px]"></div>
+            <div className="w-[68px] h-[34px] bg-gray-600 rounded-md md:w-[98px] md:h-[48px]"></div>
           </div>
           <div className="flex mx-auto justify-center items-center">
             <div className="border-b w-[69px] h-[1px] mt-[22px]"></div>
@@ -46,7 +46,9 @@ const SignUp = () => {
             <form>
               <div className="flex justify-between gap-[14px] w-full">
                 <div className="w-full">
-                  <div className="text-[10px] text-gray-600">First Name</div>
+                  <div className="text-[10px] text-gray-600 md:text-[14px]">
+                    First Name
+                  </div>
                   <input
                     type="text"
                     placeholder="First name"
@@ -54,7 +56,9 @@ const SignUp = () => {
                   />
                 </div>
                 <div className="w-full">
-                  <div className="text-[10px] text-gray-600">Last Name</div>
+                  <div className="text-[10px] text-gray-600 md:text-[14px]">
+                    Last Name
+                  </div>
                   <input
                     type="text"
                     placeholder="Last name"
@@ -83,7 +87,7 @@ const SignUp = () => {
               </div>
               <div className="flex mt-[16px] items-start">
                 <input type="checkbox" className="mt-1" />
-                <p className="ml-2 text-[10px] w-3/4">
+                <p className="ml-2 text-[10px] w-3/4 md:text-[14px]">
                   I’ve read and accepted Terms of Service and Privacy Policy
                 </p>
               </div>
