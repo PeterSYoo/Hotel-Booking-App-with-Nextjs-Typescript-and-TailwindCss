@@ -1,4 +1,9 @@
-const login_validate = (values: any) => {
+interface Errors {
+  email: string;
+  password: string;
+}
+
+const loginValidate = (values: Errors): object => {
   const errors = {
     email: '',
     password: '',
@@ -22,4 +27,4 @@ const login_validate = (values: any) => {
   return errors;
 };
 
-export default login_validate;
+export default loginValidate;

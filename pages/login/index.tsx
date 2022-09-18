@@ -1,6 +1,6 @@
 import { signIn, signOut } from 'next-auth/react';
 import { useFormik } from 'formik';
-import login_validate from '../../lib/validate';
+import loginValidate from '../../lib/loginValidate';
 
 const Login = () => {
   const onSubmit = async (values: any) => {
@@ -13,7 +13,7 @@ const Login = () => {
       email: '',
       password: '',
     },
-    validate: login_validate,
+    validate: loginValidate,
     onSubmit,
   });
 
@@ -77,10 +77,14 @@ const Login = () => {
               <input
                 type="text"
                 placeholder="Enter your email"
-                className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                className={`${
+                  formik.errors.email && formik.touched.email
+                    ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                    : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                }`}
                 {...formik.getFieldProps('email')}
               />
-              {formik.errors.email ? (
+              {formik.errors.email && formik.touched.email ? (
                 <span className="text-red-500 text-[10px] md:text-[12px]">
                   {formik.errors.email}
                 </span>
@@ -93,10 +97,14 @@ const Login = () => {
               <input
                 type="text"
                 placeholder="Enter your password"
-                className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                className={`${
+                  formik.errors.password && formik.touched.password
+                    ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                    : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                }`}
                 {...formik.getFieldProps('password')}
               />
-              {formik.errors.password ? (
+              {formik.errors.password && formik.touched.password ? (
                 <span className="text-red-500 text-[10px] md:text-[12px]">
                   {formik.errors.password}
                 </span>
@@ -106,11 +114,12 @@ const Login = () => {
               <div className="text-[10px] text-gray-600 mt-[12px] text-right md:text-[14px]">
                 Forgot your password?
               </div>
-              <input
+              <button
                 type="submit"
-                value="Sign in"
                 className="bg-blue-600 text-center text-white py-[8px] rounded-md mt-[15px] w-full md:text-[20px]"
-              />
+              >
+                Sign In
+              </button>
               <div className="text-center text-[10px] mt-[20px] text-gray-600 md:text-[14px]">
                 Don&apos;t have an account? Sign up
               </div>
