@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { useState } from 'react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 const Guest = () => {
   return (
@@ -11,6 +11,7 @@ const Guest = () => {
         <span className="text-xl font-openSans font-bold pl-2.5">
           TripGuide
         </span>
+        <span className="text-xl font-openSans font-bold pl-2.5">Unknown</span>
       </div>
       {/* Mobile */}
       <div className="flex items-center md:hidden">
@@ -44,7 +45,7 @@ const Guest = () => {
 };
 
 // Authorize User
-const User = () => {
+const User = ({ session }: any) => {
   return (
     <div className="flex py-5 px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
       {/* Desktop */}
@@ -52,6 +53,12 @@ const User = () => {
         <Image src="/img/logo.png" alt="" width="40" height="38" />
         <span className="text-xl font-openSans font-bold pl-2.5">
           TripGuide
+        </span>
+        <span className="text-xl font-openSans font-bold pl-2.5">
+          {session.user.name}
+        </span>
+        <span className="text-xl font-openSans font-bold pl-2.5">
+          {session.user.email}
         </span>
       </div>
       {/* Mobile */}
@@ -80,9 +87,9 @@ const User = () => {
 };
 
 const Header = () => {
-  const [session, setSession] = useState(false);
+  const { data: session } = useSession();
 
-  return <>{session ? User() : Guest()}</>;
+  return <>{session ? User({ session }) : Guest()}</>;
 };
 
 export default Header;

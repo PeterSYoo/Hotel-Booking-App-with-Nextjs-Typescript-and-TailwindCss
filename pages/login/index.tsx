@@ -1,4 +1,11 @@
+import { signIn, signOut } from 'next-auth/react';
+
 const Login = () => {
+  // Google Handler Function
+  const handleGoogleSignin = async () => {
+    signIn('google', { callbackUrl: 'http://localhost:3000' });
+  };
+
   return (
     <div className="bg-gray-400 h-screen font-dmSans pt-10">
       <section className="max-w-375 mx-auto md:max-w-1140">
@@ -27,21 +34,25 @@ const Login = () => {
             </button>
           </div>
           <h1 className="text-center text-[30px] font-bold">Welcome Back!</h1>
-          <div className="flex justify-between mt-[20px] gap-[12px]">
-            <div className="bg-blue-600 text-center text-[12px] text-white py-[8px] rounded-md w-full md:text-[20px]">
-              Sign in with Google
+          <form>
+            <div className="flex justify-between mt-[20px] gap-[12px]">
+              <button
+                type="button"
+                onClick={handleGoogleSignin}
+                className="bg-blue-600 text-center text-[12px] text-white py-[8px] rounded-md w-full md:text-[20px]"
+              >
+                Sign in with Google
+              </button>
+              <div className="w-[34px] h-[34px] bg-gray-600 rounded-md md:w-[48px] md:h-[48px]"></div>
             </div>
-            <div className="w-[34px] h-[34px] bg-gray-600 rounded-md md:w-[48px] md:h-[48px]"></div>
-          </div>
-          <div className="flex mx-auto justify-center items-center">
-            <div className="border-b w-[69px] h-[1px] mt-[22px]"></div>
-            <p className="text-[10px] mt-[22px] mx-3 text-gray-400 md:text-[14px]">
-              or continue with
-            </p>
-            <div className="border-b w-[69px] h-[1px] mt-[22px]"></div>
-          </div>
-          <div className="mt-[12px]">
-            <form>
+            <div className="flex mx-auto justify-center items-center">
+              <div className="border-b w-[69px] h-[1px] mt-[22px]"></div>
+              <p className="text-[10px] mt-[22px] mx-3 text-gray-400 md:text-[14px]">
+                or continue with
+              </p>
+              <div className="border-b w-[69px] h-[1px] mt-[22px]"></div>
+            </div>
+            <div className="mt-[12px]">
               <div className="text-[10px] text-gray-600 md:text-[14px]">
                 Email address
               </div>
@@ -69,8 +80,8 @@ const Login = () => {
               <div className="text-center text-[10px] mt-[20px] text-gray-600 md:text-[14px]">
                 Don&apos;t have an account? Sign up
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </section>
     </div>
