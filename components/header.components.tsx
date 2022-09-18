@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
+import { getSession, useSession, signOut } from 'next-auth/react';
+
+const handleSignOut = () => {
+  signOut();
+};
 
 const Guest = () => {
   return (
@@ -27,18 +31,20 @@ const Guest = () => {
             <a>Login</a>
           </Link>
         </div>
-        <div className="text-xl text-white bg-blueBtn px-5 py-3 rounded-xl">
+        <button className="text-xl text-white bg-blueBtn px-5 py-3 rounded-xl">
           <Link href={'/signup'}>
             <a>signup</a>
           </Link>
-        </div>
+        </button>
       </div>
       {/* Mobile */}
       <div className="flex gap-x-4 items-center md:hidden">
         <div className="text-base">Login</div>
-        <div className="text-base text-white bg-blueBtn px-2 py-1 rounded-xl">
-          signup
-        </div>
+        <button className="text-base text-white bg-blueBtn px-2 py-1 rounded-xl">
+          <Link href={'/signup'}>
+            <a>signup</a>
+          </Link>
+        </button>
       </div>
     </div>
   );
@@ -71,16 +77,22 @@ const User = ({ session }: any) => {
       {/* Desktop */}
       <div className="hidden gap-x-12 items-center md:flex">
         <div className="text-xl font-bold">Login</div>
-        <div className="text-xl text-white bg-blueBtn px-5 py-3 rounded-xl">
-          signup
-        </div>
+        <button
+          onClick={handleSignOut}
+          className="text-xl text-white bg-red-500 px-5 py-3 rounded-xl"
+        >
+          signout
+        </button>
       </div>
       {/* Mobile */}
       <div className="flex gap-x-4 items-center md:hidden">
         <div className="text-base">Login</div>
-        <div className="text-base text-white bg-blueBtn px-2 py-1 rounded-xl">
-          signup
-        </div>
+        <button
+          onClick={handleSignOut}
+          className="text-base text-white bg-red-500 px-2 py-1 rounded-xl"
+        >
+          signout
+        </button>
       </div>
     </div>
   );

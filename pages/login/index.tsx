@@ -1,6 +1,22 @@
 import { signIn, signOut } from 'next-auth/react';
+import { useFormik } from 'formik';
+import login_validate from '../../lib/validate';
 
 const Login = () => {
+  const onSubmit = async (values: any) => {
+    console.log(values);
+  };
+
+  // formik hook
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validate: login_validate,
+    onSubmit,
+  });
+
   // Google Handler Function
   const handleGoogleSignin = async () => {
     signIn('google', { callbackUrl: 'http://localhost:3000' });
@@ -25,16 +41,18 @@ const Login = () => {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
             </button>
           </div>
           <h1 className="text-center text-[30px] font-bold">Welcome Back!</h1>
-          <form>
+
+          {/* Form */}
+          <form onSubmit={formik.handleSubmit}>
             <div className="flex justify-between mt-[20px] gap-[12px]">
               <button
                 type="button"
@@ -43,7 +61,7 @@ const Login = () => {
               >
                 Sign in with Google
               </button>
-              <div className="w-[34px] h-[34px] bg-gray-600 rounded-md md:w-[48px] md:h-[48px]"></div>
+              {/* <div className="w-[34px] h-[34px] bg-gray-600 rounded-md md:w-[48px] md:h-[48px]"></div> */}
             </div>
             <div className="flex mx-auto justify-center items-center">
               <div className="border-b w-[69px] h-[1px] mt-[22px]"></div>
@@ -60,7 +78,15 @@ const Login = () => {
                 type="text"
                 placeholder="Enter your email"
                 className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                {...formik.getFieldProps('email')}
               />
+              {formik.errors.email ? (
+                <span className="text-red-500 text-[10px] md:text-[12px]">
+                  {formik.errors.email}
+                </span>
+              ) : (
+                <></>
+              )}
               <div className="text-[10px] text-gray-600 mt-[14px] md:text-[14px]">
                 Password
               </div>
@@ -68,7 +94,15 @@ const Login = () => {
                 type="text"
                 placeholder="Enter your password"
                 className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                {...formik.getFieldProps('password')}
               />
+              {formik.errors.password ? (
+                <span className="text-red-500 text-[10px] md:text-[12px]">
+                  {formik.errors.password}
+                </span>
+              ) : (
+                <></>
+              )}
               <div className="text-[10px] text-gray-600 mt-[12px] text-right md:text-[14px]">
                 Forgot your password?
               </div>

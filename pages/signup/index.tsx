@@ -1,6 +1,21 @@
-import React from 'react';
+import { useFormik } from 'formik';
 
 const SignUp = () => {
+  const onSubmit = async (values: any) => {
+    console.log(values);
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      cpassword: '',
+    },
+    onSubmit,
+  });
+
   return (
     <div className="bg-gray-400 h-screen font-dmSans pt-10">
       <section className="max-w-375 mx-auto md:max-w-1140">
@@ -20,9 +35,9 @@ const SignUp = () => {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -31,9 +46,9 @@ const SignUp = () => {
           <h1 className="text-center text-[24px] font-bold">Let&apos;s Go</h1>
           <div className="flex justify-between mt-[20px] gap-[12px]">
             <div className="bg-blue-600 text-center text-[12px] text-white py-[8px] rounded-md w-full md:text-[20px]">
-              Signup with Google
+              Sign Up with Google
             </div>
-            <div className="w-[68px] h-[34px] bg-gray-600 rounded-md md:w-[98px] md:h-[48px]"></div>
+            {/* <div className="w-[68px] h-[34px] bg-gray-600 rounded-md md:w-[98px] md:h-[48px]"></div> */}
           </div>
           <div className="flex mx-auto justify-center items-center">
             <div className="border-b w-[69px] h-[1px] mt-[22px]"></div>
@@ -43,7 +58,8 @@ const SignUp = () => {
             <div className="border-b w-[69px] h-[1px] mt-[22px]"></div>
           </div>
           <div className="mt-[12px]">
-            <form>
+            {/* Form */}
+            <form onSubmit={formik.handleSubmit}>
               <div className="flex justify-between gap-[14px] w-full">
                 <div className="w-full">
                   <div className="text-[10px] text-gray-600 md:text-[14px]">
@@ -53,6 +69,7 @@ const SignUp = () => {
                     type="text"
                     placeholder="First name"
                     className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                    {...formik.getFieldProps('firstName')}
                   />
                 </div>
                 <div className="w-full">
@@ -63,6 +80,7 @@ const SignUp = () => {
                     type="text"
                     placeholder="Last name"
                     className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                    {...formik.getFieldProps('lastName')}
                   />
                 </div>
               </div>
@@ -73,6 +91,7 @@ const SignUp = () => {
                 type="text"
                 placeholder="Enter your email"
                 className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                {...formik.getFieldProps('email')}
               />
               <div className="text-[10px] text-gray-600 mt-[14px] md:text-[14px]">
                 Password
@@ -81,6 +100,16 @@ const SignUp = () => {
                 type="text"
                 placeholder="Enter your password"
                 className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                {...formik.getFieldProps('password')}
+              />
+              <div className="text-[10px] text-gray-600 mt-[14px] md:text-[14px]">
+                Confirm Password
+              </div>
+              <input
+                type="text"
+                placeholder="Confirm your password"
+                className="bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                {...formik.getFieldProps('cpassword')}
               />
               <div className="text-[10px] text-gray-600 mt-[12px] text-right md:text-[14px]">
                 Forgot your password?
@@ -93,7 +122,7 @@ const SignUp = () => {
               </div>
               <input
                 type="submit"
-                value="Signup"
+                value="Sign Up"
                 className="bg-blue-600 text-center text-white py-[8px] rounded-md mt-[15px] w-full md:text-[20px]"
               />
               <div className="text-center text-[10px] mt-[20px] text-gray-600 md:text-[14px]">
