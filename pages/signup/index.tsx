@@ -1,9 +1,30 @@
+import { useState } from 'react';
+import Link from 'next/link';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
+import { AiFillEye, AiOutlineGoogle } from 'react-icons/ai';
 import registerValidate from '../../lib/registerValidate';
 
 const SignUp = () => {
+  const [show, setShow] = useState({
+    password: false,
+    cpassword: false,
+  });
+  const router = useRouter();
+
   const onSubmit = async (values: any) => {
-    console.log('test');
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values),
+    };
+
+    await fetch('http://localhost:3000/api/auth/signup', options)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) router.push('http://localhost:3000');
+      });
   };
 
   // formik hook
@@ -18,6 +39,11 @@ const SignUp = () => {
     validate: registerValidate,
     onSubmit,
   });
+
+  // Google Handler Function
+  const handleGoogleSignin = async () => {
+    signIn('google', { callbackUrl: 'http://localhost:3000' });
+  };
 
   return (
     <div className="bg-gray-400 h-screen font-dmSans pt-10">
@@ -46,13 +72,22 @@ const SignUp = () => {
               </svg>
             </button>
           </div>
-          <h1 className="text-center text-[24px] font-bold">Let&apos;s Go</h1>
+          <h1 className="text-center text-[30px] font-bold">Join Us!</h1>
           {/* Form */}
           <form onSubmit={formik.handleSubmit}>
             <div className="flex justify-between mt-[20px] gap-[12px]">
-              <div className="bg-blue-600 text-center text-[12px] text-white py-[8px] rounded-md w-full md:text-[20px]">
-                Sign Up with Google
-              </div>
+              <button
+                type="button"
+                onClick={handleGoogleSignin}
+                className="bg-blue-600 text-center text-[12px] text-white py-[8px] rounded-md w-full md:text-[20px]"
+              >
+                <div className="flex items-center justify-center gap-3">
+                  <span className="">
+                    <AiOutlineGoogle className="text-xl  md:text-3xl" />
+                  </span>
+                  Sign Up with Google
+                </div>
+              </button>
               {/* <div className="w-[68px] h-[34px] bg-gray-600 rounded-md md:w-[98px] md:h-[48px]"></div> */}
             </div>
             <div className="flex mx-auto justify-center items-center">
@@ -132,16 +167,24 @@ const SignUp = () => {
               <div className="text-[10px] text-gray-600 mt-[14px] md:text-[14px]">
                 Password
               </div>
-              <input
-                type="text"
-                placeholder="Enter your password"
-                className={`${
-                  formik.errors.password && formik.touched.password
-                    ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                    : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                }`}
-                {...formik.getFieldProps('password')}
-              />
+              <div className="flex justify-between">
+                <input
+                  type={`${show.password ? 'text' : 'password'}`}
+                  placeholder="Enter your password"
+                  className={`${
+                    formik.errors.password && formik.touched.password
+                      ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                      : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                  }`}
+                  {...formik.getFieldProps('password')}
+                />
+                <span
+                  className="flex items-center ml-3 text-gray-600"
+                  onClick={() => setShow({ ...show, password: !show.password })}
+                >
+                  <AiFillEye size={25} />
+                </span>
+              </div>
               {formik.errors.password && formik.touched.password ? (
                 <span className="text-red-500 text-[10px] md:text-[12px]">
                   {formik.errors.password}
@@ -152,16 +195,26 @@ const SignUp = () => {
               <div className="text-[10px] text-gray-600 mt-[14px] md:text-[14px]">
                 Confirm Password
               </div>
-              <input
-                type="text"
-                placeholder="Confirm your password"
-                className={`${
-                  formik.errors.cpassword && formik.touched.cpassword
-                    ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                    : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                }`}
-                {...formik.getFieldProps('cpassword')}
-              />
+              <div className="flex justify-between">
+                <input
+                  type={`${show.cpassword ? 'text' : 'password'}`}
+                  placeholder="Confirm your password"
+                  className={`${
+                    formik.errors.cpassword && formik.touched.cpassword
+                      ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                      : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                  }`}
+                  {...formik.getFieldProps('cpassword')}
+                />
+                <span
+                  className="flex items-center ml-3 text-gray-600"
+                  onClick={() =>
+                    setShow({ ...show, cpassword: !show.cpassword })
+                  }
+                >
+                  <AiFillEye size={25} />
+                </span>
+              </div>
               {formik.errors.cpassword && formik.touched.cpassword ? (
                 <span className="text-red-500 text-[10px] md:text-[12px]">
                   {formik.errors.cpassword}
@@ -173,8 +226,8 @@ const SignUp = () => {
                 Forgot your password?
               </div>
               <div className="flex mt-[16px] items-start">
-                <input type="checkbox" className="mt-1" />
-                <p className="ml-2 text-[10px] w-3/4 md:text-[14px]">
+                <input type="checkbox" className="mt-1" required={true} />
+                <p className="ml-2 text-[10px] w-3/4 md:text-[12px]">
                   I’ve read and accepted Terms of Service and Privacy Policy
                 </p>
               </div>
@@ -185,7 +238,7 @@ const SignUp = () => {
                 Sign Up
               </button>
               <div className="text-center text-[10px] mt-[20px] text-gray-600 md:text-[14px]">
-                Don&apos;t have an account? Sign up
+                Already have an account? <Link href="/login">Sign in</Link>
               </div>
             </div>
           </form>

@@ -1,9 +1,13 @@
-import { signIn, signOut } from 'next-auth/react';
-import { useFormik } from 'formik';
-import loginValidate from '../../lib/loginValidate';
+import { useState } from 'react';
+import Link from 'next/link';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { useFormik } from 'formik';
+import { AiFillEye, AiOutlineGoogle } from 'react-icons/ai';
+import loginValidate from '../../lib/loginValidate';
 
 const Login = () => {
+  const [show, setShow] = useState(false);
   const router = useRouter();
 
   const onSubmit = async (values: any) => {
@@ -73,7 +77,12 @@ const Login = () => {
                 onClick={handleGoogleSignin}
                 className="bg-blue-600 text-center text-[12px] text-white py-[8px] rounded-md w-full md:text-[20px]"
               >
-                Sign in with Google
+                <div className="flex items-center justify-center gap-3">
+                  <span className="">
+                    <AiOutlineGoogle className="text-xl  md:text-3xl" />
+                  </span>
+                  Sign In with Google
+                </div>
               </button>
               {/* <div className="w-[34px] h-[34px] bg-gray-600 rounded-md md:w-[48px] md:h-[48px]"></div> */}
             </div>
@@ -108,16 +117,24 @@ const Login = () => {
               <div className="text-[10px] text-gray-600 mt-[14px] md:text-[14px]">
                 Password
               </div>
-              <input
-                type="text"
-                placeholder="Enter your password"
-                className={`${
-                  formik.errors.password && formik.touched.password
-                    ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                    : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                }`}
-                {...formik.getFieldProps('password')}
-              />
+              <div className="flex justify-between">
+                <input
+                  type={`${show ? 'text' : 'password'}`}
+                  placeholder="Enter your password"
+                  className={`${
+                    formik.errors.password && formik.touched.password
+                      ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                      : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                  }`}
+                  {...formik.getFieldProps('password')}
+                />
+                <span
+                  className="flex items-center ml-3 text-gray-600"
+                  onClick={() => setShow(!show)}
+                >
+                  <AiFillEye size={25} />
+                </span>
+              </div>
               {formik.errors.password && formik.touched.password ? (
                 <span className="text-red-500 text-[10px] md:text-[12px]">
                   {formik.errors.password}
@@ -126,7 +143,7 @@ const Login = () => {
                 <></>
               )}
               <div className="text-[10px] text-gray-600 mt-[12px] text-right md:text-[14px]">
-                Forgot your password?
+                <Link href="/reset-password">Forgot your password?</Link>
               </div>
               <button
                 type="submit"
@@ -135,7 +152,8 @@ const Login = () => {
                 Sign In
               </button>
               <div className="text-center text-[10px] mt-[20px] text-gray-600 md:text-[14px]">
-                Don&apos;t have an account? Sign up
+                Don&apos;t have an account?&nbsp;
+                <Link href="/signup">Sign up</Link>
               </div>
             </div>
           </form>
