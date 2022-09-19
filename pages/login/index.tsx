@@ -1,10 +1,24 @@
 import { signIn, signOut } from 'next-auth/react';
 import { useFormik } from 'formik';
 import loginValidate from '../../lib/loginValidate';
+import { useRouter } from 'next/router';
 
 const Login = () => {
+  const router = useRouter();
+
   const onSubmit = async (values: any) => {
-    console.log(values);
+    const status = await signIn('credentials', {
+      redirect: false,
+      email: values.email,
+      password: values.password,
+      callbackUrl: '/',
+    });
+
+    // @ts-ignore
+    if (status.ok) {
+      // @ts-ignore
+      router.push(status.url);
+    }
   };
 
   // formik hook
