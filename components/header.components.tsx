@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSession, useSession, signOut } from 'next-auth/react';
+import { FaRegBell } from 'react-icons/fa';
 
 const handleSignOut = () => {
   signOut();
@@ -8,14 +9,13 @@ const handleSignOut = () => {
 
 const Guest = () => {
   return (
-    <div className="flex py-5 px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
+    <div className="flex py-[25px] px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
       {/* Desktop */}
       <div className="hidden items-center md:flex">
         <Image src="/img/logo.png" alt="" width="40" height="38" />
         <span className="text-xl font-openSans font-bold pl-2.5">
           TripGuide
         </span>
-        <span className="text-xl font-openSans font-bold pl-2.5">Unknown</span>
       </div>
       {/* Mobile */}
       <div className="flex items-center md:hidden">
@@ -52,19 +52,17 @@ const Guest = () => {
 
 // Authorize User
 const User = ({ session }: any) => {
+  const myLoader = ({ src }: any) => {
+    return session.user.image;
+  };
+
   return (
-    <div className="flex py-5 px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
+    <div className="flex py-[25px] px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
       {/* Desktop */}
       <div className="hidden items-center md:flex">
         <Image src="/img/logo.png" alt="" width="40" height="38" />
         <span className="text-xl font-openSans font-bold pl-2.5">
           TripGuide
-        </span>
-        <span className="text-xl font-openSans font-bold pl-2.5">
-          {session.user.name}
-        </span>
-        <span className="text-xl font-openSans font-bold pl-2.5">
-          {session.user.email}
         </span>
       </div>
       {/* Mobile */}
@@ -76,23 +74,62 @@ const User = ({ session }: any) => {
       </div>
       {/* Desktop */}
       <div className="hidden gap-x-12 items-center md:flex">
-        <div className="text-xl font-bold">Login</div>
-        <button
-          onClick={handleSignOut}
-          className="text-xl text-white bg-red-500 px-5 py-3 rounded-xl"
-        >
-          signout
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={handleSignOut}
+            className="text-md text-white bg-red-500 px-2 py-1 rounded-xl"
+          >
+            signout
+          </button>
+          <div className="flex items-center gap-5">
+            <span className="text-[14px] font-bold font-openSans text-gray-400">
+              USD
+            </span>
+            <Image src="/img/usa-flag.png" alt="" width="20" height="20" />
+            <div className="text-xl text-gray-500">
+              <FaRegBell />
+            </div>
+          </div>
+          <div className="border-r h-[32px] w-[1px] mx-1"></div>
+          <Image
+            loader={myLoader}
+            src={session.user.image}
+            alt=""
+            width="32"
+            height="32"
+            className="rounded-3xl"
+          />
+          <span className="text-[14px] font-openSans">{session.user.name}</span>
+        </div>
       </div>
       {/* Mobile */}
       <div className="flex gap-x-4 items-center md:hidden">
-        <div className="text-base">Login</div>
-        <button
-          onClick={handleSignOut}
-          className="text-base text-white bg-red-500 px-2 py-1 rounded-xl"
-        >
-          signout
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={handleSignOut}
+            className="text-md text-white bg-red-500 px-2 py-1 rounded-xl"
+          >
+            signout
+          </button>
+          <div className="flex items-center gap-5">
+            <span className="text-[12px] font-bold font-openSans text-gray-400">
+              USD
+            </span>
+            <Image src="/img/usa-flag.png" alt="" width="16" height="16" />
+            <div className="text-lg text-gray-500">
+              <FaRegBell />
+            </div>
+          </div>
+          <div className="border-r h-[32px] w-[1px] mx-1"></div>
+          <Image
+            loader={myLoader}
+            src={session.user.image}
+            alt=""
+            width="28"
+            height="28"
+            className="rounded-3xl"
+          />
+        </div>
       </div>
     </div>
   );

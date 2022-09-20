@@ -1,8 +1,15 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useSession } from 'next-auth/react';
 import Footer from '../components/footer.components';
 import Header from '../components/header.components';
+import {
+  RiHotelBedFill,
+  RiFlightTakeoffFill,
+  RiTaxiFill,
+} from 'react-icons/ri';
+import { AiOutlineSwap } from 'react-icons/ai';
 
 const Guest = () => {
   return (
@@ -1132,7 +1139,7 @@ const Guest = () => {
 };
 
 // Authorize User
-const User = () => {
+const User = ({ session }: any) => {
   return (
     <>
       <Header />
@@ -1146,6 +1153,169 @@ const User = () => {
             <br />
             Journey!
           </h1>
+        </section>
+
+        {/* Search Component */}
+        {/* Desktop */}
+        <section className="-mt-[125px] mx-[20px] mb-10 hidden md:block">
+          {/* Search Form */}
+          <form>
+            <div className="w-full bg-white rounded-xl px-[60px] py-[30px] drop-shadow-2xl">
+              <div className="flex justify-between">
+                <div className="w-3/4">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-6">
+                      <div className="flex justify-between items-center gap-1">
+                        <RiHotelBedFill className="text-2xl text-gray-800" />
+                        <span className="text-[14px] font-bold text-gray-800">
+                          Hotel
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center gap-1">
+                        <RiFlightTakeoffFill className="text-2xl text-gray-800" />
+                        <span className="text-[14px] font-bold text-gray-800">
+                          Flight
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center gap-1">
+                        <RiTaxiFill className="text-2xl text-gray-800" />
+                        <span className="text-[14px] font-bold text-gray-800">
+                          Car Rental
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex gap-6">
+                      <span className="text-[18px] text-gray-800">
+                        Round trip
+                      </span>
+                      <span className="text-[18px] text-gray-800">
+                        1 passenger
+                      </span>
+                    </div>
+                  </div>
+                  <div className="border-b-2 w-full mt-[20px]"></div>
+                </div>
+                <div className="w-1/4"></div>
+              </div>
+              <div className="flex justify-between items-end w-full">
+                <div className="w-3/4 flex">
+                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2">
+                    <h1 className="text-[18px]">Location</h1>
+                    <input
+                      type="text"
+                      className="bg-gray-100 text-[16px] w-full py-2"
+                      placeholder="Where are you from?"
+                    />
+                  </div>
+                  <div className="flex items-center -mx-3 mt-4 z-10">
+                    <div className="bg-white p-1 rounded-3xl">
+                      <AiOutlineSwap className="text-2xl text-gray-400 cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2">
+                    <h1 className="text-[18px]">Check in</h1>
+                    <input
+                      type="text"
+                      className="bg-gray-100 text-[16px] w-full py-2"
+                      placeholder="Add Date"
+                    />
+                  </div>
+                  <div className="flex items-center -mx-3 mt-4 z-10">
+                    <div className="bg-white p-1 rounded-3xl">
+                      <AiOutlineSwap className="text-2xl text-gray-400 cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2">
+                    <h1 className="text-[18px]">Check out</h1>
+                    <input
+                      type="text"
+                      className="bg-gray-100 text-[16px] w-full py-2"
+                      placeholder="Add Date"
+                    />
+                  </div>
+                </div>
+                <div className="w-1/4 ">
+                  <div className="ml-20">
+                    <button
+                      type="submit"
+                      className="py-[27px] w-full bg-blue-600 text-white rounded-lg text-[20px]"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        {/* Search Component */}
+        {/* Mobile */}
+        <section className="-mt-[245px] mx-[20px] mb-10 md:hidden">
+          {/* Search Form */}
+          <form>
+            <div className="w-full bg-white rounded-xl px-[20px] py-[20px] drop-shadow-2xl">
+              <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center gap-1">
+                  <RiHotelBedFill className="text-2xl text-gray-800" />
+                  <span className="text-[14px] font-bold text-gray-800">
+                    Hotel
+                  </span>
+                </div>
+                <div className="flex justify-between items-center gap-1">
+                  <RiFlightTakeoffFill className="text-2xl text-gray-800" />
+                  <span className="text-[14px] font-bold text-gray-800">
+                    Flight
+                  </span>
+                </div>
+                <div className="flex justify-between items-center gap-1">
+                  <RiTaxiFill className="text-2xl text-gray-800" />
+                  <span className="text-[14px] font-bold text-gray-800">
+                    Car Rental
+                  </span>
+                </div>
+              </div>
+              <div className="border-b-2 w-full mt-[20px]"></div>
+              <div className="flex gap-10 mt-[20px]">
+                <span className="text-[16px] text-gray-800">Round trip</span>
+                <span className="text-[16px] text-gray-800">1 passenger</span>
+              </div>
+              <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px] mt-[20px]">
+                <h1 className="text-[16px]">Location</h1>
+                <input
+                  type="text"
+                  className="bg-gray-100 text-[12px] w-full py-2"
+                  placeholder="Where are you from?"
+                />
+              </div>
+              <div className="flex justify-between gap-[10px] mt-[10px]">
+                <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px]">
+                  <h1 className="text-[16px]">Check in</h1>
+                  <input
+                    type="text"
+                    className="bg-gray-100 text-[12px] w-full py-2"
+                    placeholder="Add date"
+                  />
+                </div>
+                <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px]">
+                  <h1 className="text-[16px]">Check out</h1>
+                  <input
+                    type="text"
+                    className="bg-gray-100 text-[12px] w-full py-2"
+                    placeholder="Add date"
+                  />
+                </div>
+              </div>
+              <div className="mt-[12px]">
+                <button
+                  type="submit"
+                  className="py-[11px] w-full bg-blue-600 text-white rounded-lg text-[20px]"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </form>
         </section>
 
         {/* Search Best Place in the World */}
@@ -1318,7 +1488,6 @@ const User = () => {
             </div>
           </div>
         </section>
-
         {/* Featured Destinations */}
         <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
           <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-left md:px-0 md:text-5xl">
@@ -1328,7 +1497,6 @@ const User = () => {
             Popular destinations open to vistors from Indonesia
           </p>
         </section>
-
         {/* Desktop */}
         {/* Featured Destinations - Cards */}
         <section className="px-[135px] hidden md:block">
@@ -1361,7 +1529,6 @@ const User = () => {
             </div>
           </div>
         </section>
-
         {/* Mobile */}
         {/* Featured Destinations - Cards */}
         <section className="max-w-375 mx-auto md:hidden">
@@ -1522,7 +1689,6 @@ const User = () => {
             </div>
           </div>
         </section>
-
         {/* Top Tour */}
         <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
           <div className="mt-[60px] mb-[12px] md:mb-[24px] md:mt-[120px]">
@@ -1536,7 +1702,6 @@ const User = () => {
             </p>
           </div>
         </section>
-
         {/* Desktop */}
         <section className="hidden max-w-375 mx-auto md:mx-[135px] md:max-w-1170 md:flex md:gap-[30px]">
           {/* Card */}
@@ -1594,7 +1759,6 @@ const User = () => {
             </div>
           </section>
         </section>
-
         {/* Mobile */}
         <section className="md:hidden">
           {/* Card */}
@@ -1652,7 +1816,6 @@ const User = () => {
             </div>
           </section>
         </section>
-
         {/* Explore The World */}
         <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
           <div className="mt-[60px] mb-[12px] md:mb-[24px] md:mt-[100px]">
@@ -1885,7 +2048,6 @@ const User = () => {
             </div>
           </div>
         </section>
-
         {/* Trending Cities */}
         <section className="bg-[#F5F5F5] pb-[30px]">
           <section className="max-w-375 mx-auto md:max-w-1170">
@@ -2082,7 +2244,6 @@ const User = () => {
             </div>
           </section>
         </section>
-
         {/* Travel Your Passion */}
         <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
           <div className="mt-[60px] mb-[12px] md:mb-[24px] md:mt-[100px]">
@@ -2187,7 +2348,6 @@ const User = () => {
             </div>
           </div>
         </section>
-
         {/* Desktop */}
         {/* Get our pro offers */}
         <section className="hidden mx-auto md:mx-[135px] md:max-w-1170 md:flex md:gap-[30px] md:-mb-[75px]">
@@ -2219,7 +2379,6 @@ const User = () => {
             </div>
           </section>
         </section>
-
         {/* Mobile */}
         {/* Get our pro offers */}
         <section className="max-w-[375px] mx-auto mb-[159px] mt-[30px] md:hidden">
@@ -2260,9 +2419,9 @@ const User = () => {
 };
 
 const Home: NextPage = () => {
-  const [session, setSession] = useState(false);
+  const { data: session } = useSession();
 
-  return <>{session ? User() : Guest()}</>;
+  return <>{session ? User({ session }) : Guest()}</>;
 };
 
 export default Home;
