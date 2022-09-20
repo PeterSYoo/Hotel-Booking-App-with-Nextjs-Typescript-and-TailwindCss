@@ -5,8 +5,15 @@ import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
 import { AiFillEye, AiOutlineGoogle } from 'react-icons/ai';
 import registerValidate from '../../lib/registerValidate';
+import useModal from '../../hooks/useModal';
 
-const SignUp = () => {
+interface Modal {
+  open: boolean;
+  onClose: () => void;
+}
+
+const SignUp: React.FC<Modal> = ({ open, onClose }) => {
+  const { openModal, setOpenModal } = useModal();
   const [show, setShow] = useState({
     password: false,
     cpassword: false,
@@ -45,13 +52,24 @@ const SignUp = () => {
     signIn('google', { callbackUrl: 'http://localhost:3000' });
   };
 
+  if (!open) return null;
+
   return (
-    <div className="bg-gray-400 h-screen font-dmSans pt-10">
-      <section className="max-w-375 mx-auto md:max-w-1140">
+    <div
+      onClick={onClose}
+      className="font-dmSans fixed w-full h-full z-50 bg-gray-300 bg-opacity-80 flex items-center"
+    >
+      <section
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        className="max-w-375 mx-auto md:max-w-1140"
+      >
         <div className="w-[324px] bg-white rounded-2xl px-[30px] py-[30px] md:w-[448px] md:px-[40px]">
           <div className="text-right -mt-10 -mr-10 md:-mr-14">
             <button
               type="button"
+              onClick={onClose}
               className="bg-white rounded-3xl p-1 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 drop-shadow"
             >
               <span className="sr-only">Close menu</span>

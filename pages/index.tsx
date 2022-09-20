@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import Footer from '../components/footer.components';
 import Header from '../components/header.components';
@@ -1139,7 +1138,7 @@ const Guest = () => {
 };
 
 // Authorize User
-const User = ({ session }: any) => {
+const User = () => {
   return (
     <>
       <Header />
@@ -2421,7 +2420,7 @@ const User = ({ session }: any) => {
 const Home: NextPage = () => {
   const { data: session } = useSession();
 
-  return <>{session ? User({ session }) : Guest()}</>;
+  return <>{session ? User() : Guest()}</>;
 };
 
 export default Home;
