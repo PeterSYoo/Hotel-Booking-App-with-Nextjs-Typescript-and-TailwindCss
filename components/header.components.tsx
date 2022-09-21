@@ -1,18 +1,19 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
 import { FaRegBell } from 'react-icons/fa';
 import Login from '../pages/login';
-import useModal from '../hooks/useModal';
 import SignUp from '../pages/signup';
+import useLoginModal from '../hooks/useLoginModal';
+import useSignupModal from '../hooks/useSignupModal';
 
 // Guest
 const Guest = () => {
-  const { openModal, setOpenModal } = useModal();
+  const { openLogin, setOpenLogin } = useLoginModal();
+  const { openSignup, setOpenSignup } = useSignupModal();
   return (
     <>
-      <Login open={openModal} onClose={() => setOpenModal(false)} />
-      <SignUp open={openModal} onClose={() => setOpenModal(false)} />
+      <Login open={openLogin} onClose={() => setOpenLogin(false)} />
+      <SignUp open={openSignup} onClose={() => setOpenSignup(false)} />
       <div className="flex py-[25px] px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
         {/* Desktop */}
         <div className="hidden items-center md:flex">
@@ -31,23 +32,25 @@ const Guest = () => {
         {/* Desktop */}
         <div className="hidden gap-x-12 items-center md:flex">
           <div className="text-xl font-bold">
-            <span onClick={() => setOpenModal(true)} className="cursor-pointer">
+            <span onClick={() => setOpenLogin(true)} className="cursor-pointer">
               Login
             </span>
           </div>
-          <button className="text-xl text-white bg-blueBtn px-5 py-3 rounded-xl">
-            <span onClick={() => setOpenModal(true)} className="cursor-pointer">
-              signup
-            </span>
+          <button
+            onClick={() => setOpenSignup(true)}
+            className="text-xl text-white bg-blueBtn px-5 py-3 rounded-xl"
+          >
+            signup
           </button>
         </div>
         {/* Mobile */}
         <div className="flex gap-x-4 items-center md:hidden">
           <div className="text-base">Login</div>
-          <button className="text-base text-white bg-blueBtn px-2 py-1 rounded-xl">
-            <span onClick={() => setOpenModal(true)} className="cursor-pointer">
-              signup
-            </span>
+          <button
+            onClick={() => setOpenSignup(true)}
+            className="text-base text-white bg-blueBtn px-2 py-1 rounded-xl"
+          >
+            signup
           </button>
         </div>
       </div>
@@ -57,7 +60,8 @@ const Guest = () => {
 
 // Authorize User
 const User = ({ session }: any) => {
-  const { openModal, setOpenModal } = useModal();
+  const { openLogin, setOpenLogin } = useLoginModal();
+  const { openSignup, setOpenSignup } = useSignupModal();
   return (
     <>
       <div className="flex py-[25px] px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">

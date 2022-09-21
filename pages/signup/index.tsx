@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
 import { AiFillEye, AiOutlineGoogle } from 'react-icons/ai';
 import registerValidate from '../../lib/registerValidate';
-import useModal from '../../hooks/useModal';
 
 interface Modal {
   open: boolean;
@@ -13,7 +12,6 @@ interface Modal {
 }
 
 const SignUp: React.FC<Modal> = ({ open, onClose }) => {
-  const { openModal, setOpenModal } = useModal();
   const [show, setShow] = useState({
     password: false,
     cpassword: false,
