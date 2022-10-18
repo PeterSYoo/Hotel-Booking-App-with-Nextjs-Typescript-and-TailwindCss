@@ -29,6 +29,7 @@ export default NextAuth({
         }
 
         // compare()
+        // @ts-ignore
         const checkPassword = await compare(
           // @ts-ignore
           credentials.password,
