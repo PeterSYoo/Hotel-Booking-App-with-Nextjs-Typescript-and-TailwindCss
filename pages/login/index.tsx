@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/router';
-import { useFormik } from 'formik';
-import { AiFillEye, AiOutlineGoogle } from 'react-icons/ai';
-import loginValidate from '../../lib/loginValidate';
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useFormik } from "formik";
+import { AiFillEye, AiOutlineGoogle } from "react-icons/ai";
+import loginValidate from "../../lib/loginValidate";
 
 interface Modal {
   open: boolean;
@@ -16,11 +16,11 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
   const router = useRouter();
 
   const onSubmit = async (values: any) => {
-    const status = await signIn('credentials', {
+    const status = await signIn("credentials", {
       redirect: false,
       email: values.email,
       password: values.password,
-      callbackUrl: '/',
+      callbackUrl: "/",
     });
 
     // @ts-ignore
@@ -33,8 +33,8 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
   // formik hook
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     validate: loginValidate,
     onSubmit,
@@ -42,7 +42,9 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
 
   // Google Handler Function
   const handleGoogleSignin = async () => {
-    signIn('google', { callbackUrl: 'http://localhost:3000' });
+    signIn("google", {
+      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_URL,
+    });
   };
 
   if (!open) return null;
@@ -118,10 +120,10 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
                 placeholder="Enter your email"
                 className={`${
                   formik.errors.email && formik.touched.email
-                    ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                    : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                    ? "border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                    : "bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
                 }`}
-                {...formik.getFieldProps('email')}
+                {...formik.getFieldProps("email")}
               />
               {formik.errors.email && formik.touched.email ? (
                 <span className="text-red-500 text-[10px] md:text-[12px]">
@@ -135,14 +137,14 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
               </div>
               <div className="flex justify-between">
                 <input
-                  type={`${show ? 'text' : 'password'}`}
+                  type={`${show ? "text" : "password"}`}
                   placeholder="Enter your password"
                   className={`${
                     formik.errors.password && formik.touched.password
-                      ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                      : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                      ? "border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                      : "bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
                   }`}
-                  {...formik.getFieldProps('password')}
+                  {...formik.getFieldProps("password")}
                 />
                 <span
                   className="flex items-center ml-3 text-gray-600"
