@@ -1,9 +1,12 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const connectMongo = async () => {
   try {
     // @ts-ignore
-    const { connection } = await mongoose.connect(process.env.MONGO_URL);
+    const { connection } = await mongoose.connect(
+      // @ts-ignore
+      process.env.NEXT_PUBLIC_MONGO_URL
+    );
 
     // 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
     if (connection.readyState === 1) {
