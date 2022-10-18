@@ -1,31 +1,31 @@
-import NextAuth from 'next-auth';
-import GoogleProvider from 'next-auth/providers/google';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import connectMongo from '../../../database/conn';
-import Users from '../../../model/Schema';
-import { compare } from 'bcryptjs';
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+import CredentialsProvider from "next-auth/providers/credentials";
+import connectMongo from "../../../database/conn";
+import Users from "../../../model/Schema";
+import { compare } from "bcryptjs";
 
 export default NextAuth({
   providers: [
     GoogleProvider({
       // @ts-ignore
-      clientId: process.env.GOOGLE_ID,
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_ID,
       // @ts-ignore
-      clientSecret: process.env.GOOGLE_SECRET,
+      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_SECRET,
     }),
     // @ts-ignore
     CredentialsProvider({
-      name: 'Credentials',
+      name: "Credentials",
       // @ts-ignore
       async authorize(credentials, req) {
         connectMongo().catch((error) => {
-          error: 'Connection Failed...!';
+          error: "Connection Failed...!";
         });
 
         // check user existence
         const result = await Users.findOne({ email: credentials?.email });
         if (!result) {
-          throw new Error('No user found with the email please sign up...!');
+          throw new Error("No user found with the email please sign up...!");
         }
 
         // compare()
@@ -44,5 +44,5 @@ export default NextAuth({
       },
     }),
   ],
-  secret: process.env.SECRET,
+  secret: process.env.NEXT_PUBLIC_SECRET,
 });
