@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/router';
-import { useFormik } from 'formik';
-import { AiFillEye, AiOutlineGoogle } from 'react-icons/ai';
-import registerValidate from '../../lib/registerValidate';
+import { useState } from "react";
+import Link from "next/link";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
+import { useFormik } from "formik";
+import { AiFillEye, AiOutlineGoogle } from "react-icons/ai";
+import registerValidate from "../../lib/registerValidate";
 
 interface Modal {
   open: boolean;
@@ -20,26 +20,30 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
 
   const onSubmit = async (values: any) => {
     const options = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
     };
 
-    await fetch('http://localhost:3000/api/auth/signup', options)
+    await fetch(
+      `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}api/auth/signup`,
+      options
+    )
       .then((res) => res.json())
       .then((data) => {
-        if (data) router.push('http://localhost:3000');
+        // @ts-ignore
+        if (data) router.push(process.env.NEXT_PUBLIC_NEXTAUTH_URL);
       });
   };
 
   // formik hook
   const formik = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      cpassword: '',
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      cpassword: "",
     },
     validate: registerValidate,
     onSubmit,
@@ -47,7 +51,7 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
 
   // Google Handler Function
   const handleGoogleSignin = async () => {
-    signIn('google', { callbackUrl: 'http://localhost:3000' });
+    signIn("google", { callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_URL });
   };
 
   if (!open) return null;
@@ -124,10 +128,10 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
                     placeholder="First name"
                     className={`${
                       formik.errors.firstName && formik.touched.firstName
-                        ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                        : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                        ? "border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                        : "bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
                     }`}
-                    {...formik.getFieldProps('firstName')}
+                    {...formik.getFieldProps("firstName")}
                   />
                   {formik.errors.firstName && formik.touched.firstName ? (
                     <span className="text-red-500 text-[10px] md:text-[12px]">
@@ -146,10 +150,10 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
                     placeholder="Last name"
                     className={`${
                       formik.errors.lastName && formik.touched.lastName
-                        ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                        : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                        ? "border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                        : "bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
                     }`}
-                    {...formik.getFieldProps('lastName')}
+                    {...formik.getFieldProps("lastName")}
                   />
                   {formik.errors.lastName && formik.touched.lastName ? (
                     <span className="text-red-500 text-[10px] md:text-[12px]">
@@ -168,10 +172,10 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
                 placeholder="Enter your email"
                 className={`${
                   formik.errors.email && formik.touched.email
-                    ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                    : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                    ? "border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                    : "bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
                 }`}
-                {...formik.getFieldProps('email')}
+                {...formik.getFieldProps("email")}
               />
               {formik.errors.email && formik.touched.email ? (
                 <span className="text-red-500 text-[10px] md:text-[12px]">
@@ -185,14 +189,14 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
               </div>
               <div className="flex justify-between">
                 <input
-                  type={`${show.password ? 'text' : 'password'}`}
+                  type={`${show.password ? "text" : "password"}`}
                   placeholder="Enter your password"
                   className={`${
                     formik.errors.password && formik.touched.password
-                      ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                      : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                      ? "border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                      : "bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
                   }`}
-                  {...formik.getFieldProps('password')}
+                  {...formik.getFieldProps("password")}
                 />
                 <span
                   className="flex items-center ml-3 text-gray-600"
@@ -213,14 +217,14 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
               </div>
               <div className="flex justify-between">
                 <input
-                  type={`${show.cpassword ? 'text' : 'password'}`}
+                  type={`${show.cpassword ? "text" : "password"}`}
                   placeholder="Confirm your password"
                   className={`${
                     formik.errors.cpassword && formik.touched.cpassword
-                      ? 'border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
-                      : 'bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]'
+                      ? "border-red-500 border bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
+                      : "bg-gray-200 text-[10px] rounded-md py-[10px] pl-[10px] w-full mt-[6px] md:text-[14px] md:py-[13px]"
                   }`}
-                  {...formik.getFieldProps('cpassword')}
+                  {...formik.getFieldProps("cpassword")}
                 />
                 <span
                   className="flex items-center ml-3 text-gray-600"
