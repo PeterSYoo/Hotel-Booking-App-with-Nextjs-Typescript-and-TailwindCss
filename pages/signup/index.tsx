@@ -31,8 +31,10 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
     )
       .then((res) => res.json())
       .then((data) => {
-        // @ts-ignore
-        if (data) router.push(process.env.NEXT_PUBLIC_NEXTAUTH_URL);
+        if (data) {
+          onClose()
+          router.push(process.env.NEXT_PUBLIC_NEXTAUTH_URL!);
+        } 
       });
   };
 
