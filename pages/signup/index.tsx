@@ -32,9 +32,9 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          onClose()
+          onClose();
           router.push(process.env.NEXT_PUBLIC_NEXTAUTH_URL!);
-        } 
+        }
       });
   };
 
@@ -59,10 +59,7 @@ const SignUp: React.FC<Modal> = ({ open, onClose }) => {
   if (!open) return null;
 
   return (
-    <div
-      onClick={onClose}
-      className="font-dmSans fixed w-full h-full z-50 bg-gray-300 bg-opacity-80 flex items-center"
-    >
+    <div className="font-dmSans fixed w-full h-full z-50 bg-gray-300 bg-opacity-80 flex items-center">
       <section
         onClick={(e) => {
           e.stopPropagation();
