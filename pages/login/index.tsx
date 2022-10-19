@@ -50,10 +50,7 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
   if (!open) return null;
 
   return (
-    <div
-      onClick={onClose}
-      className="font-dmSans fixed w-full h-full z-50 bg-gray-300 bg-opacity-80 flex items-center"
-    >
+    <div className="font-dmSans fixed w-full h-full z-50 bg-gray-300 bg-opacity-80 flex items-center">
       <section
         onClick={(e) => {
           e.stopPropagation();
