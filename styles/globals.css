@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -14,5 +13,13 @@
     /* IE and Edge */
     scrollbar-width: none;
     /* Firefox */
+  }
+}
+
+@layer base {
+  body {
+    @apply max-w-[1440px] mx-auto;
+    @apply transition-all duration-100;
+    @apply dark:bg-[#222529] dark:transition-all dark:duration-100 dark:text-white;
   }
 }
