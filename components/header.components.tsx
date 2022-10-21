@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import { useSession, signOut } from 'next-auth/react';
-import { FaRegBell } from 'react-icons/fa';
-import Login from '../pages/login';
-import SignUp from '../pages/signup';
-import useLoginModal from '../hooks/useLoginModal';
-import useSignupModal from '../hooks/useSignupModal';
+import Image from "next/image";
+import { useSession, signOut } from "next-auth/react";
+import { FaRegBell } from "react-icons/fa";
+import Login from "../pages/login";
+import SignUp from "../pages/signup";
+import useLoginModal from "../hooks/useLoginModal";
+import useSignupModal from "../hooks/useSignupModal";
 
 // Guest
 const Guest = () => {
@@ -14,7 +14,7 @@ const Guest = () => {
     <>
       <Login open={openLogin} onClose={() => setOpenLogin(false)} />
       <SignUp open={openSignup} onClose={() => setOpenSignup(false)} />
-      <div className="flex py-[25px] px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
+      <div className="flex justify-between py-[25px] px-10 bg-white dark:bg-[#222529] font-dmSans">
         {/* Desktop */}
         <div className="hidden items-center md:flex">
           <Image src="/img/logo.png" alt="" width="40" height="38" />
@@ -32,9 +32,7 @@ const Guest = () => {
         {/* Desktop */}
         <div className="hidden gap-x-12 items-center md:flex">
           <div className="text-xl font-bold">
-            <span onClick={() => setOpenLogin(true)} className="cursor-pointer">
-              Login
-            </span>
+            <button onClick={() => setOpenLogin(true)}>Login</button>
           </div>
           <button
             onClick={() => setOpenSignup(true)}
@@ -45,7 +43,9 @@ const Guest = () => {
         </div>
         {/* Mobile */}
         <div className="flex gap-x-4 items-center md:hidden">
-          <div className="text-base">Login</div>
+          <div className="text-base">
+            <button onClick={() => setOpenLogin(true)}>Login</button>
+          </div>
           <button
             onClick={() => setOpenSignup(true)}
             className="text-base text-white bg-blueBtn px-2 py-1 rounded-xl"
@@ -64,7 +64,7 @@ const User = ({ session }: any) => {
   const { openSignup, setOpenSignup } = useSignupModal();
   return (
     <>
-      <div className="flex py-[25px] px-10 justify-between items-center max-w-1440 mx-auto bg-white font-dmSans">
+      <div className="flex justify-between py-[25px] px-10 bg-white dark:bg-[#222529] font-dmSans">
         {/* Desktop */}
         <div className="hidden items-center md:flex">
           <Image src="/img/logo.png" alt="" width="40" height="38" />
