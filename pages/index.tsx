@@ -1,20 +1,17 @@
-import type { NextPage } from 'next';
-import Image from 'next/image';
-import { useSession } from 'next-auth/react';
-import Footer from '../components/footer.components';
-import Header from '../components/header.components';
+import type { NextPage } from "next";
+import Image from "next/image";
+import { useSession } from "next-auth/react";
 import {
   RiHotelBedFill,
   RiFlightTakeoffFill,
   RiTaxiFill,
-} from 'react-icons/ri';
-import { AiOutlineSwap } from 'react-icons/ai';
+} from "react-icons/ri";
+import { AiOutlineSwap } from "react-icons/ai";
 
 const Guest = () => {
   return (
     <>
-      <Header />
-      <div className="md:max-w-1440 mx-auto flex flex-col justify-center w-full font-dmSans bg-sectionBg">
+      <div className="font-dmSans bg-sectionBg dark:bg-[#141416]">
         {/* Hero Section */}
         <section className="bg-hero bg-cover bg-no-repeat bg-center h-541 md:h-578">
           <h1 className="text-4xl font-bold w-80 pl-7 pt-10 leading-54 text-gray-700 font-poppins md:text-64 md:w-full md:leading-80 md:pl-32 md:pt-36">
@@ -27,11 +24,11 @@ const Guest = () => {
         </section>
 
         {/* Search Best Place in the World */}
-        <section className="max-w-375 mx-auto md:max-w-1170">
+        <section className="max-w-375 mx-auto md:max-w-1170 dark:bg-[#141416]">
           <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-5xl md:max-w-1170 md:px-0 md:mx-auto">
             Search a best place in the world
           </h1>
-          <p className="max-w-375 w-600 text-center text-sm px-14 leading-5 text-gray-400 pb-7 md:max-w-1170 md:text-base md:px-1 md:mx-auto">
+          <p className="max-w-375 w-600 text-center text-sm px-14 leading-5 text-gray-400 pb-14 md:max-w-1170 md:text-base md:px-1 md:mx-auto">
             Whether you’re looking for places for a vacation. We are here to
             Guide you about the details you need to check in and ease your trips
             in advance
@@ -43,7 +40,7 @@ const Guest = () => {
             <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-800">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/batu.png"
@@ -62,7 +59,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-800">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/kuta.png"
@@ -81,7 +78,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-800">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/surabaya.png"
@@ -100,7 +97,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-800">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/malang.png"
@@ -119,7 +116,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-800">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/doemg.png"
@@ -138,7 +135,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-800">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/nusa-dua.png"
@@ -157,7 +154,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-800">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/badung.png"
@@ -176,7 +173,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-800">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/watatobi.png"
@@ -202,7 +199,7 @@ const Guest = () => {
           <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-left md:px-0 md:text-5xl">
             Featured Destinations
           </h1>
-          <p className="max-w-375 w-600 text-center px-14 leading-6 text-gray-600 pb-7 md:max-w-1440 md:text-left md:px-0 md:mb-[50px]">
+          <p className="max-w-375 w-600 text-center px-14 leading-6 text-gray-600 pb-1 md:max-w-1440 md:text-left md:px-0 md:mb-[50px]">
             Popular destinations open to vistors from Indonesia
           </p>
         </section>
@@ -544,13 +541,13 @@ const Guest = () => {
             </p>
           </div>
         </section>
-        {/* Search Best Place in the World - Cards */}
+        {/* Explore The World - Cards */}
         <section className="md:mx-auto px-[30px] md:px-[135px] overflow-x-auto no-scrollbar snap-x snap-mandatory">
           <div className="flex pb-10">
             <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
-                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-0 dark:bg-[#222529] py-1">
                   <div className="mx-[14px] mt-[14px]">
                     <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
                   </div>
@@ -603,7 +600,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
-                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-0 dark:bg-[#222529] py-1">
                   <div className="mx-[14px] mt-[14px]">
                     <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
                   </div>
@@ -656,7 +653,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
-                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-0 dark:bg-[#222529] py-1">
                   <div className="mx-[14px] mt-[14px]">
                     <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
                   </div>
@@ -709,7 +706,7 @@ const Guest = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
-                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-0 dark:bg-[#222529] py-1">
                   <div className="mx-[14px] mt-[14px]">
                     <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
                   </div>
@@ -765,7 +762,7 @@ const Guest = () => {
         </section>
 
         {/* Trending Cities */}
-        <section className="bg-[#F5F5F5] pb-[30px]">
+        <section className="bg-[#F5F5F5] pb-[30px] dark:bg-[#141416]">
           <section className="max-w-375 mx-auto md:max-w-1170">
             <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-5xl md:max-w-1170 md:px-0 md:mx-auto md:mt-[20px]">
               Trending Cities
@@ -779,7 +776,7 @@ const Guest = () => {
 
           <section className="max-w-375 mx-auto md:flex md:gap-[40px] md:max-w-[980px] md:flex-wrap">
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -809,7 +806,7 @@ const Guest = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -839,7 +836,7 @@ const Guest = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -869,7 +866,7 @@ const Guest = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -899,7 +896,7 @@ const Guest = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -929,7 +926,7 @@ const Guest = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -961,116 +958,11 @@ const Guest = () => {
           </section>
         </section>
 
-        {/* Travel Your Passion */}
-        <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
-          <div className="mt-[60px] mb-[12px] md:mb-[24px] md:mt-[100px]">
-            <h1 className="text-center text-[30px] font-bold leading-10 md:text-left md:text-[48px]">
-              Travel Your Passion
-            </h1>
-          </div>
-          <div className="mb-[35px]">
-            <p className="max-w-375 w-600 text-center px-11 text-[14px] leading-6 text-gray-400 md:max-w-1440 md:text-left md:px-0">
-              Most Brilliant reasons Entrada should be your one-stop-shop!
-            </p>
-          </div>
-        </section>
-        {/* Search Best Place in the World - Cards */}
-        <section className="md:mx-auto px-[30px] overflow-x-auto no-scrollbar snap-x snap-mandatory md:px-[135px]">
-          <div className="flex pb-10">
-            <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
-              {/* Card */}
-              <div className="inline-block snap-always snap-center md:pb-30">
-                <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
-                  <div className="">
-                    <h1 className="text-[24px] font-bold text-white">
-                      Beach Hobby
-                    </h1>
-                  </div>
-                  <div className="flex items-center">
-                    <Image
-                      src="/img/explore-the-world/star.png"
-                      alt=""
-                      width="14"
-                      height="14"
-                    />
-                    <span className="pl-[8px] text-white text-[14px]">
-                      4.8 (122 reviews)
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {/* Card */}
-              <div className="inline-block snap-always snap-center md:pb-30">
-                <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
-                  <div className="">
-                    <h1 className="text-[24px] font-bold text-white">
-                      Beach Hobby
-                    </h1>
-                  </div>
-                  <div className="flex items-center">
-                    <Image
-                      src="/img/explore-the-world/star.png"
-                      alt=""
-                      width="14"
-                      height="14"
-                    />
-                    <span className="pl-[8px] text-white text-[14px]">
-                      4.8 (122 reviews)
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {/* Card */}
-              <div className="inline-block snap-always snap-center md:pb-30">
-                <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
-                  <div className="">
-                    <h1 className="text-[24px] font-bold text-white">
-                      Beach Hobby
-                    </h1>
-                  </div>
-                  <div className="flex items-center">
-                    <Image
-                      src="/img/explore-the-world/star.png"
-                      alt=""
-                      width="14"
-                      height="14"
-                    />
-                    <span className="pl-[8px] text-white text-[14px]">
-                      4.8 (122 reviews)
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {/* Card */}
-              <div className="inline-block snap-always snap-center md:pb-30">
-                <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
-                  <div className="">
-                    <h1 className="text-[24px] font-bold text-white">
-                      Beach Hobby
-                    </h1>
-                  </div>
-                  <div className="flex items-center">
-                    <Image
-                      src="/img/explore-the-world/star.png"
-                      alt=""
-                      width="14"
-                      height="14"
-                    />
-                    <span className="pl-[8px] text-white text-[14px]">
-                      4.8 (122 reviews)
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Desktop */}
         {/* Get our pro offers */}
-        <section className="hidden mx-auto md:mx-[135px] md:max-w-1170 md:flex md:gap-[30px] md:-mb-[75px]">
+        <section className="hidden mx-auto md:mx-[135px] md:flex md:gap-[30px]">
           {/* Card */}
-          <section className="flex justify-between h-[248px] rounded-2xl mb-[20px] w-[1170px] bg-blue-600 py-[62px] px-[90px] items-center">
+          <section className="flex justify-between h-[248px] rounded-2xl mb-[20px] w-[1170px] bg-blue-600 py-[62px] px-[90px] items-center md:-mb-[75px]">
             <div className="">
               <h1 className="text-[44px] text-white font-bold pb-[12px] leading-10">
                 Get our pro offers
@@ -1100,7 +992,7 @@ const Guest = () => {
 
         {/* Mobile */}
         {/* Get our pro offers */}
-        <section className="max-w-[375px] mx-auto mb-[159px] mt-[30px] md:hidden">
+        <section className="max-w-[375px] mx-auto -mb-12 mt-[30px] md:hidden">
           {/* Card */}
           <section className="flex flex-col justify-between w-[335px] h-[174px] rounded-2xl mb-[20px] mx-auto bg-[url('/img/offers-bg.png')] bg-blue-600 px-[20px] py-[14px]">
             <div className="">
@@ -1132,7 +1024,6 @@ const Guest = () => {
           </section>
         </section>
       </div>
-      <Footer />
     </>
   );
 };
@@ -1141,8 +1032,7 @@ const Guest = () => {
 const User = () => {
   return (
     <>
-      <Header />
-      <div className="md:max-w-1440 mx-auto flex flex-col justify-center w-full font-dmSans bg-sectionBg">
+      <div className="flex flex-col justify-center w-full font-dmSans bg-sectionBg dark:bg-[#141416]">
         {/* Hero Section */}
         <section className="bg-hero bg-cover bg-no-repeat bg-center h-541 md:h-578">
           <h1 className="text-4xl font-bold w-80 pl-7 pt-10 leading-54 text-gray-700 font-poppins md:text-64 md:w-full md:leading-80 md:pl-32 md:pt-36">
@@ -1159,76 +1049,76 @@ const User = () => {
         <section className="-mt-[125px] mx-[20px] mb-10 hidden md:block">
           {/* Search Form */}
           <form>
-            <div className="w-full bg-white rounded-xl px-[60px] py-[30px] drop-shadow-2xl">
+            <div className="w-full bg-white rounded-xl px-[60px] py-[30px] drop-shadow-2xl dark:bg-[#222529]">
               <div className="flex justify-between">
                 <div className="w-3/4">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-6">
                       <div className="flex justify-between items-center gap-1">
-                        <RiHotelBedFill className="text-2xl text-gray-800" />
-                        <span className="text-[14px] font-bold text-gray-800">
+                        <RiHotelBedFill className="text-2xl text-gray-800 dark:text-white" />
+                        <span className="text-[14px] font-bold text-gray-800 dark:text-white">
                           Hotel
                         </span>
                       </div>
                       <div className="flex justify-between items-center gap-1">
-                        <RiFlightTakeoffFill className="text-2xl text-gray-800" />
-                        <span className="text-[14px] font-bold text-gray-800">
+                        <RiFlightTakeoffFill className="text-2xl text-gray-800 dark:text-white" />
+                        <span className="text-[14px] font-bold text-gray-800 dark:text-white">
                           Flight
                         </span>
                       </div>
                       <div className="flex justify-between items-center gap-1">
-                        <RiTaxiFill className="text-2xl text-gray-800" />
-                        <span className="text-[14px] font-bold text-gray-800">
+                        <RiTaxiFill className="text-2xl text-gray-800 dark:text-white" />
+                        <span className="text-[14px] font-bold text-gray-800 dark:text-white">
                           Car Rental
                         </span>
                       </div>
                     </div>
                     <div className="flex gap-6">
-                      <span className="text-[18px] text-gray-800">
+                      <span className="text-[18px] text-gray-800 dark:text-white">
                         Round trip
                       </span>
-                      <span className="text-[18px] text-gray-800">
+                      <span className="text-[18px] text-gray-800 dark:text-white">
                         1 passenger
                       </span>
                     </div>
                   </div>
-                  <div className="border-b-2 w-full mt-[20px]"></div>
+                  <div className="border-b-2 w-full mt-[20px] dark:border-gray-700"></div>
                 </div>
                 <div className="w-1/4"></div>
               </div>
               <div className="flex justify-between items-end w-full">
                 <div className="w-3/4 flex">
-                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2">
+                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2 dark:bg-[#3B3E44] dark:border-[#3B3E44]">
                     <h1 className="text-[18px]">Location</h1>
                     <input
                       type="text"
-                      className="bg-gray-100 text-[16px] w-full py-2"
+                      className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
                       placeholder="Where are you from?"
                     />
                   </div>
                   <div className="flex items-center -mx-3 mt-4 z-10">
-                    <div className="bg-white p-1 rounded-3xl">
-                      <AiOutlineSwap className="text-2xl text-gray-400 cursor-pointer" />
+                    <div className="bg-white p-1 rounded-3xl dark:bg-[#42464B]">
+                      <AiOutlineSwap className="text-2xl text-gray-400 cursor-pointer dark:text-white" />
                     </div>
                   </div>
-                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2">
+                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2 dark:bg-[#3B3E44] dark:border-[#3B3E44]">
                     <h1 className="text-[18px]">Check in</h1>
                     <input
                       type="text"
-                      className="bg-gray-100 text-[16px] w-full py-2"
+                      className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
                       placeholder="Add Date"
                     />
                   </div>
                   <div className="flex items-center -mx-3 mt-4 z-10">
-                    <div className="bg-white p-1 rounded-3xl">
-                      <AiOutlineSwap className="text-2xl text-gray-400 cursor-pointer" />
+                    <div className="bg-white p-1 rounded-3xl dark:bg-[#42464B]">
+                      <AiOutlineSwap className="text-2xl text-gray-400 cursor-pointer dark:text-white" />
                     </div>
                   </div>
-                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2">
+                  <div className="bg-gray-100 w-full border rounded-lg px-[20px] mt-[20px] py-2 dark:bg-[#3B3E44] dark:border-[#3B3E44]">
                     <h1 className="text-[18px]">Check out</h1>
                     <input
                       type="text"
-                      className="bg-gray-100 text-[16px] w-full py-2"
+                      className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
                       placeholder="Add Date"
                     />
                   </div>
@@ -1253,54 +1143,58 @@ const User = () => {
         <section className="-mt-[245px] mx-[20px] mb-10 md:hidden">
           {/* Search Form */}
           <form>
-            <div className="w-full bg-white rounded-xl px-[20px] py-[20px] drop-shadow-2xl">
+            <div className="w-full bg-white rounded-xl px-[20px] py-[20px] drop-shadow-2xl dark:bg-[#222529]">
               <div className="flex justify-between items-center">
                 <div className="flex justify-between items-center gap-1">
-                  <RiHotelBedFill className="text-2xl text-gray-800" />
-                  <span className="text-[14px] font-bold text-gray-800">
+                  <RiHotelBedFill className="text-2xl text-gray-800 dark:text-white" />
+                  <span className="text-[14px] font-bold text-gray-800 dark:text-white">
                     Hotel
                   </span>
                 </div>
                 <div className="flex justify-between items-center gap-1">
-                  <RiFlightTakeoffFill className="text-2xl text-gray-800" />
-                  <span className="text-[14px] font-bold text-gray-800">
+                  <RiFlightTakeoffFill className="text-2xl text-gray-800 dark:text-white" />
+                  <span className="text-[14px] font-bold text-gray-800 dark:text-white">
                     Flight
                   </span>
                 </div>
                 <div className="flex justify-between items-center gap-1">
-                  <RiTaxiFill className="text-2xl text-gray-800" />
-                  <span className="text-[14px] font-bold text-gray-800">
+                  <RiTaxiFill className="text-2xl text-gray-800 dark:text-white" />
+                  <span className="text-[14px] font-bold text-gray-800 dark:text-white">
                     Car Rental
                   </span>
                 </div>
               </div>
               <div className="border-b-2 w-full mt-[20px]"></div>
               <div className="flex gap-10 mt-[20px]">
-                <span className="text-[16px] text-gray-800">Round trip</span>
-                <span className="text-[16px] text-gray-800">1 passenger</span>
+                <span className="text-[16px] text-gray-800 dark:text-white">
+                  Round trip
+                </span>
+                <span className="text-[16px] text-gray-800 dark:text-white">
+                  1 passenger
+                </span>
               </div>
-              <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px] mt-[20px]">
+              <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px] mt-[20px] dark:bg-[#3B3E44] dark:border-[#3B3E44]">
                 <h1 className="text-[16px]">Location</h1>
                 <input
                   type="text"
-                  className="bg-gray-100 text-[12px] w-full py-2"
+                  className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
                   placeholder="Where are you from?"
                 />
               </div>
               <div className="flex justify-between gap-[10px] mt-[10px]">
-                <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px]">
+                <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px] dark:bg-[#3B3E44] dark:border-[#3B3E44]">
                   <h1 className="text-[16px]">Check in</h1>
                   <input
                     type="text"
-                    className="bg-gray-100 text-[12px] w-full py-2"
+                    className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
                     placeholder="Add date"
                   />
                 </div>
-                <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px]">
+                <div className="bg-gray-100 w-full border rounded-lg px-[20px] py-[8px] dark:bg-[#3B3E44] dark:border-[#3B3E44]">
                   <h1 className="text-[16px]">Check out</h1>
                   <input
                     type="text"
-                    className="bg-gray-100 text-[12px] w-full py-2"
+                    className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
                     placeholder="Add date"
                   />
                 </div>
@@ -1334,7 +1228,7 @@ const User = () => {
             <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/batu.png"
@@ -1353,7 +1247,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/kuta.png"
@@ -1372,7 +1266,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/surabaya.png"
@@ -1391,7 +1285,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/malang.png"
@@ -1410,7 +1304,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/doemg.png"
@@ -1429,7 +1323,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/nusa-dua.png"
@@ -1448,7 +1342,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/badung.png"
@@ -1467,7 +1361,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center">
-                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-250 h-207 rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="pl-30 pt-30">
                     <Image
                       src="/img/places/watatobi.png"
@@ -1828,13 +1722,13 @@ const User = () => {
             </p>
           </div>
         </section>
-        {/* Search Best Place in the World - Cards */}
+        {/* Explore The World - Cards */}
         <section className="md:mx-auto px-[30px] md:px-[135px] overflow-x-auto no-scrollbar snap-x snap-mandatory">
           <div className="flex pb-10">
             <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
-                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="mx-[14px] mt-[14px]">
                     <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
                   </div>
@@ -1887,7 +1781,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
-                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="mx-[14px] mt-[14px]">
                     <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
                   </div>
@@ -1940,7 +1834,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
-                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="mx-[14px] mt-[14px]">
                     <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
                   </div>
@@ -1993,7 +1887,7 @@ const User = () => {
               </div>
               {/* Card */}
               <div className="inline-block md:pb-30 snap-always snap-center opacity-80 hover:opacity-100">
-                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white">
+                <div className="w-[270px] h-[362px] rounded-2xl border border-gray-200 hover:bg-white dark:hover:bg-[#222529] dark:border-gray-700">
                   <div className="mx-[14px] mt-[14px]">
                     <div className="bg-gray-300 h-[152px] w-[242px] rounded-2xl"></div>
                   </div>
@@ -2048,7 +1942,7 @@ const User = () => {
           </div>
         </section>
         {/* Trending Cities */}
-        <section className="bg-[#F5F5F5] pb-[30px]">
+        <section className="bg-[#F5F5F5] pb-[30px] dark:bg-[#141416]">
           <section className="max-w-375 mx-auto md:max-w-1170">
             <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-5xl md:max-w-1170 md:px-0 md:mx-auto md:mt-[20px]">
               Trending Cities
@@ -2062,7 +1956,7 @@ const User = () => {
 
           <section className="max-w-375 mx-auto md:flex md:gap-[40px] md:max-w-[980px] md:flex-wrap">
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -2092,7 +1986,7 @@ const User = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -2122,7 +2016,7 @@ const User = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -2152,7 +2046,7 @@ const User = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -2182,7 +2076,7 @@ const User = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -2212,7 +2106,7 @@ const User = () => {
               </div>
             </div>
             {/* Card */}
-            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px]">
+            <div className="flex w-335 h-[201px] mb-[20px] bg-white rounded-3xl mx-auto md:w-[470px] dark:bg-[#222529]">
               <div className="flex mx-[16px] my-[16px] gap-[16px]">
                 <div className="w-[160px] h-[168px] bg-gray-300 rounded-2xl"></div>
                 <div className="w-[127px] h-[168px] flex flex-col justify-between -mt-1">
@@ -2243,110 +2137,7 @@ const User = () => {
             </div>
           </section>
         </section>
-        {/* Travel Your Passion */}
-        <section className="max-w-375 mx-auto md:pl-[135px] md:mx-0 md:max-w-1170">
-          <div className="mt-[60px] mb-[12px] md:mb-[24px] md:mt-[100px]">
-            <h1 className="text-center text-[30px] font-bold leading-10 md:text-left md:text-[48px]">
-              Travel Your Passion
-            </h1>
-          </div>
-          <div className="mb-[35px]">
-            <p className="max-w-375 w-600 text-center px-11 text-[14px] leading-6 text-gray-400 md:max-w-1440 md:text-left md:px-0">
-              Most Brilliant reasons Entrada should be your one-stop-shop!
-            </p>
-          </div>
-        </section>
-        {/* Search Best Place in the World - Cards */}
-        <section className="md:mx-auto px-[30px] overflow-x-auto no-scrollbar snap-x snap-mandatory md:px-[135px]">
-          <div className="flex pb-10">
-            <div className="flex flex-nowrap gap-[30px] md:flex-wrap">
-              {/* Card */}
-              <div className="inline-block snap-always snap-center md:pb-30">
-                <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
-                  <div className="">
-                    <h1 className="text-[24px] font-bold text-white">
-                      Beach Hobby
-                    </h1>
-                  </div>
-                  <div className="flex items-center">
-                    <Image
-                      src="/img/explore-the-world/star.png"
-                      alt=""
-                      width="14"
-                      height="14"
-                    />
-                    <span className="pl-[8px] text-white text-[14px]">
-                      4.8 (122 reviews)
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {/* Card */}
-              <div className="inline-block snap-always snap-center md:pb-30">
-                <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
-                  <div className="">
-                    <h1 className="text-[24px] font-bold text-white">
-                      Beach Hobby
-                    </h1>
-                  </div>
-                  <div className="flex items-center">
-                    <Image
-                      src="/img/explore-the-world/star.png"
-                      alt=""
-                      width="14"
-                      height="14"
-                    />
-                    <span className="pl-[8px] text-white text-[14px]">
-                      4.8 (122 reviews)
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {/* Card */}
-              <div className="inline-block snap-always snap-center md:pb-30">
-                <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
-                  <div className="">
-                    <h1 className="text-[24px] font-bold text-white">
-                      Beach Hobby
-                    </h1>
-                  </div>
-                  <div className="flex items-center">
-                    <Image
-                      src="/img/explore-the-world/star.png"
-                      alt=""
-                      width="14"
-                      height="14"
-                    />
-                    <span className="pl-[8px] text-white text-[14px]">
-                      4.8 (122 reviews)
-                    </span>
-                  </div>
-                </div>
-              </div>
-              {/* Card */}
-              <div className="inline-block snap-always snap-center md:pb-30">
-                <div className="flex flex-col justify-end w-[270px] h-[362px] rounded-2xl border border-gray-200 pl-[30px] bg-gray-400 pb-[30px]">
-                  <div className="">
-                    <h1 className="text-[24px] font-bold text-white">
-                      Beach Hobby
-                    </h1>
-                  </div>
-                  <div className="flex items-center">
-                    <Image
-                      src="/img/explore-the-world/star.png"
-                      alt=""
-                      width="14"
-                      height="14"
-                    />
-                    <span className="pl-[8px] text-white text-[14px]">
-                      4.8 (122 reviews)
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
         {/* Desktop */}
         {/* Get our pro offers */}
         <section className="hidden mx-auto md:mx-[135px] md:max-w-1170 md:flex md:gap-[30px] md:-mb-[75px]">
@@ -2380,7 +2171,7 @@ const User = () => {
         </section>
         {/* Mobile */}
         {/* Get our pro offers */}
-        <section className="max-w-[375px] mx-auto mb-[159px] mt-[30px] md:hidden">
+        <section className="max-w-[375px] mx-auto -mb-12 mt-[30px] md:hidden">
           {/* Card */}
           <section className="flex flex-col justify-between w-[335px] h-[174px] rounded-2xl mb-[20px] mx-auto bg-[url('/img/offers-bg.png')] bg-blue-600 px-[20px] py-[14px]">
             <div className="">
@@ -2412,7 +2203,6 @@ const User = () => {
           </section>
         </section>
       </div>
-      <Footer />
     </>
   );
 };
