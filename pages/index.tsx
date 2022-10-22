@@ -3,8 +3,9 @@ import { useSession } from "next-auth/react";
 
 import { SearchABestPlace } from "../components/home/searchABestPlace.components";
 import { Hero } from "../components/home/hero.components";
+import { FeaturedDestinations } from "../components/home/featuredDestinations/featuredDestinations.components";
 import { TopTour } from "../components/home/topTour.components";
-import { ExploreTheWorld } from "../components/home/exploreTheWorld.components";
+import { ExploreTheWorld } from "../components/home/exploreTheWorld/exploreTheWorld.components";
 import { TrendingCities } from "../components/home/trendingCities.components";
 import { ProOffers } from "../components/home/proOffers.components";
 import { SearchPlace } from "../components/home/searchPlace.components";
@@ -15,6 +16,7 @@ const Guest = () => {
       <div className="font-dmSans bg-sectionBg dark:bg-[#141416]">
         <Hero />
         <SearchABestPlace />
+        <FeaturedDestinations />
         <TopTour />
         <ExploreTheWorld />
         <TrendingCities />
