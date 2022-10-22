@@ -5,6 +5,7 @@ import Login from "../pages/login";
 import SignUp from "../pages/signup";
 import useLoginModal from "../hooks/useLoginModal";
 import useSignupModal from "../hooks/useSignupModal";
+import Button from "./button.components";
 
 // Guest
 const Guest = () => {
@@ -34,12 +35,11 @@ const Guest = () => {
           <div className="text-xl font-bold">
             <button onClick={() => setOpenLogin(true)}>Login</button>
           </div>
-          <button
+          <Button
             onClick={() => setOpenSignup(true)}
-            className="text-xl text-white bg-blueBtn px-5 py-3 rounded-xl"
           >
             signup
-          </button>
+          </Button>
         </div>
         {/* Mobile */}
         <div className="flex gap-x-4 items-center md:hidden">
