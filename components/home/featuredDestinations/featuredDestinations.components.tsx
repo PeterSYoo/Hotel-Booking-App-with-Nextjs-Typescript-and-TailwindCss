@@ -11,7 +11,7 @@ const placeholderAvatar = '/img/destinations/avatar.png'
 export const FeaturedDestinations = () => {
 
   const {data, isInitialLoading} = useQuery(['featured-dest'], fetchFeaturedDestinations)
-  if(isInitialLoading) return <h2>'Loading...'</h2>
+  if(isInitialLoading) return <h2>Loading...</h2>
 
   return (
     <>
