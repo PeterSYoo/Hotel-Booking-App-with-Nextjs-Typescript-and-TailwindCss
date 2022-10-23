@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-  baseURL: 'http://localhost:3000/api/db'
+  baseURL: 'https://hotel-booking-app-tau.vercel.app/api/db'
 })
 
 export const request = ({...options}) => {
