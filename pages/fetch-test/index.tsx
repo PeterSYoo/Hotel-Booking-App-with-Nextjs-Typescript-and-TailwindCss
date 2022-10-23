@@ -20,7 +20,7 @@ const FetchTest: NextPage = () => {
 
   const {data: places, isInitialLoading} = useQuery(['travel-data'], fetchTravelData) // use alias for data destructure
   
-  console.log("data", places?.data["best-place"])
+  console.log("data", places?.data)
 
   if(isInitialLoading) return <h2>Loading...</h2>
 

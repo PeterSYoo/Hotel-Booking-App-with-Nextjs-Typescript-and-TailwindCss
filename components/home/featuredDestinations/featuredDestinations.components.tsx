@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query"
+import axios from "axios";
 import { request } from "../../../helpers/axios-util";
 import Card from "./cardDetail";
 
 const fetchFeaturedDestinations = () => {
-  return request({url: '/db'})
+  return axios.get('https://hotel-booking-app-tau.vercel.app/api/db/db')
+  // return request({url: '/db'})
 }
 
 const placeholderAvatar = '/img/destinations/avatar.png'
@@ -13,7 +15,8 @@ export const FeaturedDestinations = () => {
   const {data, isInitialLoading} = useQuery(['featured-dest'], fetchFeaturedDestinations)
   if(isInitialLoading) return <h2>Loading...</h2>
 
-  console.log(data?.data["featured-destinations"])
+  console.log("data", data?.data)
+  // console.log(data?.data["featured-destinations"])
 
   return (
     <>

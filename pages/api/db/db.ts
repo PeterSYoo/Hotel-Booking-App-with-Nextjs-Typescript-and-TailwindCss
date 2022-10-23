@@ -1,3 +1,5 @@
+import type { NextApiRequest, NextApiResponse } from "next"
+import Cors from 'cors'
 const rawData = `{
   "best-place": [
     {
@@ -310,7 +312,7 @@ const rawData = `{
           "location": "Australia",
           "img": "",
           "rating": 5,
-          "review": "As first time Paris-explorers, Bryan’s accommodation was perfect for our family of four (including two teens). Close to the glories of the Haussmann district and Gallery Lafayette,"
+          "review": "As first time Paris-explorers, Bryan's accommodation was perfect for our family of four (including two teens). Close to the glories of the Haussmann district and Gallery Lafayette,"
         },
         {
           "name": "Helen",
@@ -682,7 +684,7 @@ const rawData = `{
           "location": "Australia",
           "img": "",
           "rating": 5,
-          "review": "As first time Paris-explorers, Bryan’s accommodation was perfect for our family of four (including two teens). Close to the glories of the Haussmann district and Gallery Lafayette,"
+          "review": "As first time Paris-explorers, Bryan's accommodation was perfect for our family of four (including two teens). Close to the glories of the Haussmann district and Gallery Lafayette,"
         },
         {
           "name": "Helen",
@@ -721,10 +723,33 @@ const rawData = `{
   }
 }
 `
+// Initialize cors middleware
+const cors = Cors({
+  methods: ['POST', 'GET', 'HEAD'],
+})
+
+function runMiddleWare(
+  req: NextApiRequest,
+  res: NextApiResponse,
+  fn: Function
+) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result: any) => {
+      if(result instanceof Error) {
+        return reject(result)
+      }
+
+      return resolve(result)
+    })
+  })
+}
+
 let data = JSON.parse(rawData)
 
-export default function handler(req: any, res: any) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  await runMiddleWare(req, res, cors)
+  
   if(req.method === 'GET') {
-    res.status(200).json(data)
+    res.json(data)
   }
 }
