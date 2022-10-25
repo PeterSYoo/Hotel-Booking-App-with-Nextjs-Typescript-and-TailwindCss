@@ -43,10 +43,30 @@ const User = () => {
   );
 };
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ bestPlaces }: any) => {
+  console.log(bestPlaces.data, ": bestPlaces");
+
   const { data: session } = useSession();
 
   return <>{session ? User() : Guest()}</>;
 };
 
 export default Home;
+
+export const getServerSideProps = async (context: any) => {
+  const local = "http://localhost:3000";
+  const vercel = "https://hotel-booking-app-tau.vercel.app";
+
+  const res = await fetch(`${vercel}/api/cards/best-places`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const bestPlaces = await res.json();
+
+  return {
+    props: { bestPlaces },
+  };
+};
