@@ -1,0 +1,50 @@
+{
+  "barcelona": [
+    {
+      "name": "Entire rental unit hosted by Ivana",
+      "tags": ["1 guest", "Studio", "1 bed", "1 bath"],
+      "price": "$100",
+      "description": "Studio of 25m2 in a secure building near the metro La Muette (line 9) and Boulainvilliers (rer c). Numerous buses nearby. Food and clothing shops (rue de Passy) The studio has all amenities. It is equipped with an oven, stove, fridge, dishwasher and washing machine. Towels, toiletries, linens and kitchenware are provided. A double bed with a beautiful Simmons mattress. Studio on course, very quiet.",
+      "images": [
+        "https://res.cloudinary.com/joinshelf/image/upload/v1663529225/alfy-bootcamp/listing/paris/4ad9de55-cab3-497f-8ce1-b99f893d3a1d_sfa060.webp",
+        "https://res.cloudinary.com/joinshelf/image/upload/v1663529225/alfy-bootcamp/listing/paris/8f32a693-5c21-4da7-a5d8-f7f18428fcb4_mumcqx.webp",
+        "https://res.cloudinary.com/joinshelf/image/upload/v1663529225/alfy-bootcamp/listing/paris/f850be81-b989-45e1-87d3-9b413befb26f_jfvdr8.webp",
+        "https://res.cloudinary.com/joinshelf/image/upload/v1663529224/alfy-bootcamp/listing/paris/633aad0e-cecf-4643-9f54-555c32f3f4ee_s8dsiq.webp"
+      ],
+      "amenities": [
+        "Kitchen",
+        "TV",
+        "Washer",
+        "Elevator",
+        "Wifi",
+        "Hair dryer"
+      ],
+      "reviews": [
+        {
+          "name": "Laura",
+          "location": "Spain",
+          "img": "",
+          "rating": 4,
+          "review": "Communication with Ivana was easy and swift, the place is well-located, equipped and in good condition. Stayed for more than a week and had everything I needed for my stay."
+        },
+        {
+          "name": "Izzet",
+          "location": "Israel",
+          "img": "",
+          "rating": 4,
+          "review": "Great communication with Ivana, nice place to stay for business trip. You can reach metro (line 9) in 30 meters. Kitchen was bien équipée and all cleaning items"
+        }
+      ],
+      "current-bookings": [
+        {
+          "start": "Oct 2, 2022",
+          "end": "Oct 7, 2022"
+        },
+        {
+          "start": "Nov 14, 2022",
+          "end": "Nov 19, 2022"
+        }
+      ]
+    }
+  ]
+}

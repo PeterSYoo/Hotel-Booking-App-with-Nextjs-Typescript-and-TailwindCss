@@ -1,0 +1,44 @@
+{
+  "explore-world": [
+    {
+      "title": "Comfort Space",
+      "city": "Mamaris",
+      "country": "Turkey",
+      "price": 220,
+      "distance-from-city-center": "1.2km",
+      "rating": 4.7,
+      "amount-of-rating": 150,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663516137/alfy-bootcamp/houses/pexels-binyamin-mellish-106399_icqiwy.jpg"
+    },
+    {
+      "title": "Comfort Space",
+      "city": "Paris",
+      "country": "France",
+      "price": 110,
+      "distance-from-city-center": "3km",
+      "rating": 5,
+      "amount-of-rating": 150,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663516133/alfy-bootcamp/houses/pexels-binyamin-mellish-1396122_prtue5.jpg"
+    },
+    {
+      "title": "Comfort Space",
+      "city": "Madrid",
+      "country": "Spain",
+      "price": 300,
+      "distance-from-city-center": "0.6km",
+      "rating": 4.5,
+      "amount-of-rating": 150,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663516127/alfy-bootcamp/houses/pexels-binyamin-mellish-186077_cbirbs.jpg"
+    },
+    {
+      "title": "Comfort Space",
+      "city": "Jerusalem",
+      "country": "Israel",
+      "price": 400,
+      "distance-from-city-center": "0.1km",
+      "rating": 4.3,
+      "amount-of-rating": 150,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663516126/alfy-bootcamp/houses/pexels-expect-best-323780_dk5hki.jpg"
+    }
+  ]
+}

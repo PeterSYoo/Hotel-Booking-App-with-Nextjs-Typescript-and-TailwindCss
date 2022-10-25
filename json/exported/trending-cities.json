@@ -1,0 +1,46 @@
+{
+  "trending-cities": [
+    {
+      "city": "Manila",
+      "price": 220,
+      "rating": 5,
+      "amount-of-rating": 150,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515348/alfy-bootcamp/Trending%20Cites/pexels-pixabay-210367_nbupkd.jpg"
+    },
+    {
+      "city": "Frankfurt main",
+      "price": 340,
+      "rating": 4.4,
+      "amount-of-rating": 12,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515349/alfy-bootcamp/Trending%20Cites/pexels-bruno-gl%C3%A4tsch-1398003_hgtd8g.jpg"
+    },
+    {
+      "city": "San Francisco",
+      "price": 105,
+      "rating": 5,
+      "amount-of-rating": 98,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515322/alfy-bootcamp/Trending%20Cites/pexels-pixabay-208745_uaspib.jpg"
+    },
+    {
+      "city": "Washington",
+      "price": 460,
+      "rating": 4.8,
+      "amount-of-rating": 221,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515353/alfy-bootcamp/Trending%20Cites/pexels-samad-ismayilov-739047_v8kum0.jpg"
+    },
+    {
+      "city": "Seattle",
+      "price": 210,
+      "rating": 4.5,
+      "amount-of-rating": 1002,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515321/alfy-bootcamp/Trending%20Cites/pexels-josh-fields-3964406_gjxosa.jpg"
+    },
+    {
+      "city": "Stockholm",
+      "price": 130,
+      "rating": 4.2,
+      "amount-of-rating": 99,
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515338/alfy-bootcamp/Trending%20Cites/pexels-pixabay-33612_km1qos.jpg"
+    }
+  ]
+}

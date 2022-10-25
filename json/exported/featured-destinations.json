@@ -1,0 +1,34 @@
+{
+  "featured-destinations": [
+    {
+      "city": "Barcelona",
+      "country": "Spain",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515034/alfy-bootcamp/Featured%20Destinations/pexels-aleksandar-pasaric-1388030_jalzsm.jpg"
+    },
+    {
+      "city": "Sydney ",
+      "country": "Australia",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515004/alfy-bootcamp/Featured%20Destinations/pexels-patrick-mclachlan-995765_nakswl.jpg"
+    },
+    {
+      "city": "London",
+      "country": "UK",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515012/alfy-bootcamp/Featured%20Destinations/pexels-chris-schippers-427679_rqchvp.jpg"
+    },
+    {
+      "city": "Paris",
+      "country": "France",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515023/alfy-bootcamp/Featured%20Destinations/pexels-chris-molloy-1308940_vecke4.jpg"
+    },
+    {
+      "city": "Tokyo",
+      "country": "Japan",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515031/alfy-bootcamp/Featured%20Destinations/pexels-aleksandar-pasaric-2506923_szxh0t.jpg"
+    },
+    {
+      "city": "Hanoi",
+      "country": "Vietnam",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515027/alfy-bootcamp/Featured%20Destinations/pexels-huy-phan-1437618_li5ydp.jpg"
+    }
+  ]
+}
