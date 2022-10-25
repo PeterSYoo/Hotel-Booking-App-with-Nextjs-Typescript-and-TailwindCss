@@ -1,0 +1,36 @@
+{
+  "best-place": [
+    {
+      "country": "China",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515557/alfy-bootcamp/bestplaces/pexels-manuel-joseph-19872_qclbdo.jpg"
+    },
+    {
+      "country": "India",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515598/alfy-bootcamp/bestplaces/pexels-darshak-pandya-574313_ykrw9c.jpg"
+    },
+    {
+      "country": "Maldivies",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515586/alfy-bootcamp/bestplaces/pexels-asad-photo-maldives-1483053_ic6pbi.jpg"
+    },
+    {
+      "country": "Israel",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515582/alfy-bootcamp/bestplaces/pexels-mauricio-artieda-610533_hxpgok.jpg"
+    },
+    {
+      "country": "France",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515538/alfy-bootcamp/bestplaces/pexels-pixabay-2363_pqxtxj.jpg"
+    },
+    {
+      "country": "Morocco",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515591/alfy-bootcamp/bestplaces/pexels-pixabay-273935_xseyqa.jpg"
+    },
+    {
+      "country": "Brazil",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515540/alfy-bootcamp/bestplaces/pexels-florencia-potter-351283_u9r32s.jpg"
+    },
+    {
+      "country": "Egypt",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515544/alfy-bootcamp/bestplaces/pexels-david-mceachan-71241_ojwpwd.jpg"
+    }
+  ]
+}

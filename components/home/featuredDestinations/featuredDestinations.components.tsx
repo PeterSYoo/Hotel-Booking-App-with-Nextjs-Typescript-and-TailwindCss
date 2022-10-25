@@ -1,21 +1,23 @@
-import { useQuery } from "@tanstack/react-query"
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { request } from "../../../helpers/axios-util";
 import Card from "./cardDetail";
 
 const fetchFeaturedDestinations = () => {
-  return axios.get('https://hotel-booking-app-tau.vercel.app/api/db/db')
+  return axios.get("https://hotel-booking-app-tau.vercel.app/api/db/db");
   // return request({url: '/db'})
-}
+};
 
-const placeholderAvatar = '/img/destinations/avatar.png'
+const placeholderAvatar = "/img/destinations/avatar.png";
 
 export const FeaturedDestinations = () => {
+  const { data, isInitialLoading } = useQuery(
+    ["featured-dest"],
+    fetchFeaturedDestinations
+  );
+  if (isInitialLoading) return <h2>Loading...</h2>;
 
-  const {data, isInitialLoading} = useQuery(['featured-dest'], fetchFeaturedDestinations)
-  if(isInitialLoading) return <h2>Loading...</h2>
-
-  console.log("data", data?.data)
+  // console.log("data", data?.data)
   // console.log(data?.data["featured-destinations"])
 
   return (
@@ -37,7 +39,7 @@ export const FeaturedDestinations = () => {
           <div className=" md:row-start-1 md:row-span-6 md:col-start-1 md:col-span-9 w-full">
             <div className="grid grid-cols-1 gap-y-8 gap-x-14 w-full md:grid-cols-2 md:grid-rows-5 md:gap-[30px] md:h-[718px]">
               <div className="bg-gray-200 row-start-1 md:row-span-2 col-start-1 md:col-span-2 rounded-3xl h-[280px]">
-                <Card 
+                <Card
                   rating={3.5}
                   location={`${data?.data["featured-destinations"][0].city}, ${data?.data["featured-destinations"][0].country}`}
                   titleSize="text-2xl"
@@ -46,28 +48,33 @@ export const FeaturedDestinations = () => {
                   avatar={placeholderAvatar}
                 />
               </div>
-              {data?.data["featured-destinations"].slice(1,3).map((dest: any) => (
-                <div key={dest.city} className="bg-gray-200 md:row-start-3 md:row-span-3 rounded-3xl h-96">
-                  <Card 
-                    rating={3.5}
-                    location={`${dest.city}, ${dest.country}`}
-                    titleSize='text-2xl'
-                    activities={196}
-                    img={dest.img}
-                    avatar={placeholderAvatar}
-                  />
-                </div>
-              ))}
+              {data?.data["featured-destinations"]
+                .slice(1, 3)
+                .map((dest: any) => (
+                  <div
+                    key={dest.city}
+                    className="bg-gray-200 md:row-start-3 md:row-span-3 rounded-3xl h-96"
+                  >
+                    <Card
+                      rating={3.5}
+                      location={`${dest.city}, ${dest.country}`}
+                      titleSize="text-2xl"
+                      activities={196}
+                      img={dest.img}
+                      avatar={placeholderAvatar}
+                    />
+                  </div>
+                ))}
             </div>
           </div>
           <div className="md:row-start-1 md:row-span-6 md:col-start-10 md:col-span-4 w-full">
             <div className="flex flex-col gap-6 h-full w-full md:grid md:grid-cols-1 md:grid-rows-3 md:gap-[30px] md:h-[718px]">
               {data?.data["featured-destinations"].slice(3).map((dest: any) => (
                 <div key={dest.city} className="bg-gray-200 rounded-3xl h-60">
-                  <Card 
+                  <Card
                     rating={3.5}
                     location={`${dest.city}, ${dest.country}`}
-                    titleSize='text-2xl'
+                    titleSize="text-2xl"
                     activities={196}
                     img={dest.img}
                     avatar={placeholderAvatar}

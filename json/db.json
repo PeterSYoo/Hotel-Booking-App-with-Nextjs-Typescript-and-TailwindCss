@@ -1,0 +1,21 @@
+{
+  "myuser": {
+    "name": "Jonathan Due",
+    "location": "United State",
+    "joinedAt": "05.06.2022",
+    "email": "fake_email@gmail.com",
+    "address": "2445 Crosswind Drive",
+    "gender": "Male",
+    "birthday": "07.12.1995"
+  },
+  "mybookings": {
+    "bookingId": "9246940",
+    "checkin": "Dec 8, 2022",
+    "checkout": "Dec 12, 2022",
+    "price": " 1,950",
+    "title": "Baan Wanglang Riverside",
+    "location": "342 Soi Wat Rakang, Prannok Rd, Siriral, Bankoknoi, Bangkok,",
+    "orderDate": "April 8,2022",
+    "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515557/alfy-bootcamp/bestplaces/pexels-manuel-joseph-19872_qclbdo.jpg"
+  }
+}

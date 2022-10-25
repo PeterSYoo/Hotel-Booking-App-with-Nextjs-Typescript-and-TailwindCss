@@ -1,0 +1,16 @@
+{
+  "top-tour": [
+    {
+      "country": "Japan",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515061/alfy-bootcamp/Top%20Tour/pexels-belle-co-402028_ipui4w.jpg"
+    },
+    {
+      "country": "Bali",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515068/alfy-bootcamp/Top%20Tour/pexels-kimberly-mcneilus-2480626_eb5zha.jpg"
+    },
+    {
+      "country": "Spain",
+      "img": "https://res.cloudinary.com/joinshelf/image/upload/v1663515060/alfy-bootcamp/Top%20Tour/pexels-samuel-sweet-6145647_hwigz4.jpg"
+    }
+  ]
+}
