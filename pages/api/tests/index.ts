@@ -1,0 +1,35 @@
+// @ts-ignore
+import testConnect from "../../../lib/testConnect";
+import { NextApiRequest, NextApiResponse } from "next";
+import {
+  deleteTests,
+  getTests,
+  postTests,
+  putTests,
+} from "../../../lib/testController";
+
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  testConnect().catch(() =>
+    res.status(405).json({ error: "Error in the connection" })
+  );
+  const { method } = req;
+
+  switch (method) {
+    case "GET":
+      getTests(req, res);
+      break;
+    case "POST":
+      postTests(req, res);
+      break;
+    case "PUT":
+      putTests(req, res);
+      break;
+    case "DELETE":
+      deleteTests(req, res);
+      break;
+    default:
+      res.setHeader("Allow", ["GET", "POST", "PUT", "DELETE"]);
+      res.status(405).end(`Method ${method} Not Allowed`);
+      break;
+  }
+};
