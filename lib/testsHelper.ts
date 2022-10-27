@@ -3,7 +3,7 @@ const VERCEL_URL = 'https://hotel-booking-app-tau.vercel.app';
 
 // GET all tests
 export const getTests = async () => {
-  const response = await fetch(`${BASE_URL}/api/tests`);
+  const response = await fetch(`${VERCEL_URL}/api/tests`);
   const json = await response.json();
 
   return json;
@@ -11,7 +11,7 @@ export const getTests = async () => {
 
 // GET single test
 export const getTest = async (testId: any) => {
-  const response = await fetch(`${BASE_URL}/api/tests/${testId}`);
+  const response = await fetch(`${VERCEL_URL}/api/tests/${testId}`);
   const json = await response.json();
 
   if (json) return json;
@@ -28,7 +28,7 @@ export const addTest = async (formData: any) => {
       body: JSON.stringify(formData),
     };
 
-    const response = await fetch(`${BASE_URL}/api/tests/`, Options);
+    const response = await fetch(`${VERCEL_URL}/api/tests/`, Options);
     const json = await response.json();
 
     return json;
@@ -46,7 +46,7 @@ export const updateTest = async (testId: any, formData: any) => {
       body: JSON.stringify(formData),
     };
 
-    const response = await fetch(`${BASE_URL}/api/tests/${testId}`, Options);
+    const response = await fetch(`${VERCEL_URL}/api/tests/${testId}`, Options);
     const json = await response.json();
 
     return json;
@@ -63,7 +63,7 @@ export const deleteTest = async (testId: any) => {
       headers: { 'Content-Type': 'application/json' },
     };
 
-    const response = await fetch(`${BASE_URL}/api/tests/${testId}`, Options);
+    const response = await fetch(`${VERCEL_URL}/api/tests/${testId}`, Options);
     const json = await response.json();
 
     return json;
