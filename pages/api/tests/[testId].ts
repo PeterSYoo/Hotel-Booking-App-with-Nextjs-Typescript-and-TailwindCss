@@ -1,11 +1,6 @@
-import testConnect from '../../../lib/testsConnect';
 import { NextApiRequest, NextApiResponse } from 'next';
-import {
-  deleteTests,
-  getTests,
-  postTests,
-  putTests,
-} from '../../../lib/testsController';
+import testConnect from '../../../lib/testsConnect';
+import { deleteTests, getTest, putTests } from '../../../lib/testsController';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   testConnect().catch(() =>
@@ -15,10 +10,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   switch (method) {
     case 'GET':
-      getTests(req, res);
-      break;
-    case 'POST':
-      postTests(req, res);
+      getTest(req, res);
       break;
     case 'PUT':
       putTests(req, res);
