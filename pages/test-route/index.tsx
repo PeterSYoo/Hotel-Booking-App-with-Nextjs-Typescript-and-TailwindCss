@@ -6,7 +6,7 @@ import {
   useQueryClient,
 } from '@tanstack/react-query';
 import { useReducer, useState } from 'react';
-import { AddTest } from '../../components/test-route/addTest.components';
+import { TestForm } from '../../components/test-route/test-form.components';
 
 import { deleteTest, getTests } from '../../lib/testsHelper';
 
@@ -33,10 +33,6 @@ const TestRoute = () => {
   return (
     <>
       <div className="mx-20 mt-10">
-        {/* Add form */}
-        <div className="flex flex-col mb-10 px-6 py-4 bg-gray-700 rounded-lg w-3/4 mx-auto border-b-2 border-gray-600">
-          <AddTest formData={formData} setFormData={setFormData} />
-        </div>
         {data.map((test: any) => (
           <div key={test._id}>
             <div className="flex flex-col pb-3 mb-3 border-b border-gray-600">
