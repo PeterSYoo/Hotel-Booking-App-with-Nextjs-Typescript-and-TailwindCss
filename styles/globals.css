@@ -20,6 +20,6 @@
   body {
     @apply max-w-[1440px] mx-auto bg-[#FAFAFB];
     @apply transition-all duration-100;
-    @apply dark:bg-[#222529] dark:transition-all dark:duration-100 dark:text-white;
+    @apply dark:bg-[#141416] dark:transition-all dark:duration-100 dark:text-white;
   }
 }
