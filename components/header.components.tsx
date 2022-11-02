@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { useSession, signOut } from "next-auth/react";
-import { FaRegBell } from "react-icons/fa";
-import Login from "../pages/login";
-import SignUp from "../pages/signup";
-import useLoginModal from "../hooks/useLoginModal";
-import useSignupModal from "../hooks/useSignupModal";
-import Button from "./button.components";
+import Image from 'next/image';
+import { useSession, signOut } from 'next-auth/react';
+import { FaRegBell } from 'react-icons/fa';
+import Login from '../pages/login';
+import SignUp from '../pages/signup';
+import useLoginModal from '../hooks/useLoginModal';
+import useSignupModal from '../hooks/useSignupModal';
+import Button from './button.components';
 
 // Guest
 const Guest = () => {
@@ -35,11 +35,7 @@ const Guest = () => {
           <div className="text-xl font-bold">
             <button onClick={() => setOpenLogin(true)}>Login</button>
           </div>
-          <Button
-            onClick={() => setOpenSignup(true)}
-          >
-            signup
-          </Button>
+          <Button onClick={() => setOpenSignup(true)}>signup</Button>
         </div>
         {/* Mobile */}
         <div className="flex gap-x-4 items-center md:hidden">
@@ -98,9 +94,6 @@ const User = ({ session }: any) => {
               </div>
             </div>
             <div className="border-r h-[32px] w-[1px] mx-1"></div>
-            <span className="text-[14px] font-openSans">
-              {session.user.name}
-            </span>
           </div>
         </div>
         {/* Mobile */}
