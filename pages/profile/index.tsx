@@ -17,12 +17,19 @@ const ProfilePage = () => {
   const { data: session }: any = useSession();
   const router = useRouter();
 
+  useEffect(() => {
+    if (!session) {
+      router.push('/');
+    }
+  }, [session]);
+
+  const userId = session.id;
+  const { isLoading, isError, data, error } = useQuery(['user'], () =>
+    getUser(userId)
+  );
+
   if (session) {
     // const { mutateAsync, isLoading: isMutating } = useMutation(updateUser);
-    const userId = session.id;
-    const { isLoading, isError, data, error } = useQuery(['user'], () =>
-      getUser(userId)
-    );
 
     // const onFormSubmit = async (data: any) => {
     //   await mutateAsync({ ...data, id });
@@ -180,12 +187,6 @@ const ProfilePage = () => {
       </>
     );
   }
-
-  useEffect(() => {
-    if (!session) {
-      router.push('/');
-    }
-  }, [session]);
 };
 
 export default ProfilePage;
