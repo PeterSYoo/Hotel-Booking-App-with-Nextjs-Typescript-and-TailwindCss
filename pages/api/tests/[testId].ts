@@ -2,7 +2,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import testConnect from '../../../lib/testsConnect';
 import { deleteTests, getTest, putTests } from '../../../lib/testsController';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function testId(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   testConnect().catch(() =>
     res.status(405).json({ error: 'Error in the connection' })
   );
@@ -23,4 +26,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(405).end(`Method ${method} Not Allowed`);
       break;
   }
-};
+}

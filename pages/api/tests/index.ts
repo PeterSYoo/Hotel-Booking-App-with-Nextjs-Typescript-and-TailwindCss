@@ -7,7 +7,7 @@ import {
   putTests,
 } from '../../../lib/testsController';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function tests(req: NextApiRequest, res: NextApiResponse) {
   testConnect().catch(() =>
     res.status(405).json({ error: 'Error in the connection' })
   );
@@ -31,4 +31,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(405).end(`Method ${method} Not Allowed`);
       break;
   }
-};
+}

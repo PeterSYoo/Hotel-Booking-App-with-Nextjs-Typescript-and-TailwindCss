@@ -1,11 +1,17 @@
-import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
-import CredentialsProvider from "next-auth/providers/credentials";
-import connectMongo from "../../../lib/usersConnect";
-import Users from "../../../model/Users";
-import { compare } from "bcryptjs";
+import NextAuth from 'next-auth';
+import GoogleProvider from 'next-auth/providers/google';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import connectMongo from '../../../lib/usersConnect';
+import Users from '../../../model/Users';
+import { compare } from 'bcryptjs';
+import { signIn } from 'next-auth/react';
+// @ts-ignore
+import clientPromise from '../../../lib/mongoAuthAdapter';
+import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 
-export default NextAuth({
+export const authOptions = {
+  // @ts-ignore
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
       // @ts-ignore
@@ -15,17 +21,17 @@ export default NextAuth({
     }),
     // @ts-ignore
     CredentialsProvider({
-      name: "Credentials",
+      name: 'Credentials',
       // @ts-ignore
       async authorize(credentials, req) {
         connectMongo().catch((error) => {
-          error: "Connection Failed...!";
+          error: 'Connection Failed...!';
         });
 
         // check user existence
         const result = await Users.findOne({ email: credentials?.email });
         if (!result) {
-          throw new Error("No user found with the email please sign up...!");
+          throw new Error('No user found with the email please sign up...!');
         }
 
         // compare()
@@ -45,5 +51,16 @@ export default NextAuth({
       },
     }),
   ],
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }: any) {
+      return true;
+    },
+    async session({ session, user }: any) {
+      session.id = user.id;
+      return session;
+    },
+  },
   secret: process.env.NEXT_PUBLIC_SECRET,
-});
+};
+
+export default NextAuth(authOptions);

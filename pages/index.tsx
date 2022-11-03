@@ -1,14 +1,14 @@
-import type { NextPage } from "next";
-import { useSession } from "next-auth/react";
+import type { NextPage } from 'next';
+import { useSession } from 'next-auth/react';
 
-import { SearchABestPlace } from "../components/home/searchABestPlace.components";
-import { Hero } from "../components/home/hero.components";
-import { FeaturedDestinations } from "../components/home/featuredDestinations/featuredDestinations.components";
-import { TopTour } from "../components/home/topTour.components";
-import { ExploreTheWorld } from "../components/home/exploreTheWorld/exploreTheWorld.components";
-import { TrendingCities } from "../components/home/trendingCities.components";
-import { ProOffers } from "../components/home/proOffers.components";
-import { SearchPlace } from "../components/home/searchPlace.components";
+import { SearchABestPlace } from '../components/home/searchABestPlace.components';
+import { Hero } from '../components/home/hero.components';
+import { FeaturedDestinations } from '../components/home/featuredDestinations/featuredDestinations.components';
+import { TopTour } from '../components/home/topTour.components';
+import { ExploreTheWorld } from '../components/home/exploreTheWorld/exploreTheWorld.components';
+import { TrendingCities } from '../components/home/trendingCities.components';
+import { ProOffers } from '../components/home/proOffers.components';
+import { SearchPlace } from '../components/home/searchPlace.components';
 
 const Guest = () => {
   return (
@@ -44,7 +44,7 @@ const User = () => {
 };
 
 const Home: NextPage = ({ bestPlaces }: any) => {
-  console.log(bestPlaces.data, ": bestPlaces");
+  // console.log(bestPlaces.data, ": bestPlaces");
 
   const { data: session } = useSession();
 
@@ -54,13 +54,13 @@ const Home: NextPage = ({ bestPlaces }: any) => {
 export default Home;
 
 export const getServerSideProps = async (context: any) => {
-  const local = "http://localhost:3000";
-  const vercel = "https://hotel-booking-app-tau.vercel.app";
+  const local = 'http://localhost:3000';
+  const vercel = 'https://hotel-booking-app-tau.vercel.app';
 
   const res = await fetch(`${vercel}/api/cards/best-places`, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   });
 

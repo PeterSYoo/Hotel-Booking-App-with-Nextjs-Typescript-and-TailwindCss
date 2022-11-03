@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useReducer } from 'react';
 import { addTest, getTests } from '../../lib/testsHelper';
 
-export const AddTest = ({ formData, setFormData }: any) => {
+export const TestForm = ({ formData, setFormData }: any) => {
   const queryClient = useQueryClient();
   const addMutuation = useMutation(addTest, {
     onSuccess: () => {
