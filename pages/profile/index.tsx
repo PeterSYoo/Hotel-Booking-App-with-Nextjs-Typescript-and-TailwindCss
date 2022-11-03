@@ -2,25 +2,36 @@ import { unstable_getServerSession } from 'next-auth';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { FiCheck } from 'react-icons/fi';
 import { BiEditAlt } from 'react-icons/bi';
 import { BsHouseDoor, BsGenderMale } from 'react-icons/bs';
 import { AiOutlineMail } from 'react-icons/ai';
 import { MdOutlineCake } from 'react-icons/md';
+import { getUser, updateUser } from '../../lib/usersHelper';
+import { useForm } from 'react-hook-form';
+import { useMutation, useQuery } from '@tanstack/react-query';
 
 const ProfilePage = () => {
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!session) {
-      router.push('/');
-    }
-  }, [session]);
-
   if (session) {
+    // const { mutateAsync, isLoading: isMutating } = useMutation(updateUser);
+    const userId = session.id;
+    const { isLoading, isError, data, error } = useQuery(['user'], () =>
+      getUser(userId)
+    );
+
+    // const onFormSubmit = async (data: any) => {
+    //   await mutateAsync({ ...data, id });
+    //   router.push('/profile');
+    // };
+
+    // console.log(session);
+    console.log(data);
+
     return (
       <>
         <div className="max-w-[1165px] px-5 mx-auto md:mt-20 mb-[200px]">
@@ -38,13 +49,15 @@ const ProfilePage = () => {
                 <div className="flex flex-col">
                   <div className="max-w-[170px] max-h-[170px] mx-auto mt-5">
                     <Image
-                      src={'http://via.placeholder.com/170'}
+                      src={data?.image}
                       width={170}
                       height={170}
                       alt={'profile image'}
                     />
                   </div>
-                  <h1 className="mx-auto text-3xl mt-3 font-bold">John Doe</h1>
+                  <h1 className="mx-auto text-3xl mt-3 font-bold">
+                    {data?.firstName} {data?.lastName}
+                  </h1>
                   <div className="mx-auto bg-gray-100 rounded-3xl px-6 py-2 text-[14px] mt-4 flex items-center gap-2 dark:bg-[#3B3E44] dark:text-[#B1B5C4]">
                     <FiCheck />
                     <span className="text-gray-500 dark:text-[#B1B5C4]">
@@ -79,7 +92,9 @@ const ProfilePage = () => {
                     </h1>
                     <div className="border-b mt-5 border-gray-300 hidden md:flex dark:border-[#3B3E44] " />
                     <div className="flex justify-between mt-5">
-                      <h1 className="text-[20px] md:text">Hi, I'm John Doe</h1>
+                      <h1 className="text-[20px] md:text">
+                        Hi, I'm {data?.firstName} {data?.lastName}
+                      </h1>
                       <button className="border-2 border-gray-300 rounded-3xl text-[10px] md:text-[14px] px-3 py-1 dark:border-[#3B3E44]">
                         Edit your Profile
                       </button>
@@ -95,7 +110,7 @@ const ProfilePage = () => {
                           <input
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
-                            placeholder="..."
+                            name="..."
                           />
                         </div>
                       </div>
@@ -124,7 +139,7 @@ const ProfilePage = () => {
                           <input
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
-                            placeholder="..."
+                            defaultValue={data?.email}
                           />
                         </div>
                       </div>
@@ -165,6 +180,12 @@ const ProfilePage = () => {
       </>
     );
   }
+
+  useEffect(() => {
+    if (!session) {
+      router.push('/');
+    }
+  }, [session]);
 };
 
 export default ProfilePage;
