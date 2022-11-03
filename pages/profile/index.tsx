@@ -101,7 +101,7 @@ const ProfilePage = () => {
                     <div className="border-b mt-5 border-gray-300 hidden md:flex dark:border-[#3B3E44] " />
                     <div className="flex justify-between mt-5">
                       <h1 className="text-[20px] md:text">
-                        Hi, I'm {data?.firstName} {data?.lastName}
+                        Hi, I&apos;m {data?.firstName} {data?.lastName}
                       </h1>
                       <button className="border-2 border-gray-300 rounded-3xl text-[10px] md:text-[14px] px-3 py-1 dark:border-[#3B3E44]">
                         Edit your Profile
