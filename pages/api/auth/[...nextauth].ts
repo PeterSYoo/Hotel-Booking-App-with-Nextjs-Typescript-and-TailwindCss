@@ -4,8 +4,14 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import connectMongo from '../../../lib/usersConnect';
 import Users from '../../../model/Users';
 import { compare } from 'bcryptjs';
+import { signIn } from 'next-auth/react';
+// @ts-ignore
+import clientPromise from '../../../lib/mongoAuthAdapter';
+import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
 
 export const authOptions = {
+  // @ts-ignore
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
       // @ts-ignore
@@ -45,6 +51,15 @@ export const authOptions = {
       },
     }),
   ],
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }: any) {
+      return true;
+    },
+    async session({ session, user }: any) {
+      session.id = user.id;
+      return session;
+    },
+  },
   secret: process.env.NEXT_PUBLIC_SECRET,
 };
 
