@@ -19,9 +19,9 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (!session) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       router.push('/');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
 
   const userId = session.id;
