@@ -1,20 +1,18 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const connectMongo = async () => {
+const DB_URL: any = process.env.NEXT_PUBLIC_MONGO_URL_USERDB;
+
+const usersConnect = async () => {
   try {
-    // @ts-ignore
-    const { connection } = await mongoose.connect(
-      // @ts-ignore
-      process.env.NEXT_PUBLIC_MONGO_URL_USERDB
-    );
-
-    // 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
-    if (connection.readyState === 1) {
-      return Promise.resolve(true);
+    if (mongoose.connection.readyState >= 1) {
+      // if connection is open return the instance of the databse for cleaner queries
+      return mongoose.connection.db;
     }
+
+    return mongoose.connect(DB_URL);
   } catch (error) {
     return Promise.reject(error);
   }
 };
 
-export default connectMongo;
+export default usersConnect;
