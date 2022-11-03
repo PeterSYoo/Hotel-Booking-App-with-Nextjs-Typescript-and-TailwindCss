@@ -2,7 +2,10 @@
 import cardsConnect from '../../../../lib/cardsConnect';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function featuredDestinations(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { method } = req;
 
   // @ts-ignore

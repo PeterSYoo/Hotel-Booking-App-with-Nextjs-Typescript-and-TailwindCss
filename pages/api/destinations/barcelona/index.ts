@@ -2,7 +2,10 @@
 import destinationsConnect from '../../../../lib/destinationsConnect';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function barcelona(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { method } = req;
 
   // @ts-ignore

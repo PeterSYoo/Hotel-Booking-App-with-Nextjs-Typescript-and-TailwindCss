@@ -7,7 +7,7 @@ import {
   putTests,
 } from '../../../lib/testsController';
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function tests(req: NextApiRequest, res: NextApiResponse) {
   testConnect().catch(() =>
     res.status(405).json({ error: 'Error in the connection' })
   );
