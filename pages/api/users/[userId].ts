@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getUser, putUser } from '../../../lib/usersController';
 import Users from '../../../model/Users';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function (req: NextApiRequest, res: NextApiResponse) {
   usersConnect().catch(() => {
     res.status(405).json({ error: 'Error in connecting to users databse' });
   });
@@ -22,4 +22,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(405).end(`Method ${method} Not Allowed`);
       break;
   }
-};
+}
