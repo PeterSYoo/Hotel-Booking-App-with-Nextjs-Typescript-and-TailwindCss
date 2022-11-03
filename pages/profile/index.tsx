@@ -110,7 +110,7 @@ const ProfilePage = () => {
                           <input
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
-                            name="..."
+                            defaultValue={data?.cityState}
                           />
                         </div>
                       </div>
@@ -123,7 +123,7 @@ const ProfilePage = () => {
                           <input
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
-                            placeholder="..."
+                            defaultValue={data?.streetAddress}
                           />
                         </div>
                       </div>
@@ -166,7 +166,7 @@ const ProfilePage = () => {
                           <input
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
-                            placeholder="..."
+                            defaultValue={data?.gender}
                           />
                         </div>
                       </div>
