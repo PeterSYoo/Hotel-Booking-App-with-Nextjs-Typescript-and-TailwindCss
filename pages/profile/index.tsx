@@ -15,9 +15,9 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 
 const ProfilePage = () => {
   const { data: session }: any = useSession();
-  const router = useRouter();
 
   useEffect(() => {
+    const router = useRouter();
     if (!session) {
       router.push('/');
     }
