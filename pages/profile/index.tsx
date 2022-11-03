@@ -17,17 +17,15 @@ const ProfilePage = () => {
   const { data: session }: any = useSession();
   const router = useRouter();
 
+  const { isLoading, isError, data, error } = useQuery(['user'], () =>
+    getUser(session.id)
+  );
+
   useEffect(() => {
     if (!session) {
       router.push('/');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session]);
-
-  const userId = session.id;
-  const { isLoading, isError, data, error } = useQuery(['user'], () =>
-    getUser(userId)
-  );
+  }, []);
 
   if (session) {
     // const { mutateAsync, isLoading: isMutating } = useMutation(updateUser);
