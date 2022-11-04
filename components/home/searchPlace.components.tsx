@@ -5,12 +5,16 @@ import {
 } from "react-icons/ri";
 import { AiOutlineSwap } from "react-icons/ai";
 
-export const SearchPlace = () => {
+type AppProps = {
+  isHome: boolean
+}
+
+export const SearchPlace = ({isHome}:AppProps) => {
   return (
     <>
       {/* Search Component */}
       {/* Desktop */}
-      <section className="-mt-[125px] mx-[20px] mb-10 hidden md:block">
+      <section className=" mx-[20px] mb-10 hidden md:block" style={isHome ? {marginTop: '-152px'} : {marginTop: '0'}}>
         {/* Search Form */}
         <form>
           <div className="w-full bg-white rounded-xl px-[60px] py-[30px] drop-shadow-2xl dark:bg-[#222529]">
@@ -104,7 +108,7 @@ export const SearchPlace = () => {
 
       {/* Search Component */}
       {/* Mobile */}
-      <section className="-mt-[245px] mx-[20px] mb-10 md:hidden">
+      <section className="-mt-[245px] mx-[20px] mb-10 md:hidden" style={isHome ? {marginTop: '-152px'} : {marginTop: '0'}}>
         {/* Search Form */}
         <form>
           <div className="w-full bg-white rounded-xl px-[20px] py-[20px] drop-shadow-2xl dark:bg-[#222529]">
