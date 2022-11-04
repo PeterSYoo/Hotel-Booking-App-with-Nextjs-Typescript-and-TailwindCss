@@ -1,6 +1,13 @@
 const BASE_URL = 'http://localhost:3000';
 const VERCEL_URL = 'https://hotel-booking-app-tau.vercel.app';
 
+export const getUsers = async () => {
+  const response = await fetch(`${VERCEL_URL}/api/users`);
+  const json = await response.json();
+
+  return json;
+};
+
 export const getUser = async (userId: any) => {
   const response = await fetch(`${VERCEL_URL}/api/users/${userId}`);
   const json = await response.json();
