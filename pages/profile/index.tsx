@@ -2,23 +2,41 @@ import { unstable_getServerSession } from 'next-auth';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { FiCheck } from 'react-icons/fi';
 import { BiEditAlt } from 'react-icons/bi';
 import { BsHouseDoor, BsGenderMale } from 'react-icons/bs';
 import { AiOutlineMail } from 'react-icons/ai';
 import { MdOutlineCake } from 'react-icons/md';
-import { getUser, updateUser } from '../../lib/usersHelper';
-import { useForm } from 'react-hook-form';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { FiUser } from 'react-icons/fi';
+import { getUser, getUsers, updateUser } from '../../lib/usersHelper';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+
+const formReducer = (state: any, event: any) => {
+  return {
+    ...state,
+    [event.target.name]: event.target.value,
+  };
+};
 
 const ProfilePage = () => {
+  const queryClient = useQueryClient();
+  const [formData, setFormData] = useReducer(formReducer, {});
   const { data: session }: any = useSession();
   const router = useRouter();
 
-  const { isLoading, isError, data, error } = useQuery(['user'], () =>
+  const { data, isLoading, isError, error } = useQuery(['user'], () =>
     getUser(session.id)
+  );
+
+  const UpdateMutation = useMutation(
+    (newData: any) => updateUser(session.id, newData),
+    {
+      onSuccess: async (data: any) => {
+        queryClient.prefetchQuery(['user'], getUsers);
+      },
+    }
   );
 
   useEffect(() => {
@@ -27,14 +45,31 @@ const ProfilePage = () => {
     }
   }, []);
 
+  if (isLoading) return '';
+
+  if (isError) {
+    // @ts-ignore
+    return <div>Error {error.message}</div>;
+  }
+
+  const {
+    firstName,
+    lastName,
+    cityState,
+    streetAddress,
+    email,
+    dateOfBirth,
+    gender,
+  } = data;
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    let updated = Object.assign({}, data, formData);
+    UpdateMutation.mutate(updated);
+    router.reload();
+  };
+
   if (session) {
-    // const { mutateAsync, isLoading: isMutating } = useMutation(updateUser);
-
-    // const onFormSubmit = async (data: any) => {
-    //   await mutateAsync({ ...data, id });
-    //   router.push('/profile');
-    // };
-
     // console.log(session);
     console.log(data);
 
@@ -54,12 +89,21 @@ const ProfilePage = () => {
               <aside className="col-start-1 col-span-4 border-2 bg-white rounded-lg dark:bg-[#222529] dark:border-[#3B3E44]">
                 <div className="flex flex-col">
                   <div className="max-w-[170px] max-h-[170px] mx-auto mt-5">
-                    <Image
-                      src={data?.image}
-                      width={170}
-                      height={170}
-                      alt={'profile image'}
-                    />
+                    {data?.image ? (
+                      <Image
+                        src={data?.image}
+                        width={170}
+                        height={170}
+                        alt={'profile image'}
+                      />
+                    ) : (
+                      <Image
+                        src="https://via.placeholder.com/170"
+                        width={170}
+                        height={170}
+                        alt={'profile image'}
+                      />
+                    )}
                   </div>
                   <h1 className="mx-auto text-3xl mt-3 font-bold">
                     {data?.firstName} {data?.lastName}
@@ -91,7 +135,7 @@ const ProfilePage = () => {
               </aside>
               {/* Col 2 */}
               <aside className="col-start-5 col-span-8">
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="flex flex-col md:mx-9">
                     <h1 className="hidden md:flex text-[48px] font-semibold">
                       My Profile
@@ -105,6 +149,41 @@ const ProfilePage = () => {
                         Edit your Profile
                       </button>
                     </div>
+                    {/* First Name | Last Name */}
+                    <div className="flex flex-col md:flex-row justify-between mt-4 gap-4 md:gap-8">
+                      <div className="flex flex-col md:w-1/2 w-full">
+                        <span className="text-gray-500 font-bold">
+                          First Name
+                        </span>
+                        <div className="border border-gray-300 rounded-md px-2 flex items-center gap-2 py-2 mt-2 dark:border-[#3B3E44]">
+                          <FiUser />
+                          <input
+                            onChange={setFormData}
+                            className="bg-transparent focus:outline-none text-[14px] w-full"
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            defaultValue={data?.firstName}
+                          />
+                        </div>
+                      </div>
+                      <div className="flex flex-col w-full md:w-1/2">
+                        <span className="text-gray-500 font-bold">
+                          Last Name
+                        </span>
+                        <div className="border border-gray-300 rounded-md px-2 flex items-center gap-2 py-2 mt-2 dark:border-[#3B3E44]">
+                          <FiUser />
+                          <input
+                            onChange={setFormData}
+                            id="lastName"
+                            name="lastName"
+                            className="bg-transparent focus:outline-none text-[14px] w-full"
+                            type="text"
+                            defaultValue={data?.lastName}
+                          />
+                        </div>
+                      </div>
+                    </div>
                     {/* Lives in | Street Address */}
                     <div className="flex flex-col md:flex-row justify-between mt-4 gap-4 md:gap-8">
                       <div className="flex flex-col md:w-1/2 w-full">
@@ -114,8 +193,11 @@ const ProfilePage = () => {
                         <div className="border border-gray-300 rounded-md px-2 flex items-center gap-2 py-2 mt-2 dark:border-[#3B3E44]">
                           <BsHouseDoor />
                           <input
+                            onChange={setFormData}
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
+                            id="cityState"
+                            name="cityState"
                             defaultValue={data?.cityState}
                           />
                         </div>
@@ -127,6 +209,9 @@ const ProfilePage = () => {
                         <div className="border border-gray-300 rounded-md px-2 flex items-center gap-2 py-2 mt-2 dark:border-[#3B3E44]">
                           <BsHouseDoor />
                           <input
+                            onChange={setFormData}
+                            id="streetAddress"
+                            name="streetAddress"
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
                             defaultValue={data?.streetAddress}
@@ -143,6 +228,9 @@ const ProfilePage = () => {
                         <div className="border border-gray-300 rounded-md px-2 flex items-center gap-2 py-2 mt-2 dark:border-[#3B3E44]">
                           <AiOutlineMail />
                           <input
+                            onChange={setFormData}
+                            id="email"
+                            name="email"
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
                             defaultValue={data?.email}
@@ -170,6 +258,9 @@ const ProfilePage = () => {
                         <div className="border border-gray-300 rounded-md px-2 flex items-center gap-2 py-2 mt-2 dark:border-[#3B3E44]">
                           <BsGenderMale />
                           <input
+                            onChange={setFormData}
+                            id="gender"
+                            name="gender"
                             className="bg-transparent focus:outline-none text-[14px] w-full"
                             type="text"
                             defaultValue={data?.gender}
