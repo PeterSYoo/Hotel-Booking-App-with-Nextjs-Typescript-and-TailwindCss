@@ -1,7 +1,6 @@
 import usersConnect from '../../../lib/usersConnect';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getUser, putUser } from '../../../lib/usersController';
-import Users from '../../../model/Users';
 
 export default async function userId(
   req: NextApiRequest,
