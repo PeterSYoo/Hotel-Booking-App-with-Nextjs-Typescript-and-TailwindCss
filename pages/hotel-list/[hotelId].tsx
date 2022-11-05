@@ -1,4 +1,3 @@
-import { useRouter } from "next/router"
 import BookingHeader from "../../components/bookingHeader.components"
 import Image from "next/image"
 import {AiFillStar} from 'react-icons/ai'
@@ -9,9 +8,7 @@ import {CgFlagAlt} from 'react-icons/cg'
 
 const HotelDetails = () => {
 
-  const router = useRouter()
 
-  if(router.isFallback) return <h1>Loading...</h1>
 
   return (
     <>
