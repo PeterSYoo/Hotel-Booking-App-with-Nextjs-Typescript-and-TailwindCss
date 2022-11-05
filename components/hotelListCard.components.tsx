@@ -107,6 +107,7 @@ const HotelListCard = ({imgPath, headline, rating, amountOfRating, city, country
       <div className="image-wrapper">
           <Image 
             src={imgPath}
+            alt={hotelName}
             width={450}
             height={450}
             objectFit="contain"

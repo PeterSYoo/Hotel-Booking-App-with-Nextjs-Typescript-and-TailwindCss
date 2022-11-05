@@ -25,7 +25,7 @@ const HotelList = () => {
     if (!session) {
       router.push('/');
     }
-  }, [session]);
+  }, []);
 
   const {data: places, isInitialLoading} = useQuery(['hotel-data'], fetchHotelData)
 
@@ -53,6 +53,7 @@ const HotelList = () => {
               amenities={place.amenities}
               price={place.price}
               hotelName={place.hotelName}
+              key={place.hotelName}
             />
           ))}
         <div className="view-all-button my-4">

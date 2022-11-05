@@ -35,6 +35,7 @@ const HotelDetails = () => {
             <div className="w-250 h-207">
               <Image 
                 src="https://unsplash.it/300/200"
+                alt="Placeholder Image"
                 width={300}
                 height={200}
               />
@@ -44,6 +45,7 @@ const HotelDetails = () => {
             <div className="w-250 h-207">
               <Image 
                 src="https://unsplash.it/300/200"
+                alt="Placeholder Image"
                 width={300}
                 height={200}
               />
@@ -53,6 +55,7 @@ const HotelDetails = () => {
             <div className="w-250 h-207">
               <Image 
                 src="https://unsplash.it/300/200"
+                alt="Placeholder Image"
                 width={300}
                 height={200}
               />
@@ -62,6 +65,7 @@ const HotelDetails = () => {
             <div className="w-250 h-207">
               <Image 
                 src="https://unsplash.it/300/200"
+                alt="Placeholder Image"
                 width={300}
                 height={200}
               />
