@@ -32,7 +32,7 @@ const User = () => {
     <>
       <div className="font-dmSans bg-sectionBg dark:bg-[#141416]">
         <Hero />
-        <SearchPlace />
+        <SearchPlace isHome={true}/>
         <SearchABestPlace />
         <TopTour />
         <ExploreTheWorld />
