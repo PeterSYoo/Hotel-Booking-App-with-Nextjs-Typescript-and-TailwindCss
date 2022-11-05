@@ -25,7 +25,7 @@ const HotelList = () => {
     if (!session) {
       router.push('/');
     }
-  }, []);
+  }, [session, router]);
 
   const {data: places, isInitialLoading} = useQuery(['hotel-data'], fetchHotelData)
 
