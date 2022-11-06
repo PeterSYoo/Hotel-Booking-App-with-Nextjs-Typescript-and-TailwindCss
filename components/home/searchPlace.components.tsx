@@ -94,7 +94,7 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                   <input
                     type="text"
                     name="destination"
-                    value={searchQuery? searchQuery : ''}
+                    value={inputValue}
                     className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
                     placeholder="Where are you going?"
                     required
