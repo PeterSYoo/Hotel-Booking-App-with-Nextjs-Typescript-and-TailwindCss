@@ -3,7 +3,7 @@ import { BsFillSunFill, BsMoonStars } from 'react-icons/bs';
 import { applyThemePreference } from '../applyThemePreference';
 import useThemeStore from '../stores/useThemeStore';
 
-export default function () {
+export default function ThemeButton() {
   const toggleTheme = useThemeStore((state: any) => state.toggleTheme);
   const theme = useThemeStore((state: any) => state.theme);
 
