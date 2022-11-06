@@ -16,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Hydrate state={pageProps.dehydratedState}>
         <SessionProvider session={pageProps.session}>
           <Layout>
-            <Component {...pageProps} />
+            <div className="max-w-[1440px] mx-auto">
+              <Component {...pageProps} />
+            </div>
           </Layout>
         </SessionProvider>
       </Hydrate>
