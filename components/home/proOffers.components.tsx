@@ -35,7 +35,7 @@ export const ProOffers = () => {
 
       {/* Mobile */}
       {/* Get our pro offers */}
-      <section className="max-w-[375px] mx-auto -mb-12 mt-[30px] md:hidden">
+      <section className="max-w-[375px] mx-auto mb-10 mt-1 md:hidden">
         {/* Card */}
         <section className="flex flex-col justify-between w-[335px] h-[174px] rounded-2xl mb-[20px] mx-auto bg-[url('/img/offers-bg.png')] bg-blue-600 px-[20px] py-[14px]">
           <div className="">
