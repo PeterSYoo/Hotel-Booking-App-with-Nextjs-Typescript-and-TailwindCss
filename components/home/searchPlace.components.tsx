@@ -97,6 +97,7 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                     value={inputValue}
                     className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
                     placeholder="Where are you going?"
+                    onChange={(e) => setInputValue(e.target.value)}
                     required
                   />
                 </div>
@@ -186,6 +187,7 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                 onChange={(e) => setInputValue(e.target.value)}
                 className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
                 placeholder="Where are you from?"
+                required
               />
             </div>
             <div className="flex justify-between gap-[10px] mt-[10px]">
