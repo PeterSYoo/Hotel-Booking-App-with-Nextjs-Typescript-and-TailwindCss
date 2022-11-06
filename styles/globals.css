@@ -18,7 +18,7 @@
 
 @layer base {
   body {
-    @apply max-w-[1440px] mx-auto bg-[#FAFAFB];
+    @apply bg-[#FAFAFB];
     @apply transition-all duration-100;
     @apply dark:bg-[#141416] dark:transition-all dark:duration-100 dark:text-white;
   }
