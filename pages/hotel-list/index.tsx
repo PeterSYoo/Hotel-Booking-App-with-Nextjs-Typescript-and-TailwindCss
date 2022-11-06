@@ -69,7 +69,7 @@ const HotelList = () => {
             ))
 
           ) : (
-            <h2>Sorry, we didn't find anything there. Please enter a different location.</h2>
+            <h2>Sorry, we did not find anything there. Please enter a different location.</h2>
           )}
         <div className="view-all-button my-4">
           <Button version='clear'>+ View All</Button>
