@@ -1,3 +1,5 @@
+import React, { useState } from 'react'
+import { useRouter } from "next/router";
 import {
   RiHotelBedFill,
   RiFlightTakeoffFill,
@@ -6,17 +8,48 @@ import {
 import { AiOutlineSwap } from "react-icons/ai";
 
 type AppProps = {
-  isHome: boolean
+  isHome: boolean;
+  searchQuery?: string;
 }
 
-export const SearchPlace = ({isHome}:AppProps) => {
+export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
+  const [inputValue, setInputValue] = useState(searchQuery)
+  const router = useRouter()
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+
+    const data = {
+      destination: e.target.destination.value
+    }
+
+    const JSONdata = JSON.stringify(data)
+
+    const endpoint = '/api/forms/destination'
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSONdata,
+    }
+
+    const response = await fetch(endpoint, options)
+    const result = await response.json()
+    router.push({
+      pathname: '/hotel-list',
+      query: {dest: result.data}
+    })
+
+  }
+
   return (
     <>
       {/* Search Component */}
       {/* Desktop */}
       <section className=" mx-[20px] mb-10 hidden md:block" style={isHome ? {marginTop: '-152px'} : {marginTop: '0'}}>
         {/* Search Form */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="w-full bg-white rounded-xl px-[60px] py-[30px] drop-shadow-2xl dark:bg-[#222529]">
             <div className="flex justify-between">
               <div className="w-3/4">
@@ -60,8 +93,11 @@ export const SearchPlace = ({isHome}:AppProps) => {
                   <h1 className="text-[18px]">Location</h1>
                   <input
                     type="text"
+                    name="destination"
+                    value={inputValue}
                     className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
-                    placeholder="Where are you from?"
+                    placeholder="Where are you going?"
+                    required
                   />
                 </div>
                 <div className="flex items-center -mx-3 mt-4 z-10">
@@ -110,7 +146,7 @@ export const SearchPlace = ({isHome}:AppProps) => {
       {/* Mobile */}
       <section className="-mt-[245px] mx-[20px] mb-10 md:hidden" style={isHome ? {marginTop: '-152px'} : {marginTop: '0'}}>
         {/* Search Form */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="w-full bg-white rounded-xl px-[20px] py-[20px] drop-shadow-2xl dark:bg-[#222529]">
             <div className="flex justify-between items-center">
               <div className="flex justify-between items-center gap-1">
@@ -145,6 +181,9 @@ export const SearchPlace = ({isHome}:AppProps) => {
               <h1 className="text-[16px]">Location</h1>
               <input
                 type="text"
+                name="destination"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
                 className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
                 placeholder="Where are you from?"
               />
