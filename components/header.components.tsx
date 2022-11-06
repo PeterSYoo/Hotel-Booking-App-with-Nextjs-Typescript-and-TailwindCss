@@ -9,7 +9,11 @@ import useSignupModal from '../hooks/useSignupModal';
 import Button from './button.components';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { ThemeButton } from './theme-button.components';
+
+const ThemeButton = dynamic(
+  () => import('../components/theme-button.components') as any,
+  { ssr: false }
+);
 
 // Guest
 const Guest = () => {
@@ -39,18 +43,24 @@ const Guest = () => {
           <div className="hidden gap-x-8 items-center md:flex">
             <ThemeButton />
             <div className="border-r h-[32px] w-[1px] mx-1 dark:border-gray-700" />
-            <div className="text-xl font-bold">
-              <button onClick={() => setOpenLogin(true)}>Login</button>
-            </div>
+            <button
+              onClick={() => setOpenLogin(true)}
+              className="text-xl font-bold"
+            >
+              Login
+            </button>
             {/* <Button onClick={() => setOpenSignup(true)}>signup</Button> */}
           </div>
           {/* Mobile */}
           <div className="flex gap-x-4 items-center md:hidden">
             <ThemeButton />
             <div className="border-r h-[32px] w-[1px] mx-1 dark:border-gray-700" />
-            <div className="text-base">
-              <button onClick={() => setOpenLogin(true)}>Login</button>
-            </div>
+            <button
+              onClick={() => setOpenLogin(true)}
+              className="text-base font-bold"
+            >
+              Login
+            </button>
             {/* <button
             onClick={() => setOpenSignup(true)}
             className="text-base text-white bg-blueBtn px-2 py-1 rounded-xl"
@@ -107,11 +117,8 @@ const User = ({ session }: any) => {
                 </Link>
               </button>
               <div className="border-r h-[32px] w-[1px] mx-1 dark:border-gray-700" />
-              <button
-                onClick={() => signOut()}
-                className="text-md text-white bg-red-500 px-2 py-1 rounded-xl"
-              >
-                signout
+              <button onClick={() => signOut()} className="text-xl font-bold">
+                Sign out
               </button>
             </div>
           </div>
@@ -136,11 +143,8 @@ const User = ({ session }: any) => {
                 </Link>
               </button>
               <div className="border-r h-[32px] w-[1px] mx-1 dark:border-gray-700" />
-              <button
-                onClick={() => signOut()}
-                className="text-md text-white bg-red-500 px-2 py-1 rounded-xl"
-              >
-                signout
+              <button onClick={() => signOut()} className="text-base font-bold">
+                Sign out
               </button>
             </div>
           </div>

@@ -1,12 +1,16 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { ThemeButton } from './theme-button.components';
+
+const ThemeButton = dynamic(
+  () => import('../components/theme-button.components') as any,
+  { ssr: false }
+);
 
 const Footer = () => {
   return (
     <>
       <section className="bg-footerBg font-dmSans dark:bg-[#222529]">
-        <div className="pt-10 px-8 pb-8 md:px-48 md:pt-44 md:pb-32 md:flex md:justify-between md:gap-10">
+        <div className="pt-10 pb-8 md:px-48 md:pt-44 md:pb-32 md:flex md:justify-between md:gap-10">
           <div className="md:w-[1440px] md:max-w-[1440px] mx-auto md:flex justify-between px-10">
             <div className="hidden flex-col w-64 md:flex">
               <div className="items-center md:flex">
@@ -20,7 +24,7 @@ const Footer = () => {
                   Making sure in finding the best place for you to travel
                 </span>
               </div>
-              <div className="bg-white rounded-lg dark:bg-[#3B3E44] mt-5 pt-2 px-3 w-12">
+              <div className="mt-10">
                 <ThemeButton />
               </div>
             </div>
@@ -45,7 +49,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="md:hidden border-b border-gray-700 my-5"></div>
+            <div className="md:hidden border-b border-gray-300 dark:border-gray-700 my-5"></div>
             {/* Support - Desktop/Mobile */}
             <div className="">
               <ul className="flex flex-col gap-3.5">
@@ -67,7 +71,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="md:hidden border-b border-gray-700 my-5"></div>
+            <div className="md:hidden border-b border-gray-300 dark:border-gray-700 my-5"></div>
             {/* Business - Desktop/Mobile */}
             <div>
               <ul className="flex flex-col gap-3.5">
@@ -89,14 +93,15 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+            <div className="md:hidden border-b border-gray-300 dark:border-gray-700 my-5"></div>
             {/* Mobile */}
-            <div className="pt-7 flex items-center md:hidden">
-              <Image src="/img/logo.png" alt="" width="24" height="24" />
-              <span className="text-xs font-openSans font-bold pl-2.5">
-                TripGuide
-              </span>
-            </div>
-            <div className="bg-white rounded-lg dark:bg-[#3B3E44] mt-5 pt-2 px-3 w-12 md:hidden">
+            <div className="mt-5 mb-5 flex items-center md:hidden justify-between">
+              <div className="flex items-center">
+                <Image src="/img/logo.png" alt="" width="24" height="24" />
+                <span className="text-xs font-openSans font-bold pl-2.5">
+                  TripGuide
+                </span>
+              </div>
               <ThemeButton />
             </div>
           </div>
