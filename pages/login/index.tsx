@@ -43,14 +43,14 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
   // Google handler function
   const handleGoogleSignin = async () => {
     signIn('google', {
-      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_BASE_URL,
+      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_VERCEL_URL,
     });
   };
 
   // GitHub handler function
   const handleGithubSignin = async () => {
     signIn('github', {
-      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_BASE_URL,
+      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_VERCEL_URL,
     });
   };
 
@@ -90,7 +90,7 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
                 </svg>
               </button>
             </div>
-            <h1 className="text-center text-[30px] font-bold">Welcome Back!</h1>
+            <h1 className="text-center text-[30px] font-bold">Login</h1>
 
             {/* Form */}
             <form onSubmit={formik.handleSubmit}>
@@ -193,6 +193,19 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
                 </div>
               </div> */}
             </form>
+            <div className="mt-5 grid grid-cols-12 px-1">
+              <div className="col-start-1 col-span-1 pt-1">
+                <span className="text-xs">*</span>
+              </div>
+              <div className="col-start-2 col-span-11 leading-snug">
+                <span className="text-xs">
+                  If you are using the same email address across different
+                  providers, you must login with the original provider you 1st
+                  logged in with. If not, you can login with any provider for
+                  your 1st login.
+                </span>
+              </div>
+            </div>
           </div>
         </section>
       </div>
