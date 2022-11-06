@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { unstable_getServerSession } from 'next-auth';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -17,6 +17,7 @@ const fetchHotelData = () => {
 }
 
 const HotelList = () => {
+  const [query, setQuery] = useState<any | null>(null)
 
   const { data: session }: any = useSession();
   const router = useRouter();
@@ -25,37 +26,51 @@ const HotelList = () => {
     if (!session) {
       router.push('/');
     }
-  }, [session, router]);
+    setQuery(router.query.dest)
+  }, [session, router, query]);
 
   const {data: places, isInitialLoading} = useQuery(['hotel-data'], fetchHotelData)
 
   if(session) {
     if(isInitialLoading) return <h2>Loading...</h2>
-  
-    console.log(places?.data.newyork)
+
+    const searchedDestination = query.replace(/ /g, '').toLowerCase()
+    const checkDestination = (obj: {}, searchString: string) => {
+      if(Object.keys(obj).find(el => el === searchString) !== undefined)  {
+        return true
+      } else {
+        return false
+      }
+    }
   
     return (
       <>
         <BookingHeader crumbs={['Hotel-list']} />
-        <SearchPlace isHome={false}/>
+        <SearchPlace isHome={false} searchQuery={query}/>
         <div className="hotel-list flex flex-col justify-center items-center p-3 gap-4 md:items-center">
+          <h1 className='font-bold text-4xl capitalize text-slate-700'>{query}</h1>
           {/* CARD COMPOENT */}
-          {places?.data?.newyork?.map((place: any) => (
-            <HotelListCard 
-              imgPath={place.images[0]}
-              headline={place.name}
-              rating={place.ratings}
-              amountOfRating={place.amountOfRating}
-              city={place.city}
-              country={place.country}
-              bookingStart={place.bookingStart}
-              bookingEnd={place.bookingEnd}
-              amenities={place.amenities}
-              price={place.price}
-              hotelName={place.hotelName}
-              key={place.hotelName}
-            />
-          ))}
+          {checkDestination(places.data, searchedDestination) ? (
+            places?.data[`${searchedDestination}`].map((place: any) => (
+              <HotelListCard 
+                imgPath={place.images[0]}
+                headline={place.name}
+                rating={place.ratings}
+                amountOfRating={place.amountOfRating}
+                city={place.city}
+                country={place.country}
+                bookingStart={place.bookingStart}
+                bookingEnd={place.bookingEnd}
+                amenities={place.amenities}
+                price={place.price}
+                hotelName={place.hotelName}
+                key={place.hotelName}
+              />
+            ))
+
+          ) : (
+            <h2>Sorry, we didn't find anything there. Please enter a different location.</h2>
+          )}
         <div className="view-all-button my-4">
           <Button version='clear'>+ View All</Button>
         </div>
