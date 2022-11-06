@@ -12,7 +12,8 @@ import { MdOutlineCake } from 'react-icons/md';
 import { FiUser } from 'react-icons/fi';
 import { getUser, getUsers, updateUser } from '../../lib/usersHelper';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import moment from 'moment';
+
+const moment = require('moment');
 
 /* Create an object inside our useReducer hook. Our key is the name prop in 
 our input, and value is the value prop in input. */
