@@ -18,15 +18,20 @@ const fetchHotelData = () => {
 
 const HotelList = () => {
   const [query, setQuery] = useState<any | null>(null);
+  const [checkIn, setCheckIn] = useState<any | null>(null)
+  const [checkOut, setCheckOut] = useState<any | null>(null)
 
   const { data: session }: any = useSession();
   const router = useRouter();
 
   useEffect(() => {
-    if (!session) {
-      router.push('/');
-    }
+    // if (!session) {
+    //   router.push('/');
+    // }
+    console.log(router.query)
     setQuery(router.query.dest);
+    setCheckIn(router.query.checkIn)
+    setCheckOut(router.query.checkOut)
   }, [session, router, query]);
 
   const { data: places, isInitialLoading } = useQuery(
@@ -34,7 +39,7 @@ const HotelList = () => {
     fetchHotelData
   );
 
-  if (session) {
+  if (true) {
     if (isInitialLoading) return <h2>Loading...</h2>;
 
     const searchedDestination = query.replace(/ /g, '').toLowerCase();
@@ -64,8 +69,8 @@ const HotelList = () => {
                 amountOfRating={place.amountOfRating}
                 city={place.city}
                 country={place.country}
-                bookingStart={place.bookingStart}
-                bookingEnd={place.bookingEnd}
+                bookingStart={checkIn}
+                bookingEnd={checkOut}
                 amenities={place.amenities}
                 price={place.price}
                 hotelName={place.hotelName}
