@@ -101,7 +101,6 @@ const handleIcons = (amenity: string) => {
 
 
 const HotelListCard = ({imgPath, headline, rating, amountOfRating, city, country, bookingStart, bookingEnd, amenities, price, hotelName, clickRoute}: AppProps) => {
-  console.log(amenities)
   return (
     <div className="flex flex-col justify-around items-center border border-[#e7ecf3] rounded-3xl p-3 md:flex-row md:w-full md:max-w-4xl">
       <div className="image-wrapper">

@@ -19,8 +19,11 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
     e.preventDefault()
 
     const data = {
-      destination: e.target.destination.value
+      destination: e.target.destination.value,
+      checkIn: e.target.checkIn.value,
+      checkOut: e.target.checkOut.value
     }
+    console.log("THE DATA", data)
 
     const JSONdata = JSON.stringify(data)
 
@@ -36,9 +39,10 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
 
     const response = await fetch(endpoint, options)
     const result = await response.json()
+    console.log(result, 'result')
     router.push({
       pathname: '/hotel-list',
-      query: {dest: result.data}
+      query: {dest: result.data.destination, checkIn: result.data.checkIn, checkOut: result.data.checkOut}
     })
 
   }
@@ -110,8 +114,9 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                   <h1 className="text-[18px]">Check in</h1>
                   <input
                     type="text"
+                    name='checkIn'
                     className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
-                    placeholder="Add Date"
+                    placeholder="dd.mm.yyyy"
                   />
                 </div>
                 <div className="flex items-center -mx-3 mt-4 z-10">
@@ -123,8 +128,9 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                   <h1 className="text-[18px]">Check out</h1>
                   <input
                     type="text"
+                    name='checkOut'
                     className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
-                    placeholder="Add Date"
+                    placeholder="dd.mm.yyyy"
                   />
                 </div>
               </div>
@@ -195,6 +201,7 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                 <h1 className="text-[16px]">Check in</h1>
                 <input
                   type="text"
+                  name='checkIn'
                   className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
                   placeholder="Add date"
                 />
@@ -203,6 +210,7 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                 <h1 className="text-[16px]">Check out</h1>
                 <input
                   type="text"
+                  name='checkOut'
                   className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
                   placeholder="Add date"
                 />
