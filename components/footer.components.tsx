@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <>
       <section className="bg-footerBg font-dmSans dark:bg-[#222529]">
-        <div className="pt-10 pb-8 md:px-48 md:pt-44 md:pb-32 md:flex md:justify-between md:gap-10">
+        <div className="pt-10 pb-8 md:px-5 md:pt-44 md:pb-32 md:flex md:justify-between md:gap-10">
           <div className="md:w-[1440px] md:max-w-[1440px] mx-auto md:flex justify-between px-10">
             <div className="hidden flex-col w-64 md:flex">
               <div className="items-center md:flex">
