@@ -54,7 +54,7 @@ export default Home;
 
 export const getServerSideProps = async (context: any) => {
   const local = 'http://localhost:3000';
-  const vercel = 'https://hotel-booking-app-tau.vercel.app';
+  const vercel = 'https://tripguide-mocha.vercel.app';
 
   const res = await fetch(`${vercel}/api/cards/best-places`, {
     method: 'GET',
