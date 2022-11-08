@@ -4,7 +4,8 @@ import {AiFillStar} from 'react-icons/ai'
 import {CiLocationOn, CiCalendar} from 'react-icons/ci'
 import {CgFlagAlt} from 'react-icons/cg'
 import {IoMdAirplane} from 'react-icons/io'
-import {Icons} from '../constants/icons'
+// import {Icons} from '../constants/icons'
+import {HandleIcons} from '../lib/iconHandler'
 
 type AppProps = {
   imgPath: string;
@@ -30,74 +31,74 @@ type Amenity = {
   name: string;
 }
 
-const handleIcons = (amenity: string) => {
-  switch(amenity) {
-    case "Kitchen":
-      return (
-        <>
-          {Icons.kitchen}<span>{amenity}</span>
-        </>
-      )
-    case "Refrigerator":
-      return (
-        <>
-          {Icons.refrigerator}<span>{amenity}</span>
-        </>
-      )
-    case "Washer":
-    case "Free washer":
-      return (
-        <>
-          {Icons.washer}<span>{amenity}</span>
-        </>
-      )
-    case "Hair dryer":
-      return (
-        <>
-          {Icons.hairDryer}<span>{amenity}</span>
-        </>
-      )
-    case "Security cameras":
-      return (
-        <>
-          {Icons.securityCameras}<span>{amenity}</span>
-        </>
-      )
-    case "Wifi":
-      return (
-        <>
-          {Icons.wifi}<span>{amenity}</span>
-        </>
-      )
-    case "EV charger":
-      return (
-        <>
-          {Icons.evCharger}<span>{amenity}</span>
-        </>
-      )
-    case "Elevator":
-      return (
-        <>
-          {Icons.elevator}<span>{amenity}</span>
-        </>
-      )
-    case "Courtyard view":
-      return (
-        <>
-          {Icons.courtyardView}<span>{amenity}</span>
-        </>
-      )
-    case "TV":
-    case "HDTV":
-      return (
-        <>
-          {Icons.tv}<span>{amenity}</span>
-        </>
-      )
-    default:
-      return <span>{amenity}</span>
-  }
-}
+// const handleIcons = (amenity: string) => {
+//   switch(amenity) {
+//     case "Kitchen":
+//       return (
+//         <>
+//           {Icons.kitchen}<span>{amenity}</span>
+//         </>
+//       )
+//     case "Refrigerator":
+//       return (
+//         <>
+//           {Icons.refrigerator}<span>{amenity}</span>
+//         </>
+//       )
+//     case "Washer":
+//     case "Free washer":
+//       return (
+//         <>
+//           {Icons.washer}<span>{amenity}</span>
+//         </>
+//       )
+//     case "Hair dryer":
+//       return (
+//         <>
+//           {Icons.hairDryer}<span>{amenity}</span>
+//         </>
+//       )
+//     case "Security cameras":
+//       return (
+//         <>
+//           {Icons.securityCameras}<span>{amenity}</span>
+//         </>
+//       )
+//     case "Wifi":
+//       return (
+//         <>
+//           {Icons.wifi}<span>{amenity}</span>
+//         </>
+//       )
+//     case "EV charger":
+//       return (
+//         <>
+//           {Icons.evCharger}<span>{amenity}</span>
+//         </>
+//       )
+//     case "Elevator":
+//       return (
+//         <>
+//           {Icons.elevator}<span>{amenity}</span>
+//         </>
+//       )
+//     case "Courtyard view":
+//       return (
+//         <>
+//           {Icons.courtyardView}<span>{amenity}</span>
+//         </>
+//       )
+//     case "TV":
+//     case "HDTV":
+//       return (
+//         <>
+//           {Icons.tv}<span>{amenity}</span>
+//         </>
+//       )
+//     default:
+//       return <span>{amenity}</span>
+//   }
+// }
 
 
 const HotelListCard = ({imgPath, headline, rating, amountOfRating, city, country, bookingStart, bookingEnd, amenities, price, hotelName, clickRoute}: AppProps) => {
@@ -141,7 +142,7 @@ const HotelListCard = ({imgPath, headline, rating, amountOfRating, city, country
               <div className="service flex flex-col justify-between items-start gap-3">
                 {amenities?.map((amenity: string) => (
                   <div key={amenity} className="wifi flex flex-row justify-center items-center gap-4">
-                    {handleIcons(amenity)}
+                    {HandleIcons(amenity)}
                   </div>
                 ))}
               </div>
