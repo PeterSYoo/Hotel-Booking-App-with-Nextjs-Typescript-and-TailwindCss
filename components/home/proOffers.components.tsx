@@ -19,14 +19,15 @@ export const ProOffers = () => {
               <div className="flex justify-between item-center -mt-[1px] pl-[9px]">
                 <input
                   type="text"
-                  className="w-[255px]"
+                  className="w-[255px] focus:outline-none dark:bg-white dark:text-black"
                   placeholder="Type your email here"
                 />
-                <input
+                <button
                   className="bg-gray-700 w-[130px] h-[55px] text-white text-[16px] font-bold rounded-md flex items-center justify-center"
                   type="submit"
-                  value="Subscribe"
-                />
+                >
+                  Subscribe
+                </button>
               </div>
             </form>
           </div>
@@ -52,14 +53,15 @@ export const ProOffers = () => {
                 <div className="flex justify-between item-center -mt-[1px]">
                   <input
                     type="text"
-                    className="w-[155px]"
+                    className="w-[155px] focus:outline-none dark:bg-white dark:text-black"
                     placeholder="Enter email..."
                   />
-                  <input
+                  <button
                     className="bg-gray-700 w-[120px] h-[44px] text-white text-[16px] font-bold rounded-md flex items-center justify-center"
                     type="submit"
-                    value="Subscribe"
-                  />
+                  >
+                    Subscribe
+                  </button>
                 </div>
               </form>
             </div>
