@@ -26,7 +26,7 @@ export default function ThemeButton() {
       return (
         <>
           <button onClick={() => setTheme('light')} type="button">
-            <BsFillSunFill size={25} />
+            <BsFillSunFill className="h-5 md:h-8" size={25} />
           </button>
         </>
       );
@@ -34,7 +34,7 @@ export default function ThemeButton() {
       return (
         <>
           <button onClick={() => setTheme('dark')} type="button">
-            <BsMoonStars size={25} />
+            <BsMoonStars className="h-5 md:h-8" size={25} />
           </button>
         </>
       );
