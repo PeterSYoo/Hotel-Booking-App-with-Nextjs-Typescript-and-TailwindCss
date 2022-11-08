@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { Footer } from './footer.components';
-import { Header } from './header.components';
+import { Footer } from './Footer.components';
+import { Header } from './Header.components';
 
 export const Layout = ({ children }: any) => {
   return (
