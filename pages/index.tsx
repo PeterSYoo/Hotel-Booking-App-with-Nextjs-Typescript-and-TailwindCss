@@ -1,14 +1,14 @@
 import type { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
 
-import { SearchABestPlace } from '../Components/home/SearchABestPlace.components';
-import { Hero } from '../Components/home/Hero.components';
-import { FeaturedDestinations } from '../Components/home/featured-destinations/FeaturedDestinations.components';
-import { TopTour } from '../Components/home/TopTour.components';
-import { ExploreTheWorld } from '../Components/home/explore-the-world/ExploreTheWorld.components';
-import { TrendingCities } from '../Components/home/TrendingCities.components';
-import { ProOffers } from '../Components/home/ProOffers.components';
-import { SearchPlace } from '../Components/home/SearchPlace.components';
+import { SearchABestPlace } from '../components/home/SearchABestPlace.components';
+import { Hero } from '../components/home/Hero.components';
+import { FeaturedDestinations } from '../components/home/featured-destinations/FeaturedDestinations.components';
+import { TopTour } from '../components/home/TopTour.components';
+import { ExploreTheWorld } from '../components/home/explore-the-world/ExploreTheWorld.components';
+import { TrendingCities } from '../components/home/TrendingCities.components';
+import { ProOffers } from '../components/home/ProOffers.components';
+import { SearchPlace } from '../components/home/SearchPlace.components';
 
 const Guest = () => {
   return (
