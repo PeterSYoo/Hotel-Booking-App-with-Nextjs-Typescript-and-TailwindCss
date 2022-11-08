@@ -9,7 +9,7 @@ import useSignupModal from '../hooks/useSignupModal';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const ThemeButton = dynamic(() => import('./ThemeButton.components') as any, {
+const ThemeButton = dynamic(() => import('./themeButton.components') as any, {
   ssr: false,
 });
 

@@ -1,14 +1,13 @@
 import type { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
-
-import { SearchABestPlace } from '../components/home/SearchABestPlace.components';
-import { Hero } from '../components/home/Hero.components';
-import { FeaturedDestinations } from '../components/home/featured-destinations/FeaturedDestinations.components';
-import { TopTour } from '../components/home/TopTour.components';
-import { ExploreTheWorld } from '../components/home/explore-the-world/ExploreTheWorld.components';
-import { TrendingCities } from '../components/home/TrendingCities.components';
-import { ProOffers } from '../components/home/ProOffers.components';
-import { SearchPlace } from '../components/home/SearchPlace.components';
+import { ExploreTheWorld } from '../components/home/explore-the-world/exploreTheWorld.components';
+import { FeaturedDestinations } from '../components/home/featured-destinations/featuredDestinations.components';
+import { Hero } from '../components/home/hero.components';
+import { ProOffers } from '../components/home/proOffers.components';
+import { SearchABestPlace } from '../components/home/searchABestPlace.components';
+import { SearchPlace } from '../components/home/searchPlace.components';
+import { TopTour } from '../components/home/topTour.components';
+import { TrendingCities } from '../components/home/trendingCities.components';
 
 const Guest = () => {
   return (

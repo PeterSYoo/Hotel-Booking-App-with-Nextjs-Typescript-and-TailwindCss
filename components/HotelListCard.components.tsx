@@ -5,7 +5,7 @@ import { CgFlagAlt } from 'react-icons/cg';
 import { IoMdAirplane } from 'react-icons/io';
 // import {Icons} from '../constants/icons'
 import { HandleIcons } from '../lib/iconHandler';
-import { Button } from './Button.components';
+import { Button } from './button.components';
 
 type AppProps = {
   imgPath: string;
