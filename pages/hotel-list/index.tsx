@@ -6,10 +6,10 @@ import { useQuery } from '@tanstack/react-query';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { request } from '../../helpers/axios-util';
 import { SearchPlace } from '../../components/home/SearchPlace.components';
-import HotelListCard from '../../components/hotelListCard.components';
+import HotelListCard from '../../components/HotelListCard.components';
 import axios from 'axios';
-import { BookingHeader } from '../../components/bookingHeader.components';
-import { Button } from '../../components/button.components';
+import { BookingHeader } from '../../components/BookingHeader.components';
+import { Button } from '../../components/Button.components';
 
 const fetchHotelData = () => {
   return request({ url: `/db` }); // uncomment for production
