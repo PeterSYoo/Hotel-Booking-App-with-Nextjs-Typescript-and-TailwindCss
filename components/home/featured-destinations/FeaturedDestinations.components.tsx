@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { request } from '../../../helpers/axios-util';
-import { CardDetail } from './cardDetail.components';
+import { CardDetail } from './CardDetail.components';
 
 const fetchFeaturedDestinations = () => {
   return axios.get('https://hotel-booking-app-tau.vercel.app/api/db/db');
