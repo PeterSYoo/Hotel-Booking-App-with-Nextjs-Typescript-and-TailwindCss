@@ -1,4 +1,5 @@
 import { URL } from 'url';
+
 type Props = {
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -32,6 +33,7 @@ export const Button = ({ children, rounded, version, onClick }: Props) => {
         );
     }
   };
+
   return (
     <>{buttonVersion()}</>
     // <button className="bg-blueBtn text-white px-5 py-3 rounded-xl font-medium text-xl" style={{borderRadius: rounded}}>{children}</button>
