@@ -69,3 +69,5 @@ export const getServerSideProps = async (context: any) => {
     props: { bestPlaces },
   };
 };
+
+// ignore this line
