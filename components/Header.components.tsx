@@ -6,10 +6,10 @@ import Login from '../pages/login';
 // import SignUp from '../pages/signup';
 import useLoginModal from '../hooks/useLoginModal';
 import useSignupModal from '../hooks/useSignupModal';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
-const ThemeButton = dynamic(() => import('./ThemeButton.components') as any, {
+const ThemeButton = dynamic(() => import('./themeButton.components') as any, {
   ssr: false,
 });
 

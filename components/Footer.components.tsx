@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-const ThemeButton = dynamic(() => import('./ThemeButton.components') as any, {
+const ThemeButton = dynamic(() => import('./themeButton.components') as any, {
   ssr: false,
 });
 

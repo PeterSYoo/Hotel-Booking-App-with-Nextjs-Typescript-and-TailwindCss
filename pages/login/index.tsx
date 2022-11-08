@@ -43,14 +43,14 @@ const Login: React.FC<Modal> = ({ open, onClose }) => {
   // Google handler function
   const handleGoogleSignin = async () => {
     signIn('google', {
-      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_VERCEL_URL,
+      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_BASE_URL,
     });
   };
 
   // GitHub handler function
   const handleGithubSignin = async () => {
     signIn('github', {
-      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_VERCEL_URL,
+      callbackUrl: process.env.NEXT_PUBLIC_NEXTAUTH_BASE_URL,
     });
   };
 

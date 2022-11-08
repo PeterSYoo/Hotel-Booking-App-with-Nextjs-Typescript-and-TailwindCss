@@ -1,11 +1,11 @@
-import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 import { CiLocationOn, CiCalendar } from 'react-icons/ci';
 import { CgFlagAlt } from 'react-icons/cg';
 import { IoMdAirplane } from 'react-icons/io';
 // import {Icons} from '../constants/icons'
 import { HandleIcons } from '../lib/iconHandler';
-import { Button } from './Button.components';
+import Image from 'next/image';
+import { Button } from './button.components';
 
 type AppProps = {
   imgPath: string;
