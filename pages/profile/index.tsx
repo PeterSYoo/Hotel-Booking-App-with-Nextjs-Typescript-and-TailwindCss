@@ -13,6 +13,7 @@ import { FiUser } from 'react-icons/fi';
 import { getUser, getUsers, updateUser } from '../../lib/usersHelper';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import moment from 'moment';
+import { LoadingSpinner } from '../../components/LoadingSpinner.components';
 
 /* Create an object inside our useReducer hook. Our key is the name prop in 
 our input, and value is the value prop in input. */
@@ -29,7 +30,7 @@ const ProfilePage = () => {
   const { data: session }: any = useSession();
   const router = useRouter();
 
-  const { data, isLoading, isError, error } = useQuery(['user'], () =>
+  const { data, isLoading, isError, error }: any = useQuery(['user'], () =>
     getUser(session.id)
   );
 
@@ -48,11 +49,15 @@ const ProfilePage = () => {
     }
   }, []);
 
-  if (isLoading) return '';
+  if (isLoading) return <LoadingSpinner />;
 
   if (isError) {
     // @ts-ignore
-    return <div>Error {error.message}</div>;
+    return (
+      <div className="max-w-[1165px] px-10 mx-auto mt-5 md:mt-10 mb-20 md:mb-[200px]">
+        Error {error.message}
+      </div>
+    );
   }
 
   const {
@@ -118,12 +123,16 @@ const ProfilePage = () => {
                     </span>
                   </div>
                   <div className="border-b mt-5 mx-5 border-gray-300 dark:border-[#3B3E44]" />
-                  <div className="flex justify-between mx-5 mt-5">
-                    <span className="text-[14px]">From</span>
-                    <span className="text-[14px] text-gray-500">
-                      {data?.cityState}
-                    </span>
-                  </div>
+                  {data?.cityState ? (
+                    <div className="flex justify-between mx-5 mt-5">
+                      <span className="text-[14px]">From</span>
+                      <span className="text-[14px] text-gray-500">
+                        {data?.cityState}
+                      </span>
+                    </div>
+                  ) : (
+                    ''
+                  )}
                   <div className="flex justify-between mx-5 mt-4">
                     <span className="text-[14px]">Profile last updated</span>
                     <span className="text-[14px] text-gray-500">
