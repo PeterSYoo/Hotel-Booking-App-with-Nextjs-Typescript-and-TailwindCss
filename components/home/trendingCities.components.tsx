@@ -1,10 +1,10 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export const TrendingCities = () => {
   return (
     <>
       {/* Trending Cities */}
-      <section className="bg-[#F5F5F5] pb-[30px] dark:bg-[#141416]">
+      <section className="pb-[100px] dark:bg-[#141416] pt-10">
         <section className="max-w-375 mx-auto md:max-w-1170">
           <h1 className="text-center text-3xl px-9 pt-7 pb-3 font-bold leading-10 md:text-5xl md:max-w-1170 md:px-0 md:mx-auto md:mt-[20px]">
             Trending Cities
