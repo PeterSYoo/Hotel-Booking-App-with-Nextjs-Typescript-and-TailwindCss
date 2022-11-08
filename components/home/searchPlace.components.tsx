@@ -1,33 +1,33 @@
-import React, { useState } from 'react'
-import { useRouter } from "next/router";
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import {
   RiHotelBedFill,
   RiFlightTakeoffFill,
   RiTaxiFill,
-} from "react-icons/ri";
-import { AiOutlineSwap } from "react-icons/ai";
+} from 'react-icons/ri';
+import { AiOutlineSwap } from 'react-icons/ai';
 
 type AppProps = {
   isHome: boolean;
   searchQuery?: string;
-}
+};
 
-export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
-  const [inputValue, setInputValue] = useState(searchQuery)
-  const router = useRouter()
+export const SearchPlace = ({ isHome, searchQuery }: AppProps) => {
+  const [inputValue, setInputValue] = useState(searchQuery);
+  const router = useRouter();
   const handleSubmit = async (e: any) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const data = {
       destination: e.target.destination.value,
       checkIn: e.target.checkIn.value,
-      checkOut: e.target.checkOut.value
-    }
-    console.log("THE DATA", data)
+      checkOut: e.target.checkOut.value,
+    };
+    console.log('THE DATA', data);
 
-    const JSONdata = JSON.stringify(data)
+    const JSONdata = JSON.stringify(data);
 
-    const endpoint = '/api/forms/destination'
+    const endpoint = '/api/forms/destination';
 
     const options = {
       method: 'POST',
@@ -35,23 +35,29 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
         'Content-Type': 'application/json',
       },
       body: JSONdata,
-    }
+    };
 
-    const response = await fetch(endpoint, options)
-    const result = await response.json()
-    console.log(result, 'result')
+    const response = await fetch(endpoint, options);
+    const result = await response.json();
+    console.log(result, 'result');
     router.push({
       pathname: '/hotel-list',
-      query: {dest: result.data.destination, checkIn: result.data.checkIn, checkOut: result.data.checkOut}
-    })
-
-  }
+      query: {
+        dest: result.data.destination,
+        checkIn: result.data.checkIn,
+        checkOut: result.data.checkOut,
+      },
+    });
+  };
 
   return (
     <>
       {/* Search Component */}
       {/* Desktop */}
-      <section className=" mx-[20px] mb-10 hidden md:block" style={isHome ? {marginTop: '-152px'} : {marginTop: '0'}}>
+      <section
+        className=" mx-[20px] mb-10 hidden md:block"
+        style={isHome ? { marginTop: '-152px' } : { marginTop: '0' }}
+      >
         {/* Search Form */}
         <form onSubmit={handleSubmit}>
           <div className="w-full bg-white rounded-xl px-[60px] py-[30px] drop-shadow-2xl dark:bg-[#222529]">
@@ -97,9 +103,9 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                   <h1 className="text-[18px]">Location</h1>
                   <input
                     type="text"
-                    name="destination"
+                    name="location"
                     value={inputValue}
-                    className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
+                    className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44] focus:outline-none"
                     placeholder="Where are you going?"
                     onChange={(e) => setInputValue(e.target.value)}
                     required
@@ -114,8 +120,8 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                   <h1 className="text-[18px]">Check in</h1>
                   <input
                     type="text"
-                    name='checkIn'
-                    className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
+                    name="checkIn"
+                    className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44] focus:outline-none"
                     placeholder="dd.mm.yyyy"
                   />
                 </div>
@@ -128,8 +134,8 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                   <h1 className="text-[18px]">Check out</h1>
                   <input
                     type="text"
-                    name='checkOut'
-                    className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44]"
+                    name="checkOut"
+                    className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44] focus:outline-none"
                     placeholder="dd.mm.yyyy"
                   />
                 </div>
@@ -151,7 +157,10 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
 
       {/* Search Component */}
       {/* Mobile */}
-      <section className="-mt-[245px] mx-[20px] mb-10 md:hidden" style={isHome ? {marginTop: '-152px'} : {marginTop: '0'}}>
+      <section
+        className="-mt-[245px] mx-[20px] mb-10 md:hidden"
+        style={isHome ? { marginTop: '-152px' } : { marginTop: '0' }}
+      >
         {/* Search Form */}
         <form onSubmit={handleSubmit}>
           <div className="w-full bg-white rounded-xl px-[20px] py-[20px] drop-shadow-2xl dark:bg-[#222529]">
@@ -188,10 +197,10 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
               <h1 className="text-[16px]">Location</h1>
               <input
                 type="text"
-                name="destination"
+                name="location"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
+                className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44] focus:outline-none"
                 placeholder="Where are you from?"
                 required
               />
@@ -201,8 +210,8 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                 <h1 className="text-[16px]">Check in</h1>
                 <input
                   type="text"
-                  name='checkIn'
-                  className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
+                  name="checkIn"
+                  className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44] focus:outline-none"
                   placeholder="Add date"
                 />
               </div>
@@ -210,8 +219,8 @@ export const SearchPlace = ({isHome, searchQuery}:AppProps) => {
                 <h1 className="text-[16px]">Check out</h1>
                 <input
                   type="text"
-                  name='checkOut'
-                  className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44]"
+                  name="checkOut"
+                  className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44] focus:outline-none"
                   placeholder="Add date"
                 />
               </div>
