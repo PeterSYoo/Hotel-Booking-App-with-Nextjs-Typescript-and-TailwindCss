@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import { useSession, signOut } from 'next-auth/react';
-import { FaRegBell } from 'react-icons/fa';
 import { FaUserCircle } from 'react-icons/fa';
 import Login from '../pages/login';
 // import SignUp from '../pages/signup';
 import useLoginModal from '../hooks/useLoginModal';
-import useSignupModal from '../hooks/useSignupModal';
+// import useSignupModal from '../hooks/useSignupModal';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
@@ -25,17 +24,21 @@ const Guest = () => {
         {/* Desktop */}
         <div className="w-[1440px] md:max-w-[1440px] mx-auto flex justify-between px-5 md:px-10">
           <div className="hidden items-center md:flex">
-            <button className="text-xl font-openSans font-bold flex items-center gap-3">
-              <Image src="/img/logo.png" alt="" width="28" height="28" />
-              <Link href="/">TripGuide</Link>
-            </button>
+            <Link href="/">
+              <button className="text-xl font-openSans font-bold flex items-center gap-3">
+                <Image src="/img/logo.png" alt="" width="28" height="28" />
+                TripGuide
+              </button>
+            </Link>
           </div>
           {/* Mobile */}
           <div className="flex items-center md:hidden">
-            <button className="text-base font-openSans font-bold flex items-center gap-3">
-              <Image src="/img/logo.png" alt="" width="22" height="22" />
-              <Link href="/">TripGuide</Link>
-            </button>
+            <Link href="/">
+              <button className="text-base font-openSans font-bold flex items-center gap-3">
+                <Image src="/img/logo.png" alt="" width="22" height="22" />
+                TripGuide
+              </button>
+            </Link>
           </div>
           {/* Desktop */}
           <div className="hidden gap-x-8 items-center md:flex">
@@ -82,17 +85,21 @@ const User = ({ session }: any) => {
         {/* Desktop */}
         <div className="w-[1440px] md:max-w-[1440px] mx-auto flex justify-between px-5 md:px-10">
           <div className="hidden items-center md:flex">
-            <button className="text-xl font-openSans font-bold flex items-center gap-3">
-              <Image src="/img/logo.png" alt="" width="28" height="28" />
-              <Link href="/">TripGuide</Link>
-            </button>
+            <Link href="/">
+              <button className="text-xl font-openSans font-bold flex items-center gap-3">
+                <Image src="/img/logo.png" alt="" width="28" height="28" />
+                TripGuide
+              </button>
+            </Link>
           </div>
           {/* Mobile */}
           <div className="flex items-center md:hidden">
-            <button className="text-base font-openSans font-bold flex items-center gap-3">
-              <Image src="/img/logo.png" alt="" width="22" height="22" />
-              <Link href="/">TripGuide</Link>
-            </button>
+            <Link href="/">
+              <button className="text-base font-openSans font-bold flex items-center gap-3">
+                <Image src="/img/logo.png" alt="" width="22" height="22" />
+                TripGuide
+              </button>
+            </Link>
           </div>
           {/* Desktop */}
           <div className="hidden items-center md:flex">
