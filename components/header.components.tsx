@@ -6,14 +6,12 @@ import Login from '../pages/login';
 // import SignUp from '../pages/signup';
 import useLoginModal from '../hooks/useLoginModal';
 import useSignupModal from '../hooks/useSignupModal';
-import Button from './button.components';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const ThemeButton = dynamic(
-  () => import('../components/theme-button.components') as any,
-  { ssr: false }
-);
+const ThemeButton = dynamic(() => import('./ThemeButton.components') as any, {
+  ssr: false,
+});
 
 // Guest
 const Guest = () => {
@@ -25,16 +23,16 @@ const Guest = () => {
       {/* <SignUp open={openSignup} onClose={() => setOpenSignup(false)} /> */}
       <div className="flex py-[25px] bg-white dark:bg-[#222529] font-dmSans ">
         {/* Desktop */}
-        <div className="w-[1440px] md:max-w-[1440px] mx-auto flex justify-between pl-3 pr-5 md:px-10">
+        <div className="w-[1440px] md:max-w-[1440px] mx-auto flex justify-between px-5 md:px-10">
           <div className="hidden items-center md:flex">
-            <button className="text-xl font-openSans font-bold pl-2.5 flex items-center gap-3">
+            <button className="text-xl font-openSans font-bold flex items-center gap-3">
               <Image src="/img/logo.png" alt="" width="28" height="28" />
               <Link href="/">TripGuide</Link>
             </button>
           </div>
           {/* Mobile */}
           <div className="flex items-center md:hidden">
-            <button className="text-base font-openSans font-bold pl-2.5 flex items-center gap-3">
+            <button className="text-base font-openSans font-bold flex items-center gap-3">
               <Image src="/img/logo.png" alt="" width="22" height="22" />
               <Link href="/">TripGuide</Link>
             </button>
@@ -82,16 +80,16 @@ const User = ({ session }: any) => {
     <>
       <div className="flex justify-between py-[25px] bg-white dark:bg-[#222529] font-dmSans">
         {/* Desktop */}
-        <div className="w-[1440px] md:max-w-[1440px] mx-auto flex justify-between pl-3 pr-5 md:px-10">
+        <div className="w-[1440px] md:max-w-[1440px] mx-auto flex justify-between px-5 md:px-10">
           <div className="hidden items-center md:flex">
-            <button className="text-xl font-openSans font-bold pl-2.5 flex items-center gap-3">
+            <button className="text-xl font-openSans font-bold flex items-center gap-3">
               <Image src="/img/logo.png" alt="" width="28" height="28" />
               <Link href="/">TripGuide</Link>
             </button>
           </div>
           {/* Mobile */}
           <div className="flex items-center md:hidden">
-            <button className="text-base font-openSans font-bold pl-2.5 flex items-center gap-3">
+            <button className="text-base font-openSans font-bold flex items-center gap-3">
               <Image src="/img/logo.png" alt="" width="22" height="22" />
               <Link href="/">TripGuide</Link>
             </button>

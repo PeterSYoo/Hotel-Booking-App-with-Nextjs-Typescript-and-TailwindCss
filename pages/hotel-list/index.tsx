@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 import { useQuery } from '@tanstack/react-query';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { request } from '../../helpers/axios-util';
-import BookingHeader from '../../components/bookingHeader.components';
-import { SearchPlace } from '../../components/home/searchPlace.components';
-import HotelListCard from '../../components/hotelListCard.components';
+import BookingHeader from '../../components/BookingHeader.components';
+import { SearchPlace } from '../../components/home/SearchPlace.components';
+import HotelListCard from '../../components/HotelListCard.components';
 import axios from 'axios';
-import Button from '../../components/button.components';
+import Button from '../../components/Button.components';
 
 const fetchHotelData = () => {
   return request({ url: `/db` }); // uncomment for production
@@ -18,8 +18,8 @@ const fetchHotelData = () => {
 
 const HotelList = () => {
   const [query, setQuery] = useState<any | null>(null);
-  const [checkIn, setCheckIn] = useState<any | null>(null)
-  const [checkOut, setCheckOut] = useState<any | null>(null)
+  const [checkIn, setCheckIn] = useState<any | null>(null);
+  const [checkOut, setCheckOut] = useState<any | null>(null);
 
   const { data: session }: any = useSession();
   const router = useRouter();
@@ -28,10 +28,10 @@ const HotelList = () => {
     // if (!session) {
     //   router.push('/');
     // }
-    console.log(router.query)
+    console.log(router.query);
     setQuery(router.query.dest);
-    setCheckIn(router.query.checkIn)
-    setCheckOut(router.query.checkOut)
+    setCheckIn(router.query.checkIn);
+    setCheckOut(router.query.checkOut);
   }, [session, router, query]);
 
   const { data: places, isInitialLoading } = useQuery(

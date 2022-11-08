@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-const ThemeButton = dynamic(
-  () => import('../components/theme-button.components') as any,
-  { ssr: false }
-);
+const ThemeButton = dynamic(() => import('./ThemeButton.components') as any, {
+  ssr: false,
+});
 
 const Footer = () => {
   return (
