@@ -6,7 +6,7 @@ import {
   useQueryClient,
 } from '@tanstack/react-query';
 import { useReducer, useState } from 'react';
-import { TestForm } from '../../components/test-route/test-form.components';
+import { TestForm } from '../../components/test-route/TestForm.components';
 
 import { deleteTest, getTests } from '../../lib/testsHelper';
 

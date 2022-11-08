@@ -78,7 +78,7 @@ const ProfilePage = () => {
 
     return (
       <>
-        <div className="max-w-[1165px] px-5 mx-auto mt-5 md:mt-20 mb-20 md:mb-[200px]">
+        <div className="max-w-[1165px] px-10 mx-auto mt-5 md:mt-10 mb-20 md:mb-[200px]">
           <div className="flex flex-col">
             {/* Nav */}
             <nav className="md:flex gap-2 items-center hidden">
