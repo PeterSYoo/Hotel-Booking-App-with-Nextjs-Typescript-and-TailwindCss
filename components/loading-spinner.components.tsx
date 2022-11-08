@@ -16,7 +16,7 @@ export const LoadingSpinner = () => {
   if (currentTheme === 'dark') {
     return (
       <>
-        <div className="min-w-screen mt-10 flex justify-center items-center">
+        <div className="min-w-screen min-h-screen mt-10 flex justify-center">
           <MoonLoader color="#919191" size="30" />
         </div>
       </>
@@ -24,7 +24,7 @@ export const LoadingSpinner = () => {
   } else {
     return (
       <>
-        <div className="min-w-screen mt-10 flex justify-center items-center">
+        <div className="min-w-screen min-h-screen mt-10 flex justify-center">
           <MoonLoader color="#545454" size="30" />
         </div>
       </>
