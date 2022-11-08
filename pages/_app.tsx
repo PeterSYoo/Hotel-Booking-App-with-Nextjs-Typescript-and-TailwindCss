@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { Layout } from '../components/layout';
 import { SessionProvider } from 'next-auth/react';
 import {
   QueryClientProvider,
@@ -8,14 +7,14 @@ import {
   Hydrate,
 } from '@tanstack/react-query';
 import { ThemeProvider } from 'next-themes';
-import Router, { useRouter } from 'next/router';
+import Router from 'next/router';
 import { useEffect, useState } from 'react';
-import { LoadingSpinner } from '../components/loading-spinner.components';
+import { LoadingSpinner } from '../components/LoadingSpinner.components';
+import { Layout } from '../components/Layout';
 
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
