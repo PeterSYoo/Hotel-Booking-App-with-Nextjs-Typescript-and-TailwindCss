@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 import { useQuery } from '@tanstack/react-query';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { request } from '../../helpers/axios-util';
-import { SearchPlace } from '../../components/home/SearchPlace.components';
-import HotelListCard from '../../components/HotelListCard.components';
+import { SearchPlace } from '../../Components/home/SearchPlace.components';
+import HotelListCard from '../../Components/HotelListCard.components';
 import axios from 'axios';
-import { BookingHeader } from '../../components/BookingHeader.components';
-import { Button } from '../../components/Button.components';
+import { BookingHeader } from '../../Components/BookingHeader.components';
+import { Button } from '../../Components/Button.components';
 
 const fetchHotelData = () => {
   return request({ url: `/db` }); // uncomment for production
