@@ -4,7 +4,7 @@ import { request } from '../../../helpers/axios-util';
 import { CardDetail } from './CardDetail.components';
 
 const fetchFeaturedDestinations = () => {
-  return axios.get('https://hotel-booking-app-tau.vercel.app/api/db/db');
+  return axios.get('https://tripguide-mocha.vercel.app/api/db/db');
   // return request({url: '/db'})
 };
 
