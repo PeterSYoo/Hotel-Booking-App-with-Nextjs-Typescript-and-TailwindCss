@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
-import { TestForm } from '../../../components/test-route/TestForm.components';
+import { TestForm } from '../../../Components/test-route/TestForm.components';
 import { addTest } from '../../../lib/testsHelper';
 
 const CreateTest = () => {
