@@ -1,5 +1,5 @@
 const BASE_URL = 'http://localhost:3000';
-const VERCEL_URL = 'https://hotel-booking-app-tau.vercel.app';
+const VERCEL_URL = 'https://tripguide-mocha.vercel.app';
 
 export const getUsers = async () => {
   const response = await fetch(`${VERCEL_URL}/api/users`);
