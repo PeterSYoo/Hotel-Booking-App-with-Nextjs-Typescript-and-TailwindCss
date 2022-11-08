@@ -33,6 +33,7 @@ const User = () => {
         <Hero />
         <SearchPlace isHome={true} />
         <SearchABestPlace />
+        <FeaturedDestinations />
         <TopTour />
         <ExploreTheWorld />
         <TrendingCities />
