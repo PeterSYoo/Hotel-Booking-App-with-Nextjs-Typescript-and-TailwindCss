@@ -9,8 +9,8 @@ import {
 import { ThemeProvider } from 'next-themes';
 import Router from 'next/router';
 import { useEffect, useState } from 'react';
-import { LoadingSpinner } from '../components/loadingSpinner.components';
-import { Layout } from '../components/layout';
+import { LoadingSpinner } from '../components/LoadingSpinner.components';
+import { Layout } from '../components/Layout';
 
 const queryClient = new QueryClient();
 
