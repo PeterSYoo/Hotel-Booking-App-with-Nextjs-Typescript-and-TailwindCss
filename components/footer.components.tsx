@@ -5,7 +5,7 @@ const ThemeButton = dynamic(() => import('./ThemeButton.components') as any, {
   ssr: false,
 });
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <>
       <section className="bg-footerBg font-dmSans dark:bg-[#222529]">
@@ -109,5 +109,3 @@ const Footer = () => {
     </>
   );
 };
-
-export default Footer;

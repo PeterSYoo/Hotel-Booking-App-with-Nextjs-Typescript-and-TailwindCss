@@ -1,10 +1,10 @@
-import BookingHeader from '../../components/BookingHeader.components';
 import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 import { BsStarHalf, BsStarFill } from 'react-icons/bs';
 import { CgFlagAlt } from 'react-icons/cg';
 import { HandleIcons } from '../../lib/iconHandler';
 import { Icons } from '../../constants/icons';
+import { BookingHeader } from '../../components/BookingHeader.components';
 
 const tagsForDev = [
   '5.0',

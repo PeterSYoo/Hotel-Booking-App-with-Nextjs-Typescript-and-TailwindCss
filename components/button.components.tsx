@@ -7,7 +7,7 @@ type Props = {
   version?: string;
 };
 
-const Button = ({ children, rounded, version, onClick }: Props) => {
+export const Button = ({ children, rounded, version, onClick }: Props) => {
   const buttonVersion = () => {
     switch (version) {
       case 'clear':
@@ -38,5 +38,3 @@ const Button = ({ children, rounded, version, onClick }: Props) => {
     // <button className="bg-blueBtn text-white px-5 py-3 rounded-xl font-medium text-xl" style={{borderRadius: rounded}} onClick={click? click : () => {}}>{children}</button>
   );
 };
-
-export default Button;

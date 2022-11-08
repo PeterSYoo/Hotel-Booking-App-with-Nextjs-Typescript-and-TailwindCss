@@ -152,10 +152,8 @@ const User = ({ session }: any) => {
   );
 };
 
-const Header = () => {
+export const Header = () => {
   const { data: session } = useSession();
 
   return <>{session ? User({ session }) : Guest()}</>;
 };
-
-export default Header;
