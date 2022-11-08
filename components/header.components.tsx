@@ -111,7 +111,7 @@ const User = ({ session }: any) => {
                */}
               <ThemeButton />
               <div className="border-r h-[32px] w-[1px] mx-1 dark:border-gray-700" />
-              <button>
+              <button className="text-blue-600 dark:text-white">
                 <Link href="/profile">
                   <FaUserCircle size={27} />
                 </Link>
