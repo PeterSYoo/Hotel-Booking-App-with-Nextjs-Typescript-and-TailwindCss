@@ -16,7 +16,7 @@ export const TopTour = () => {
       </section>
 
       {/* Desktop */}
-      <section className="hidden max-w-375 mx-auto md:mx-[135px] md:max-w-1170 md:flex md:gap-[30px]">
+      <section className="hidden max-w-375 mx-auto md:mx-[135px] md:max-w-1170 md:flex md:gap-[30px] md:pb-20">
         {/* Card */}
         <section className="flex flex-col justify-between h-[495px] rounded-2xl mb-[20px] bg-[url('/img/top-tour/japan.png')] bg-no-repeat w-[370px]">
           <div className="mt-[30px] ml-[30px]">
@@ -74,7 +74,7 @@ export const TopTour = () => {
       </section>
 
       {/* Mobile */}
-      <section className="md:hidden">
+      <section className="md:hidden pb-10">
         {/* Card */}
         <section className="flex flex-col justify-between w-[335px] h-[495px] rounded-2xl mb-[20px] mx-auto bg-[url('/img/top-tour/japan.png')]">
           <div className="pt-[30px] pl-[30px]">
