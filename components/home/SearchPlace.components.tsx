@@ -103,7 +103,7 @@ export const SearchPlace = ({ isHome, searchQuery }: AppProps) => {
                   <h1 className="text-[18px]">Location</h1>
                   <input
                     type="text"
-                    name="location"
+                    name="destination"
                     value={inputValue}
                     className="bg-gray-100 text-[16px] w-full py-2 dark:bg-[#3B3E44] focus:outline-none"
                     placeholder="Where are you going?"
@@ -197,7 +197,7 @@ export const SearchPlace = ({ isHome, searchQuery }: AppProps) => {
               <h1 className="text-[16px]">Location</h1>
               <input
                 type="text"
-                name="location"
+                name="destination"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 className="bg-gray-100 text-[12px] w-full py-2 dark:bg-[#3B3E44] focus:outline-none"

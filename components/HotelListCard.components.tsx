@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { AiFillStar } from 'react-icons/ai';
 import { CiLocationOn, CiCalendar } from 'react-icons/ci';
 import { CgFlagAlt } from 'react-icons/cg';
@@ -31,74 +32,6 @@ type Amenity = {
   name: string;
 };
 
-// const handleIcons = (amenity: string) => {
-//   switch(amenity) {
-//     case "Kitchen":
-//       return (
-//         <>
-//           {Icons.kitchen}<span>{amenity}</span>
-//         </>
-//       )
-//     case "Refrigerator":
-//       return (
-//         <>
-//           {Icons.refrigerator}<span>{amenity}</span>
-//         </>
-//       )
-//     case "Washer":
-//     case "Free washer":
-//       return (
-//         <>
-//           {Icons.washer}<span>{amenity}</span>
-//         </>
-//       )
-//     case "Hair dryer":
-//       return (
-//         <>
-//           {Icons.hairDryer}<span>{amenity}</span>
-//         </>
-//       )
-//     case "Security cameras":
-//       return (
-//         <>
-//           {Icons.securityCameras}<span>{amenity}</span>
-//         </>
-//       )
-//     case "Wifi":
-//       return (
-//         <>
-//           {Icons.wifi}<span>{amenity}</span>
-//         </>
-//       )
-//     case "EV charger":
-//       return (
-//         <>
-//           {Icons.evCharger}<span>{amenity}</span>
-//         </>
-//       )
-//     case "Elevator":
-//       return (
-//         <>
-//           {Icons.elevator}<span>{amenity}</span>
-//         </>
-//       )
-//     case "Courtyard view":
-//       return (
-//         <>
-//           {Icons.courtyardView}<span>{amenity}</span>
-//         </>
-//       )
-//     case "TV":
-//     case "HDTV":
-//       return (
-//         <>
-//           {Icons.tv}<span>{amenity}</span>
-//         </>
-//       )
-//     default:
-//       return <span>{amenity}</span>
-//   }
-// }
 
 const HotelListCard = ({
   imgPath,
@@ -114,6 +47,7 @@ const HotelListCard = ({
   hotelName,
   clickRoute,
 }: AppProps) => {
+  const router = useRouter()
   return (
     <div className="flex flex-col justify-around items-center border border-[#e7ecf3] rounded-3xl p-3 md:flex-row md:w-full md:max-w-4xl">
       <div className="image-wrapper">
@@ -171,7 +105,7 @@ const HotelListCard = ({
               <span>Per night</span>
             </div>
             <div className="button">
-              <Button rounded="30px">Book Now</Button>
+              <Button route={clickRoute} rounded="30px">Book Now</Button>
             </div>
           </div>
         </div>
