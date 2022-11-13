@@ -12,8 +12,8 @@ import { BookingHeader } from '../../components/BookingHeader.components';
 import { Button } from '../../components/Button.components';
 
 const fetchHotelData = () => {
-  return request({ url: `/db` }); // uncomment for production
-  // return axios.get('http://localhost:3000/api/db/db') // Uncomment for development
+  // return request({ url: `/db` }); // uncomment for production
+  return axios.get('http://localhost:3000/api/db/db') // Uncomment for development
 };
 
 const HotelList = () => {
@@ -25,10 +25,9 @@ const HotelList = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // if (!session) {
-    //   router.push('/');
-    // }
-    console.log(router.query);
+    if (!session) {
+      router.push('/');
+    }
     setQuery(router.query.dest);
     setCheckIn(router.query.checkIn);
     setCheckOut(router.query.checkOut);
@@ -39,7 +38,7 @@ const HotelList = () => {
     fetchHotelData
   );
 
-  if (true) {
+  if (session) {
     if (isInitialLoading) return <h2>Loading...</h2>;
 
     const searchedDestination = query.replace(/ /g, '').toLowerCase();
@@ -60,7 +59,7 @@ const HotelList = () => {
             {query}
           </h1>
           {/* CARD COMPOENT */}
-          {checkDestination(places.data, searchedDestination) ? (
+          {checkDestination(places?.data, searchedDestination) ? (
             places?.data[`${searchedDestination}`].map((place: any) => (
               <HotelListCard
                 imgPath={place.images[0]}
@@ -75,6 +74,7 @@ const HotelList = () => {
                 price={place.price}
                 hotelName={place.hotelName}
                 key={place.hotelName}
+                clickRoute={place.name}
               />
             ))
           ) : (
