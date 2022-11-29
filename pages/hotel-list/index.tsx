@@ -3,6 +3,7 @@ import { unstable_getServerSession } from 'next-auth';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@tanstack/react-query';
+import useDestinationStore from '../../stores/useDestinationStore';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { request } from '../../helpers/axios-util';
 import { SearchPlace } from '../../components/home/SearchPlace.components';
@@ -12,8 +13,8 @@ import { BookingHeader } from '../../components/BookingHeader.components';
 import { Button } from '../../components/Button.components';
 
 const fetchHotelData = () => {
-  // return request({ url: `/db` }); // uncomment for production
-  return axios.get('http://localhost:3000/api/db/db') // Uncomment for development
+  return request({ url: `/db` }); // uncomment for production
+  // return axios.get('http://localhost:3000/api/db/db') // Uncomment for development
 };
 
 const HotelList = () => {
@@ -23,6 +24,8 @@ const HotelList = () => {
 
   const { data: session }: any = useSession();
   const router = useRouter();
+
+  const updateDestination = useDestinationStore(state => state.updateDestination)
 
   useEffect(() => {
     if (!session) {
@@ -42,6 +45,9 @@ const HotelList = () => {
     if (isInitialLoading) return <h2>Loading...</h2>;
 
     const searchedDestination = query.replace(/ /g, '').toLowerCase();
+
+    updateDestination(searchedDestination)
+
     const checkDestination = (obj: {}, searchString: string) => {
       if (Object.keys(obj).find((el) => el === searchString) !== undefined) {
         return true;

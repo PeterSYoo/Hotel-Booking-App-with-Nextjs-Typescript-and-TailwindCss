@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import axios from 'axios';
+import { request } from '../../helpers/axios-util';
 import { useQuery } from '@tanstack/react-query';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
+import useDestinationStore from '../../stores/useDestinationStore';
 import { unstable_getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]';
 import { AiFillStar } from 'react-icons/ai';
@@ -12,8 +15,8 @@ import { BookingHeader } from '../../components/BookingHeader.components';
 import { Button } from '../../components/Button.components';
 
 const fetchHotelData = () => {
-  // return request({ url: `/db` }); // uncomment for production
-  return axios.get('http://localhost:3000/api/db/db') // Uncomment for development
+  return request({ url: `/db` }); // uncomment for production
+  // return axios.get('http://localhost:3000/api/db/db') // Uncomment for development
 };
 
 
@@ -29,6 +32,7 @@ const tagsForDev = [
 const amenities = ['Kitchen', 'Free washer', 'Wifi', 'Hair dryer', 'Courtyard view'];
 
 const HotelDetails = () => {
+  const router = useRouter()
 
   const { data: session }: any = useSession();
 
@@ -36,6 +40,10 @@ const HotelDetails = () => {
     ['hotel-details'], 
     fetchHotelData
   );
+  const destination = useDestinationStore(state => state.destination)
+  const slug = router.asPath.slice(12)
+  // const findDestination = places?.data.find((n: any) => n.name.toLowerCase() )
+
 
   return (
     <>
